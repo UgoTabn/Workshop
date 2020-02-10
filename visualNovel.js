@@ -23,7 +23,7 @@ function scene_1a(){
 
 function display_perso(pos,nom,state){
 
-	$("#perso"+pos).attr("src","assets/character/"+nom+"_"+state+".png");
+	$("#perso"+pos+"_img").attr("src","assets/character/"+nom+"_"+state+".png");
 	switch (pos){
 		case 1:
 			$("#perso1").css(/*position1 + flip*/);
