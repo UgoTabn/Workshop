@@ -1,10 +1,11 @@
-/*
+
 //Var globales
 
 function realisateur(index){
 	switch (index){
 		case 1 :
-			scene_1a
+			scene_1a();
+			changeText($("#text_hold"),$("#text"),20);
 			break;
 		case 2:
 
@@ -20,24 +21,31 @@ function scene_1a(){
 	display_perso(2,"nom","state");
 	//senario
 	//dialogue("")
+	$("#text_hold").html("lol c'est drôle, regarde moi ça c'est trop cool !!!");
 }
 
 function display_perso(pos,nom,state){
-
 	$("#perso"+pos+"_img").attr("src","assets/character/"+nom+"_"+state+".png");
-	switch (pos){
-		case 1:
-			$("#perso1").css(/*position1 + flip*//*);
-			break;
-		case 2:
-			$("#perso2").css(/*position2 + flip*//*);
-			break;
-		case 3:
-			$("#perso3").css(/*position3 + flip*//*);
-			break;
-		case 4:
-			$("#perso4").css(/*position4 + flip*//*);
-			break;
-	}
-	
-}*/
+}
+
+function changeText(cont1,cont2,speed){
+	var Otext=cont1.text();
+	var Ocontent=Otext.split("");
+	var i=0;
+	function show(){
+		if(i<Ocontent.length)
+		{		
+			cont2.append(Ocontent[i]);
+			i=i+1;
+		};
+	};
+		var Otimer=setInterval(show,speed);	
+};
+
+
+realisateur(1);
+
+display_perso(1,"billy","idle");
+display_perso(2,"billy","idle");
+display_perso(3,"billy","idle");
+display_perso(4,"billy","idle");
