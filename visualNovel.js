@@ -85,6 +85,22 @@ function laby(){
 				ecrit_text_popup("J'ai comme une impression de déjà vu, on serait pas retourné au départ ?")
 				l_score =0;
 				break;
+			case 5:
+				ecrit_text_popup("Tiens ?! un trou dans le mur ?")
+				l_score = 8;
+				break;
+			case 6:
+				ecrit_text_popup("Tu est doué !")
+				l_score = 7;
+				break;
+			case 7:
+				ecrit_text_popup("La sortie ! ah non on dirait le début")
+				l_score = 0;
+				break;
+			case 8:
+				ecrit_text_popup("De la lumière !")
+				l_score = 9;
+				break;
 		}
 	})
 
@@ -114,6 +130,18 @@ function laby(){
 				ecrit_text_popup("On serait pas en train de tourné en rond ?")
 				l_score = 5;
 				break;
+			case 6:
+				ecrit_text_popup("Il n'y a rien de particulier ici essaye a gauche")
+				l_score = 7;
+				break;
+			case 7:
+				ecrit_text_popup("Mmmmm tu es sur de toi ?")
+				l_score = 8;
+				break;
+			case 8:
+			ecrit_text_popup("je pense qu'on y sera encore demain, non ? qui a fait ce labyrinthe ?")
+			l_score = 6;
+			break;
 		}
 	})
 
