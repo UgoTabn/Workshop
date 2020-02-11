@@ -143,10 +143,9 @@ function laby(){
 				l_score = 8;
 				break;
 			case 8:
-			ecrit_text_popup("Je pense que j\'y sera encore demain, non ? qui a fait ce foutu desert ?")
-			l_score = 6;
-			break;
-
+				ecrit_text_popup("Je pense que j\'y sera encore demain, non ? qui a fait ce foutu desert ?")
+				l_score = 6;
+				break;
 			case 9:
 				ecrit_text_popup("Bien j'avance pour le moment")
 				l_score =10;
