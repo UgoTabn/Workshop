@@ -1,57 +1,47 @@
-//
-let nb = 1;
-//Function
-function text(text){
-    if (text == 'void'){
-        $('#text').html('')
-        $('#container').hide();
-    }
-    else{
-        $('#text').html(text);
-    }
+//Var globales
+
+function realisateur(index){
+	switch (index){
+		case 1 :
+			scene_1a();
+			changeText($("#text_hold"),$("#text"),20);
+      display_perso(1,"billy","idle");
+      display_perso(2,"billy","idle");
+      display_perso(3,"billy","idle");
+      display_perso(4,"billy","idle");
+			break;
+		case 2:
+
+			break;
+		case 3:
+      
+			break;
+	}
+}
+function scene_1a(){
+	//change background
+	display_perso(2,"nom","state");
+	//senario
+	//dialogue("")
+	$("#text_hold").html("lol c'est drôle, regarde moi ça c'est trop cool !!!");
 }
 
-function character(pos,state,who){
-    if(who == 0){
-        $('#perso'+pos).attr('src','assets/character/void.png')
-    }
-    else{$('#perso'+pos).attr('src','assets/character/char'+who+'.png')}
-
-}
-function scenetest(){
-    $('#background').css('background-image','url(assets/background/fondecranMaxime.png)')
-    character(1,0,1);
-    character(2,0,2);
-    text('Le texte marche car il a des pieds mdr');
+function display_perso(pos,nom,state){
+	$("#perso"+pos+"_img").attr("src","assets/character/"+nom+"_"+state+".png");
 }
 
-function scenetest2(){
-    $('#background').css('background-image','url(assets/background/fond.jpg)')
-    character(1,0,2);
-    character(2,0,2);
-    text('OUI !')
-}
+function changeText(cont1,cont2,speed){
+	var Otext=cont1.text();
+	var Ocontent=Otext.split("");
+	var i=0;
+	function show(){
+		if(i<Ocontent.length)
+		{		
+			cont2.append(Ocontent[i]);
+			i=i+1;
+		};
+	};
+		var Otimer=setInterval(show,speed);	
+};
 
-function scenetest3(){
-    $('#background').css('background-image','url(assets/background/fondecranMaxime.png)')
-    character(1,0,0);
-    character(2,0,0);
-    text('LOL y\'a R');
-}
-
-scenetest();
-
-$('html').on('click',function(){
-    nb++;
-    $("#player")[0].play();
-    //$("#player2")[0].play();
-    console.log('VALIDE ! '+ nb)
-    switch(nb){
-        case 2:
-            scenetest2();
-            break;
-        case 3:
-            scenetest3();
-            break;
-    }       
-})
+realisateur(1);

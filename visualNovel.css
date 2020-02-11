@@ -1,38 +1,51 @@
-#background{
+#background {
     height: 600px;
     width: 800px;
-    /*background-image: url(assets/background/fondecranMaxime.png);*/
-}
-.perso{position: absolute;}
-
-#perso1{
-    position: relative;
-    top: -400px;
-    left: 200px;
-    height: 80px;
-    width: 80px;
-}
-#perso2{
-    position: relative;
-    top: -400px;
-    left: 400px;
-    height: 80px;
-    width: 80px;
 }
 
-#container{
-    position: relative;
-    top: -200px;
-    left: 25px;
-    height: 170px;
-    width: 750px;
-
-    background-color: rgba(255,250,255, 0.22);
-    display: flex;
-    justify-content: center;
+#perso1_img{
+	position:relative;
+	top: 180px;
+	left: 0px;
+	width: 187px;
+}
+#perso2_img{
+	position:relative;
+	top: 180px;
+	left: 187px;
+	width: 187px;
+}
+#perso3_img{
+	position:relative;
+	top: 180px;
+	left: 375px;
+	width: 187px;
+}
+#perso4_img{
+	position:relative;
+	top: 180px;
+	left: 562px;
+	width: 187px;
+}
+.perso{
+	position:absolute;
 }
 
-#text{
-    margin: 20px;
-    text-align: center;
+#container {
+	position: relative;
+	top: 400px;
+	height: 175px;
+	left: 25px;
+	width:750px;
+	background-color: rgba(255,255,255,0.5);
+	border-style: solid;
+	border-color: red;
+}
+
+#text_hold {
+	display: none;
+}
+
+#text {
+	margin: 20px;
 }
