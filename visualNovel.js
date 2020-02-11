@@ -81,6 +81,10 @@ function laby(){
 				ecrit_text_popup("Hummm c'était tout droit cette fois ci")
 				l_score = 4;
 				break;
+			case 4:
+				ecrit_text_popup("J'ai comme une impression de déjà vu, on serait pas retourné au départ ?")
+				l_score =0;
+				break;
 		}
 	})
 
@@ -101,6 +105,14 @@ function laby(){
 			case 3:
 				ecrit_text_popup("Hummm c'était tout droit cette fois ci")
 				l_score = 4;
+				break;
+			case 4:
+				ecrit_text_popup("Bien jouer ! mais maintenant ? On vas a gauche ou a droite ?")
+				l_score = 5;
+				break;
+			case 5:
+				ecrit_text_popup("On serait pas en train de tourné en rond ?")
+				l_score = 5;
 				break;
 		}
 	})
