@@ -5,10 +5,10 @@ function realisateur(index){
 		case 1 :
 			scene_1a();
 			changeText($("#text_hold"),$("#text"),20);
-      display_perso(1,"billy","idle");
-      display_perso(2,"billy","idle");
-      display_perso(3,"billy","idle");
-      display_perso(4,"billy","idle");
+            display_perso(1,"billy","idle");
+        	display_perso(2,"billy","idle");
+      		display_perso(3,"billy","idle");
+      		display_perso(4,"billy","idle");
 			break;
 		case 2:
 
@@ -20,6 +20,7 @@ function realisateur(index){
 }
 function scene_1a(){
 	//change background
+	$("#background").css("background-image","url('assets/background/fondecranMaxime.png')");
 	display_perso(2,"nom","state");
 	//senario
 	//dialogue("")
