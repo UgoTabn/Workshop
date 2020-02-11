@@ -28,6 +28,20 @@ function scene_1a(){
 	changeText($("#text_hold"),$("#text"),20);
 }
 
+
+
+
+$("#button_play.e6").click(function e6(){
+	//$("#element1").css({"background-color": "red", "display": "block", "width": "500px", "height": "50px", "position": "absolute"});
+	//$("#element2").css({"background-image": "url('assets/symbole/flecheG.png')", "width": "30px", "height": "50px"})
+	//var vis = {""};
+	$("#element2_img").attr("src", "assets/symbole/flecheG.png");
+	$("#element2_img").css({"width": "30px", "height": "50px"});
+
+
+
+})
+
 function display_perso(pos,nom,state){
 	$("#perso"+pos+"_img").attr("src","assets/character/"+nom+"_"+state+".png");
 }
@@ -155,9 +169,7 @@ function laby(){
 	})
 
 }
-
-
-laby();
+scene_1a();
 
 $("#button_play").click(function(){
 	$("#pop").css("display", "block");
