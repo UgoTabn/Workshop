@@ -1,4 +1,5 @@
 //Var globales
+let ywx = 0;
 
 function realisateur(index){
 	switch (index){
@@ -53,9 +54,9 @@ function ecrit_text_popup(chaine){
 	changeText($("#text_pop_hold"),$("#text_pop"),20);
 }
 
-function laby(){
-	let l_score = 0;
-	$('.laby').css('visibility','visible')
+function E1(){
+	let l_score = 9;
+	$('.e1').css('visibility','visible')
 	display_perso(1,"void","void");
     display_perso(2,"void","void");
     display_perso(3,"void","void");
@@ -105,6 +106,20 @@ function laby(){
 				ecrit_text_popup("Tiens un morceau de papier ? La recette de la raclette ?!")
 				l_score = 10;
 				break;
+			case 10:
+				$('.e1').css('visibility','hidden')
+				
+				end = setInterval(function(){
+					ecrit_text_popup("Un grand batiment... ça doit être ça !");
+					if (ywx == 1){
+						$('#pop').css("display","none");
+						clearInterval(end);
+					}else{
+						ywx++;
+					}
+				},1500)
+				end;
+				break;
 		}
 	})
 
@@ -150,13 +165,27 @@ function laby(){
 				ecrit_text_popup("Bien j'avance pour le moment")
 				l_score =10;
 				break;
+			case 10:
+				$('.e1').css('visibility','hidden')
+				
+				end = setInterval(function(){
+					ecrit_text_popup("Tiens ? Un batiment");
+					if (ywx == 1){
+						$('#pop').css("display","none");
+						clearInterval(end);
+					}else{
+						ywx++;
+					}
+				},1500)
+				end;
+				break;
 		}
 	})
 
 }
 
 
-laby();
+E1();
 
 $("#button_play").click(function(){
 	$("#pop").css("display", "block");
