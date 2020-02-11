@@ -58,15 +58,55 @@
 	background-color: red;
 	width: 500px;
 	left: 150px;
-	bottom : 120px;
+	top : 480px;
 }
 
 .popup{
 	display: none;
 	position: fixed;
-	height: 550px;
-	width: 700px;
-	left: 55px;
-	top: 25px;
+	height: 600px;
+	width: 800px;
+	left: 8px;
+	top: 8px;
 	background-color: purple;
+}
+
+#text_pop_hold{
+	display: none;
+}
+
+.laby{
+	position: relative;
+	visibility: collapse;
+}
+
+#fleche_D{
+	position: absolute;
+	top: 50px;
+	left: 740px;
+	height: 60px;
+	width: 60px;
+}
+
+#fleche_G{
+	position: absolute;
+	top: 50px;
+	height: 60px;
+	width: 60px;
+}
+
+#container_pop{
+	position: relative;
+	top: 400px;
+	height: 175px;
+	left: 25px;
+	width:750px;
+	background-color: rgba(255,255,255,0.5);
+	border-style: solid;
+	border-color: red;
+}
+
+#text_pop {
+	margin: 20px;
+	overflow: auto;
 }
