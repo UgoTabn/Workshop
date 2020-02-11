@@ -29,7 +29,7 @@ function scenetest2(){
     $('#background').css('background-image','url(assets/background/fond.jpg)')
     character(1,0,2);
     character(2,0,2);
-    text('OUI !')
+    text('OUI !fkoezkfpoezkfopezkfzeokpfffffffffffffffffffff efkozfjkoezkfozekfoze ezofkeozfkopekf ezfoezkfoezkfo kzeopfkozpkfeopzkofpzkfopzek opezkofkezofkpezokf kefopzekfopkezopfkzeofk oezkfopezkfokzeopfkezpo kzpoefkzoekfopezkf ezofkezopfkezopf')
 }
 
 function scenetest3(){
