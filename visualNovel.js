@@ -1,4 +1,3 @@
-
 //Var globales
 
 function realisateur(index){
@@ -6,16 +5,19 @@ function realisateur(index){
 		case 1 :
 			scene_1a();
 			changeText($("#text_hold"),$("#text"),20);
+      display_perso(1,"billy","idle");
+      display_perso(2,"billy","idle");
+      display_perso(3,"billy","idle");
+      display_perso(4,"billy","idle");
 			break;
 		case 2:
 
 			break;
 		case 3:
-
+      
 			break;
 	}
 }
-
 function scene_1a(){
 	//change background
 	display_perso(2,"nom","state");
@@ -42,10 +44,4 @@ function changeText(cont1,cont2,speed){
 		var Otimer=setInterval(show,speed);	
 };
 
-
 realisateur(1);
-
-display_perso(1,"billy","idle");
-display_perso(2,"billy","idle");
-display_perso(3,"billy","idle");
-display_perso(4,"billy","idle");
