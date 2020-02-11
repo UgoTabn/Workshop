@@ -43,6 +43,8 @@ scenetest();
 
 $('html').on('click',function(){
     nb++;
+    $("#player")[0].play();
+    //$("#player2")[0].play();
     console.log('VALIDE ! '+ nb)
     switch(nb){
         case 2:
