@@ -55,8 +55,8 @@ function ecrit_text_popup(chaine){
 }
 
 function e1(){
-	let l_score = 9;
-	$('.e1').css('visibility','visible')
+	let l_score = 0;
+	//$('.e1').css('visibility','visible')
 	display_perso(1,"void","void");
     display_perso(2,"void","void");
     display_perso(3,"void","void");
@@ -64,8 +64,8 @@ function e1(){
 	$("#background").css("background-image","url('assets/background/fondecranMaxime.png')");
 	ecrit_text_popup("un labyrinthe ?");
 
-	$('#element1').css({'position':'absolute','top':'50px','left':'740px','height':'60px','width':'60px;','background-image':'url(assets/symbole/flecheG.png)','visibility':'visible','display':'block'})
-	$('#element2').css({'position':'absolute','top':'50px','height':'60px','width':'60px;','background-image':'url(assets/symbole/flecheG.png)'})
+	$('#element1_img').css({'position': 'absolute','top': '200px','left': '720px','height': '60px','width': '60px;','visibility': 'visible','display': 'block'}).attr("src","assets/symbole/flecheD.png")
+	$('#element2_img').css({'position': 'absolute','top': '200px','height': '60px','width': '60px;','visibility': 'visible','display': 'block'}).attr("src","assets/symbole/flecheG.png")
 
 	$("#element1").on('click',function(){
 		switch(l_score){
@@ -110,8 +110,9 @@ function e1(){
 				l_score = 10;
 				break;
 			case 10:
-				$('.e1').css('visibility','hidden')
-				
+				//$('.e1').css('visibility','hidden')
+				$("#element1").css('display','none');
+				$("#element2").css('display','none');
 				end = setInterval(function(){
 					ecrit_text_popup("Un grand batiment... ça doit être ça !");
 					if (ywx == 1){
@@ -120,7 +121,7 @@ function e1(){
 					}else{
 						ywx++;
 					}
-				},1500)
+				},1400)
 				end;
 				break;
 		}
@@ -169,7 +170,9 @@ function e1(){
 				l_score =10;
 				break;
 			case 10:
-				$('.e1').css('visibility','hidden')
+				//$('.e1').css('visibility','hidden')
+				$("#element1").css('display','none');
+				$("#element2").css('display','none');
 				
 				end = setInterval(function(){
 					ecrit_text_popup("Tiens ? Un batiment");
