@@ -1,4 +1,5 @@
 #background {
+	margin:50px;
     height: 600px;
     width: 800px;
 }
@@ -34,12 +35,25 @@
 #container {
 	position: relative;
 	top: 400px;
-	height: 175px;
-	left: 25px;
-	width:750px;
+	height: 200px;
+	left: -5px;
+	width:810px;
 	background-color: rgba(255,255,255,0.5);
-	border-style: solid;
+	border-top-style: solid;
 	border-color: red;
+	border-width: 10px;
+}
+#border {
+	margin:50px;
+	position: absolute;
+	border-style: solid;
+	border-width: 10px;
+	border-radius: 20px;
+	border-color: black;
+	height: 600px;
+	width: 800px;
+	top: -10px;
+	left: -2px;
 }
 
 #text_hold {
@@ -52,21 +66,23 @@
 }
 
 #button_play {
+	margin:50px;
 	display: block;
 	position: absolute;
 	height: 60px;
 	background-color: red;
 	width: 500px;
 	left: 150px;
-	bottom : 120px;
+	top : 480px;
 }
 
 .popup{
+	margin:50px;
 	display: none;
 	position: fixed;
-	height: 550px;
-	width: 700px;
-	left: 55px;
-	top: 25px;
+	height: 600px;
+	width: 800px;
+	top:0px;
 	background-color: purple;
+	border-radius: 10px;
 }
