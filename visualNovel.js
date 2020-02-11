@@ -4,11 +4,6 @@ function realisateur(index){
 	switch (index){
 		case 1 :
 			scene_1a();
-			changeText($("#text_hold"),$("#text"),20);
-            display_perso(1,"billy","idle");
-        	display_perso(2,"billy","idle");
-      		display_perso(3,"billy","idle");
-      		display_perso(4,"billy","idle");
 			break;
 		case 2:
 
@@ -23,8 +18,14 @@ function scene_1a(){
 	$("#background").css("background-image","url('assets/background/fondecranMaxime.png')");
 	display_perso(2,"nom","state");
 	//senario
+	display_perso(1,"billy","idle");
+    display_perso(2,"billy","idle");
+    display_perso(3,"billy","idle");
+    display_perso(4,"billy","idle");
+
 	//dialogue("")
 	$("#text_hold").html("lol c'est drôle, regarde moi ça c'est trop cool !!!");
+	changeText($("#text_hold"),$("#text"),20);
 }
 
 function display_perso(pos,nom,state){
@@ -46,3 +47,8 @@ function changeText(cont1,cont2,speed){
 };
 
 realisateur(1);
+
+$("#button_play").click(function(){
+	$("#pop").css("display", "block");
+	$("#button_play").css("display","none");
+})

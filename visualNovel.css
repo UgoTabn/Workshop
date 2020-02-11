@@ -48,5 +48,25 @@
 
 #text {
 	margin: 20px;
+	overflow: auto;
 }
 
+#button_play {
+	display: block;
+	position: absolute;
+	height: 60px;
+	background-color: red;
+	width: 500px;
+	left: 150px;
+	bottom : 120px;
+}
+
+.popup{
+	display: none;
+	position: fixed;
+	height: 550px;
+	width: 700px;
+	left: 55px;
+	top: 25px;
+	background-color: purple;
+}
