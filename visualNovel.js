@@ -54,7 +54,7 @@ function ecrit_text_popup(chaine){
 	changeText($("#text_pop_hold"),$("#text_pop"),20);
 }
 
-function E1(){
+function e1(){
 	let l_score = 9;
 	$('.e1').css('visibility','visible')
 	display_perso(1,"void","void");
@@ -64,7 +64,10 @@ function E1(){
 	$("#background").css("background-image","url('assets/background/fondecranMaxime.png')");
 	ecrit_text_popup("un labyrinthe ?");
 
-	$("#fleche_G").on('click',function(){
+	$('#element1').css({'position':'absolute','top':'50px','left':'740px','height':'60px','width':'60px;','background-image':'url(assets/symbole/flecheG.png)','visibility':'visible','display':'block'})
+	$('#element2').css({'position':'absolute','top':'50px','height':'60px','width':'60px;','background-image':'url(assets/symbole/flecheG.png)'})
+
+	$("#element1").on('click',function(){
 		switch(l_score){
 			case 0 :
 				ecrit_text_popup("a gauche ? pourquoi pas...\n maintenant je vais à droite?");
@@ -123,7 +126,7 @@ function E1(){
 		}
 	})
 
-	$("#fleche_D").on('click',function(){
+	$("#element2").on('click',function(){
 		switch(l_score){
 			case 0 :
 				ecrit_text_popup("ce n'était pas a droite dommage");
@@ -185,7 +188,7 @@ function E1(){
 }
 
 
-E1();
+e1();
 
 $("#button_play").click(function(){
 	$("#pop").css("display", "block");
