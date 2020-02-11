@@ -86,3 +86,44 @@
 	background-color: purple;
 	border-radius: 10px;
 }
+
+#text_pop_hold{
+	display: none;
+}
+
+.laby{
+	position: relative;
+	visibility: collapse;
+}
+
+#container_pop{
+	position: relative;
+	top: 400px;
+	height: 175px;
+	left: 25px;
+	width:750px;
+	background-color: rgba(255,255,255,0.5);
+	border-style: solid;
+	border-color: red;
+}
+
+#text_pop {
+	margin: 20px;
+	overflow: auto;
+
+/*Enigme 1*/
+#fleche_D{
+	position: absolute;
+	top: 50px;
+	left: 740px;
+	height: 60px;
+	width: 60px;
+}
+
+#fleche_G{
+	position: absolute;
+	top: 50px;
+	height: 60px;
+	width: 60px;
+}
+}
