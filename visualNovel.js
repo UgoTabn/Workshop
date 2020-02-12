@@ -29,7 +29,7 @@ function scene_1a(){
 	changeText($("#text_hold"),$("#text"),20);
 }
 
-$("#button_play.e1").click(function e6(){
+$("#button_play.e1").click(function(){
 	let l_score = 0;
 	//$('.e1').css('visibility','visible')
 	display_perso(1,"void","void");
@@ -162,7 +162,7 @@ $("#button_play.e1").click(function e6(){
 	})
 
 })
-$("#button_play.e2").click(function e6(){
+$("#button_play.e2").click(function(){
 	let vie = 2;
 	let game_end = 0;
 	$("#element1").css({'height':'70px','width':'550px','background-color':'white','position':'absolute','top':'65px','left':'120px','padding':'8px'})
@@ -196,7 +196,7 @@ $("#button_play.e2").click(function e6(){
 	})
 })
 
-$("#button_play.e6").click(function e6(){
+$("#button_play.e6v").click(function(){
 	var t1 = {value: 1};
 	var t2 = {value: 0};
 	var t3 = {value: 0};
