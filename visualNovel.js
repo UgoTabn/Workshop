@@ -1,5 +1,6 @@
 //Var globales
 let ywx = 0;
+var sec = 30;
 
 function realisateur(index){
 	switch (index){
@@ -28,6 +29,14 @@ function scene_1a(){
 	$("#text_hold").html("lol c'est drôle, regarde moi ça c'est trop cool !!!");
 	changeText($("#text_hold"),$("#text"),20);
 }
+
+//ALEA
+function getRandomIntInclusive(min, max) {
+  	min = Math.ceil(min);
+	max = Math.floor(max);
+	return Math.floor(Math.random() * (max - min +1)) + min;
+}
+
 
 $("#button_play.e1").click(function(){
 	let l_score = 0;
@@ -194,7 +203,40 @@ $("#button_play.e2").click(function(){
 		}
 	})
 })
+$('#button_play.e3').click(function(){
+	var nb = 10;
+	$('#element1').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'50px','left':'20px'}).addClass("clickable")
+	$('#element2').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'40px','left':'200px'}).addClass("clickable")
+	$('#element3').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'450px','left':'60px'}).addClass("clickable")
+	$('#element4').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'500px','left':'70px'}).addClass("clickable")
+	$('#element5').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'50px','left':'250px'}).addClass("clickable")
+	$('#element6').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'360px','left':'80px'}).addClass("clickable")
+	$('#element7').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'10px','left':'400px'}).addClass("clickable")
+	$('#element8').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'500px','left':'3px'}).addClass("clickable")
+	$('#element9').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'45px','left':'320px'}).addClass("clickable")
+	$('#element10').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'430px','left':'590px'}).addClass("clickable")
 
+	$("#container_pop").css({"height": "50px", "width": "50px", "top": "45px", "left": "700px","visibility":"visible"});
+	$("#text_pop").css({"margin": "8px", "font-size": "30px"});
+
+	$('.clickable').on('click',function(){
+		$(this).css("visivility","hidden").removeClass("clickable")
+		nb --;
+		if(nb == 0){
+			$('#pop').css("display","none");
+			clear_minigame();
+		}
+	})
+
+	var timer = window.setInterval(function(){
+		sec --;
+		$("#text_pop").html(sec);
+		if(sec == -1){
+			$('#pop').css("display","none");
+			clear_minigame();
+			window.clearInterval(timer);
+		}
+	},1000)
 $("#button_play.e4d").click(function(){
 
 	$('.popup').css("background-color", "mediumorchid")
@@ -454,7 +496,59 @@ $("#button_play.e6d").click(function(){
 			},2000)
 		}
 	}
-} 	)
+})
+$("#button_play.e7").click(function(){
+	let hit = 3;
+	let boss_hp = 5;
+	$('#element1_img').attr('src','assets/symbole/boss.jpg').css({'height':'70px','width':'auto','position':'absolute','top':'230px','left':'330px'})
+
+	$('#element2_img').attr('src','assets/symbole/enemy.jpg').css({'height':'70px','width':'auto','position':'absolute','top':getRandomIntInclusive(10,540)+'px','left':getRandomIntInclusive(10,770)+'px'}).addClass('alive')
+	$('#element3_img').attr('src','assets/symbole/enemy.jpg').css({'height':'70px','width':'auto','position':'absolute','top':getRandomIntInclusive(10,540)+'px','left':getRandomIntInclusive(10,770)+'px'}).addClass('alive')
+	$('#element4_img').attr('src','assets/symbole/enemy.jpg').css({'height':'70px','width':'auto','position':'absolute','top':getRandomIntInclusive(10,540)+'px','left':getRandomIntInclusive(10,770)+'px'}).addClass('alive')
+
+	$("#container_pop").css({"height": "55px", "width": "55px", "top": "45px", "left": "700px","visibility":"visible"});
+	$("#text_pop").css({"margin": "1px", "font-size": "25px"});
+	
+	$("#text_pop").html(boss_hp+' PV')
+	
+	geneAleaEnemy =  window.setInterval(function(){
+		if($('#element2_img').hasClass('alive')){
+			$('#element2_img').css({'top':getRandomIntInclusive(10,540)+'px','left':getRandomIntInclusive(10,770)+'px'})
+		}
+		if($('#element3_img').hasClass('alive')){
+			$('#element3_img').css({'top':getRandomIntInclusive(10,540)+'px','left':getRandomIntInclusive(10,770)+'px'})
+		}
+		if($('#element4_img').hasClass('alive')){
+			$('#element4_img').css({'top':getRandomIntInclusive(10,540)+'px','left':getRandomIntInclusive(10,770)+'px'})
+		}
+
+		
+	},1000)
+
+	$('.alive').on('click',function(){
+		$(this).removeClass('alive').css("visibility","hidden")
+		hit --;
+	})
+
+	//faire des faintes
+
+	$('#element1_img').on('click',function(){
+		if(hit == 0){
+			boss_hp --;
+			$("#text_pop").html(boss_hp+' PV')
+			$('#element2_img').css({'top':getRandomIntInclusive(10,540)+'px','left':getRandomIntInclusive(10,770)+'px','visibility':'visible'}).addClass('alive')
+			$('#element3_img').css({'top':getRandomIntInclusive(10,540)+'px','left':getRandomIntInclusive(10,770)+'px','visibility':'visible'}).addClass('alive')
+			$('#element4_img').css({'top':getRandomIntInclusive(10,540)+'px','left':getRandomIntInclusive(10,770)+'px','visibility':'visible'}).addClass('alive')
+			hit = 3;
+
+			if(boss_hp == 0){
+				window.clearInterval(geneAleaEnemy);
+				$('#pop').css("display","none");
+				clear_minigame();
+			}
+		}
+	})
+})
 
 function display_perso(pos,nom,state){
 	$("#perso"+pos+"_img").attr("src","assets/character/"+nom+"_"+state+".png");
