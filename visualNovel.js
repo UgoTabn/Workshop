@@ -174,6 +174,7 @@ $("#button_play.e1").click(function(){
 $("#button_play.e2").click(function(){
 	let vie = 2;
 	let game_end = 0;
+	$('.popup').css("background-color", "mediumorchid");
 	$("#element1").css({'height':'70px','width':'550px','background-color':'white','position':'absolute','top':'65px','left':'120px','padding':'8px'})
 	$('#element3').css({'border':'solid','height':'400px','width':'65px','position':'absolute','top':'160px','left':'605px'})
 	$("#element4").css({'height':'50px','width':'50px','position':'absolute','top':'300px','left':'120px'})
@@ -205,6 +206,7 @@ $("#button_play.e2").click(function(){
 })
 $('#button_play.e3').click(function(){
 	var nb = 10;
+	$('.popup').css("background-color", "mediumorchid");
 	$('#element1').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'50px','left':'20px'}).addClass("clickable")
 	$('#element2').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'40px','left':'200px'}).addClass("clickable")
 	$('#element3').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'450px','left':'60px'}).addClass("clickable")
@@ -238,9 +240,77 @@ $('#button_play.e3').click(function(){
 		}
 	},1000)
 })
+
+$("#button_play.e4v").click(function(){
+	$('.popup').css("background-color", "mediumorchid");
+	//fond jauge
+	$("#element1").css({"height": "100px", "width": "550px", "left": "125px", "top": "250px", "background-color": "blue", "position": "absolute"});
+	//jauge
+	$("#element2").css({"height": "80px", "width": "530px", "left": "135px", "top": "260px", "background-color": "white", "position": "absolute"});
+	//objectif
+	$("#element3").css({"width": "105px", "height": "80px", "font-size": "40px", "top": "260px", "left": "349px", "position": "absolute", "background-color": "red"});
+	//curseur
+	$("#element4").css({"height": "80px", "width": "20px", "left": "235px", "top": "260px", "background-color": "black", "position": "absolute", "transition": "0.01s"});
+	//text
+	$("#element5").css({"width": "600px", "font-size": "40px", "top": "450px", "left": "150px", "position": "absolute"});
+	$("#element5").html("Appuyez sur la barre Espace !");
+	var x = 235;
+	var y = 1;
+	var percent = 0;
+	var end = {value: 5};
+	var won = {value: 0};
+	var test = 0;
+	var timer = window.setInterval(function(){
+		inTimer();		
+	},10)
+	function inTimer(){
+		x += 15 * y;
+		$("#element4").css("left",x + "px");
+		if (x >= 645){
+			y = -1;
+		}
+		if (x <= 135){
+			y = 1;
+		}
+	}
+	document.addEventListener("keydown",keyDownHandler, false)
+
+	function keyDownHandler(event) {
+		if (test == 0){
+			if(event.keyCode == 32) {
+				window.clearInterval(timer);
+				percent = (10/51)*x-(450/17);
+				if ((percent >= 40) && (percent <= 60)){
+					won.value += 1;
+				}
+				test = 1;
+				end.value -= 1;
+				if ((end.value == 0)||(won.value == 3)){
+					if (won.value == 3){
+						$("#element5").html("C'est gagné !");
+					}else{
+						$("#element5").html("C'est perdu !");
+					}
+				}
+			}
+		}else{
+			if ((end.value == 0)||(won.value == 3)){
+				$('#pop').css("display","none");
+				clear_minigame();
+				clearInterval(time);
+			}else{
+				timer = window.setInterval(function(){
+					inTimer();
+				},10);
+				test = 0;
+			}
+		}
+	}
+})
+
 $("#button_play.e4d").click(function(){
 
-	$('.popup').css("background-color", "mediumorchid")
+	$('.popup').css("background-color", "mediumorchid");
 	$("#text_pop").css({"margin": "8px", "font-size": "30px", "display": "block"});
 	$("#text_pop").html("6");
 	$("#container_pop").css({"height": "50px", "width": "50px", "top": "45px", "left": "700px"});
@@ -380,11 +450,13 @@ $("#button_play.e4d").click(function(){
 			stoptime = setInterval(function(){
 				$('#pop').css("display","none");
 				window.clearInterval(stoptime);
+				clear_minigame();
 			},1500)
 		}else if (win == 4){
 			stoptime = setInterval(function(){
 				$('#pop').css("display","none");
 				window.clearInterval(stoptime);
+				clear_minigame();
 			},1500)
 		}
 	})
@@ -527,6 +599,7 @@ $("#button_play.e6d").click(function(){
 			lock.value = 1;
 			end = setInterval(function(){
 					$('#pop').css("display","none");
+					clear_minigame();
 			},2000)
 		}
 	}
@@ -603,9 +676,9 @@ function changeText(cont1,cont2,speed){
 };
 
 function clear_minigame(){
-	for (i = 1; 1 <= 10; i++) {
+	for (i = 1; i <= 10; i++) {
 		$('#element'+i+'_img').attr('src','assets/character/void_void.png');
-		$('#elements'+i).removeAttr( 'style' );
+		$('#element'+i).removeAttr( 'style' );
 	}
 	$('.popup').removeAttr('style');
 	$('#container_pop').removeAttr('style');

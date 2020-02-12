@@ -98,6 +98,7 @@ input{
 	visibility: collapse;
 }
 #container_pop{
+	visibility: hidden;
 	position: relative;
 	top: 400px;
 	height: 175px;
