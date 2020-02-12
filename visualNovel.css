@@ -85,6 +85,10 @@
 	border-radius: 10px;
 }
 
+input{
+	visibility: hidden;
+}
+
 #text_pop_hold{
 	display: none;
 }
