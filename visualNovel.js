@@ -237,6 +237,7 @@ $('#button_play.e3').click(function(){
 			window.clearInterval(timer);
 		}
 	},1000)
+})
 $("#button_play.e4d").click(function(){
 
 	$('.popup').css("background-color", "mediumorchid")
