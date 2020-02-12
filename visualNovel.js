@@ -213,7 +213,7 @@ function e1(){
 }
 
 function e2(){
-	let vie = 3;
+	let vie = 2;
 	let game_end = 0;
 	$("#element1").css({'height':'70px','width':'550px','background-color':'white','position':'absolute','top':'65px','left':'120px','padding':'8px'})
 	$('#element3').css({'border':'solid','height':'400px','width':'65px','position':'absolute','top':'160px','left':'605px'})
@@ -227,6 +227,7 @@ function e2(){
 	$('#element5').droppable({drop: function(event,ui){
 		console.log("OUI")
 		game_end = 1;
+		$('#element4_img').css({'top':'2px','left':'382px'})
 
 	}})
 	
