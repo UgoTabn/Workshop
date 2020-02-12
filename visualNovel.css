@@ -94,8 +94,6 @@
 	position: relative;
 	visibility: collapse;
 }
-
-
 #container_pop{
 	visibility: hidden;
 	position: relative;
@@ -111,19 +109,4 @@
 #text_pop {
 	margin: 20px;
 	overflow: auto;
-}
-/*Enigme 1*/
-#fleche_D{
-	position: absolute;
-	top: 50px;
-	left: 740px;
-	height: 60px;
-	width: 60px;
-}
-
-#fleche_G{
-	position: absolute;
-	top: 50px;
-	height: 60px;
-	width: 60px;
 }
