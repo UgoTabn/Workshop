@@ -240,6 +240,38 @@ $('#button_play.e3').click(function(){
 	},1000)
 
 })
+$('#button_play.e5').click(function(){
+	var error = 10;
+	var champi = 'champignon';
+	var i=0;
+	$('input').css({"visibility":"visible",'height':'30px','width':'100px','position':'absolute','top':'200px','left':'350px','padding':'12px'})
+	$('#element1').css({'height':'30px','width':'100px','background-color':'white','position':'absolute','top':'100px','left':'350px','padding':'12px'})
+	$('#element1').html("fqnssd")
+	$('#element2').css({'height':'30px','width':'100px','background-color':'white','position':'absolute','top':'300px','left':'350px','padding':'12px'})
+	$('#element2').html('Envoyer code')
+	$('#element3').css({'height':'30px','width':'100px','background-color':'white','position':'absolute','top':'400px','left':'350px','padding':'12px'})
+
+	$('#element2').click(function(){
+		if($('input').val() == 'grotte'){
+			$('#pop').css("display","none");
+			clear_minigame();
+		}else{
+			error--;
+			$('#element3').html($('#element3').html()+champi[i])
+			i++;
+			if(error == 0){
+				
+				setTimeout(end,2000);
+				function end(){
+					$('#pop').css("display","none");
+					window.clearInterval(end);
+					clear_minigame();
+				}
+			}
+		}
+
+	})	
+})
 $("#button_play.e6v").click(function(){
 	var t1 = {value: 1};
 	var t2 = {value: 0};
