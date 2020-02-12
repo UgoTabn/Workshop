@@ -182,7 +182,6 @@ $("#button_play.e2").click(function(){
 	$('#element5').css({'border':'solid','height':'50px','width':'50px','position':'absolute','top':'300px','left':'500px'})
 	$('#element4_img').draggable();
 	$('#element5').droppable({drop: function(event,ui){
-		console.log("OUI")
 		game_end = 1;
 		$('#element4_img').css({'top':'2px','left':'382px'})
 	}})
@@ -238,8 +237,175 @@ $('#button_play.e3').click(function(){
 			window.clearInterval(timer);
 		}
 	},1000)
+$("#button_play.e4d").click(function(){
 
+	$('.popup').css("background-color", "mediumorchid")
+	$("#text_pop").css({"margin": "8px", "font-size": "30px", "display": "block"});
+	$("#text_pop").html("6");
+	$("#container_pop").css({"height": "50px", "width": "50px", "top": "45px", "left": "700px"});
+	var carte = {"background-color" : "white", "display" : "block", "width" : "100px", "height" : "150px", "position" : "absolute", "transition": "0.5s"};
+	$("#element10").css(carte);
+	$("#element10").css({"left": "200px", "top": "50px"});
+	$("#element2").css(carte);
+	$("#element2").css({"left": "350px", "top": "50px"});
+	$("#element3").css(carte);
+	$("#element3").css({"left": "500px", "top": "50px"});
+	$("#element4").css(carte);
+	$("#element4").css({"left": "200px", "top": "225px"});
+	$("#element5").css(carte);
+	$("#element5").css({"left": "350px", "top": "225px"});
+	$("#element6").css(carte);
+	$("#element6").css({"left": "500px", "top": "225px"});
+	$("#element7").css(carte);
+	$("#element7").css({"left": "200px", "top": "400px"});
+	$("#element8").css(carte);
+	$("#element8").css({"left": "350px", "top": "400px"});
+	$("#element9").css(carte);
+	$("#element9").css({"left": "500px", "top": "400px"});
+
+	$("#element1").css({"background-color": "green","position": "absolute", "left": "150px", "top": "25px", "width": "500px", "height": "550px"});
+
+	var test = [0,0];
+	var end = 6;
+	var win = 0;
+	var lock = {value: 0};
+	var count = {value: 0};
+	var carte1 = 1, carte2 = 4, carte3 = 0, carte4 = 1, carte5 = 2, carte6 = 4, carte7 = 3, carte8 = 3, carte9 = 2;
+	$(".element").click(function(){
+		if (lock.value == 0){
+			switch (this.id){
+				case ("element10") :
+					$("#"+this.id).css("background-color","black");
+					if (count.value == 0){
+						test[0] = carte1;
+						count.value = 1;
+					}else{
+						test[1] = carte1;
+						testCount(test[0],test[1]);
+						count.value = 0;
+					}
+					break;
+				case ("element2") :
+					$("#"+this.id).css("background-color","red");
+					if (count.value == 0){
+						test[0] = carte2;
+						count.value = 1;
+					}else{
+						test[1] = carte2;
+						testCount(test[0],test[1]);
+						count.value = 0;
+					}
+					break;
+				case ("element3") :
+					$("#"+this.id).css("background-color","blue");
+					if (count.value == 0){
+						test[0] = carte3;
+						count.value = 1;
+					}else{
+						test[1] = carte3;
+						testCount(test[0],test[1]);
+						count.value = 0;
+					}
+					break;
+				case ("element4") :
+					$("#"+this.id).css("background-color","black");
+					if (count.value == 0){
+						test[0] = carte4;
+						count.value = 1;
+					}else{
+						test[1] = carte4;
+						testCount(test[0],test[1]);
+						count.value = 0;
+					}
+					break;
+				case ("element5") :
+					$("#"+this.id).css("background-color","purple");
+					if (count.value == 0){
+						test[0] = carte5;
+						count.value = 1;
+					}else{
+						test[1] = carte5;
+						testCount(test[0],test[1]);
+						count.value = 0;
+					}
+					break;
+				case ("element6") :
+					$("#"+this.id).css("background-color","red");
+					if (count.value == 0){
+						test[0] = carte6;
+						count.value = 1;
+					}else{
+						test[1] = carte6;
+						testCount(test[0],test[1]);
+						count.value = 0;
+					}
+					break;
+				case ("element7") :
+					$("#"+this.id).css("background-color","lime");
+					if (count.value == 0){
+						test[0] = carte7;
+						count.value = 1;
+					}else{
+						test[1] = carte7;
+						testCount(test[0],test[1]);
+						count.value = 0;
+					}
+					break;	
+				case ("element8") :
+					$("#"+this.id).css("background-color","lime");
+					if (count.value == 0){
+						test[0] = carte8;
+						count.value = 1;
+					}else{
+						test[1] = carte8;
+						testCount(test[0],test[1]);
+						count.value = 0;
+					}
+					break;
+				case ("element9") :
+					$("#"+this.id).css("background-color","purple");
+					if (count.value == 0){
+						test[0] = carte9;
+						count.value = 1;
+					}else{
+						test[1] = carte9;
+						testCount(test[0],test[1]);
+						count.value = 0;
+					}
+					break;
+			}
+		}
+		if (end == 0){
+			stoptime = setInterval(function(){
+				$('#pop').css("display","none");
+				window.clearInterval(stoptime);
+			},1500)
+		}else if (win == 4){
+			stoptime = setInterval(function(){
+				$('#pop').css("display","none");
+				window.clearInterval(stoptime);
+			},1500)
+		}
+	})
+	function testCount(a,b){
+		if (a == b){
+			win += 1;
+		}else{
+			end -= 1;
+			win = 0;
+			$("#text_pop").html(end);
+			lock.value = 1;
+			time = setInterval(function(){
+				for (var i = 2; i <= 10; i++) {
+					$("#element"+i).css("background-color","white");
+				}
+				lock.value = 0;
+				window.clearInterval(time);
+			},500)
+		}
+	}
 })
+
 $('#button_play.e5').click(function(){
 	var error = 10;
 	var champi = 'champignon';
@@ -271,7 +437,9 @@ $('#button_play.e5').click(function(){
 		}
 	},2000)
 })	
-$("#button_play.e6v").click(function(){
+
+
+$("#button_play.e6d").click(function(){
 	var t1 = {value: 1};
 	var t2 = {value: 0};
 	var t3 = {value: 0};
@@ -281,9 +449,10 @@ $("#button_play.e6v").click(function(){
 	var lock = {value: 0};
 
 	var vis = {"background-color" : "white", "display" : "block", "width" : "20px", "height" : "150px", "position" : "absolute", "transition": "1s"};
-	$("#text_pop").css({"margin": "8px", "font-size": "30px"});
+	$('.popup').css("background-color", "blue");
+	$("#text_pop").css({"margin": "8px", "font-size": "30px", "display": "block"});
 	$("#text_pop").html("15");
-	$("#container_pop").css({"height": "50px", "width": "50px", "top": "45px", "left": "700px"});
+	$("#container_pop").css({"height": "50px", "width": "50px", "top": "45px", "left": "700px", "display": "block"});
 	$("#element1").css(vis);
 	$("#element1").css({"left": " 190px", "top": "180px"});
 	$("#element2").css(vis);
@@ -352,7 +521,7 @@ $("#button_play.e6v").click(function(){
 	}
 	function test(t1,t2,t3,t4,t5,coup){
 		coup.value -= 1;
-		$("#text_pop").html(coup.value)
+		$("#text_pop").html(coup.value);
 		if ((t1.value == t2.value) && (t2.value == t3.value) && (t3.value == t4.value) && (t4.value == t5.value) || (coup.value == 0)){
 			lock.value = 1;
 			end = setInterval(function(){
@@ -409,12 +578,9 @@ $("#button_play.e7").click(function(){
 				window.clearInterval(geneAleaEnemy);
 				$('#pop').css("display","none");
 				clear_minigame();
-				
 			}
 		}
 	})
-
-
 })
 
 function display_perso(pos,nom,state){
@@ -436,21 +602,14 @@ function changeText(cont1,cont2,speed){
 };
 
 function clear_minigame(){
-	$('#element1_img').attr('src','assets/character/void_void.png');
-	$('#element2_img').attr('src','assets/character/void_void.png');
-	$('#element3_img').attr('src','assets/character/void_void.png');
-	$('#element4_img').attr('src','assets/character/void_void.png');
-	$('#element5_img').attr('src','assets/character/void_void.png');
-	$('#element6_img').attr('src','assets/character/void_void.png');
-
-	$('#elements1').removeAttr( 'style' );
-	$('#elements2').removeAttr( 'style' );
-	$('#elements3').removeAttr( 'style' );
-	$('#elements4').removeAttr( 'style' );
-	$('#elements5').removeAttr( 'style' );
-	$('#elements6').removeAttr( 'style' );
-
+	for (i = 1; 1 <= 10; i++) {
+		$('#element'+i+'_img').attr('src','assets/character/void_void.png');
+		$('#elements'+i).removeAttr( 'style' );
+	}
+	$('.popup').removeAttr('style');
 	$('#container_pop').removeAttr('style');
+	$('#text_pop').removeAttr('style');
+	$('#text_pop').html('');
 }
 
 
@@ -460,10 +619,6 @@ function ecrit_text_popup(chaine){
 	$("#text_pop_hold").html(chaine);
 	changeText($("#text_pop_hold"),$("#text_pop"),20);
 }
-
-//e1();
-//clear_minigame();
-//e2()
 
 $("#button_play").click(function(){
 	$("#pop").css("display", "block");
