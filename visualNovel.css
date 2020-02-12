@@ -3,7 +3,6 @@
     height: 600px;
     width: 800px;
 }
-
 #perso1_img{
 	position:relative;
 	top: 180px;
@@ -91,12 +90,12 @@
 	display: none;
 }
 
-.laby{
+.e1{
 	position: relative;
 	visibility: collapse;
 }
-
 #container_pop{
+	visibility: hidden;
 	position: relative;
 	top: 400px;
 	height: 175px;
@@ -110,14 +109,4 @@
 #text_pop {
 	margin: 20px;
 	overflow: auto;
-}
-
-/*Enigme 1*/
-#element2{
-	background-color: white;
-	position: absolute;
-	top: 50px;
-	left: 740px;
-	height: 60px;
-	width: 60px;
 }
