@@ -47,6 +47,24 @@ function changeText(cont1,cont2,speed){
 		var Otimer=setInterval(show,speed);	
 };
 
+function clear_minigame(){
+	$('#element1_img').attr('src','assets/character/void_void.png');
+	$('#element2_img').attr('src','assets/character/void_void.png');
+	$('#element3_img').attr('src','assets/character/void_void.png');
+	$('#element4_img').attr('src','assets/character/void_void.png');
+	$('#element5_img').attr('src','assets/character/void_void.png');
+	$('#element6_img').attr('src','assets/character/void_void.png');
+
+	$('#elements1').removeAttr( 'style' );
+	$('#elements2').removeAttr( 'style' );
+	$('#elements3').removeAttr( 'style' );
+	$('#elements4').removeAttr( 'style' );
+	$('#elements5').removeAttr( 'style' );
+	$('#elements6').removeAttr( 'style' );
+
+}
+
+
 function ecrit_text_popup(chaine){
 	$("#text_pop").html("");
 	$("#text_pop_hold").html("");
@@ -191,8 +209,8 @@ function e1(){
 
 }
 
-
-e1();
+//e1();
+//clear_minigame();
 
 $("#button_play").click(function(){
 	$("#pop").css("display", "block");
