@@ -3,7 +3,6 @@
     height: 600px;
     width: 800px;
 }
-
 #perso1_img{
 	position:relative;
 	top: 180px;
@@ -91,12 +90,14 @@
 	display: none;
 }
 
-.laby{
+.e1{
 	position: relative;
 	visibility: collapse;
 }
 
+
 #container_pop{
+	visibility: hidden;
 	position: relative;
 	top: 400px;
 	height: 175px;
@@ -125,5 +126,4 @@
 	top: 50px;
 	height: 60px;
 	width: 60px;
-}
 }

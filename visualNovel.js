@@ -1,4 +1,5 @@
 //Var globales
+let ywx = 0;
 
 function realisateur(index){
 	switch (index){
@@ -53,17 +54,21 @@ function ecrit_text_popup(chaine){
 	changeText($("#text_pop_hold"),$("#text_pop"),20);
 }
 
-function laby(){
+function e1(){
 	let l_score = 0;
-	$('.laby').css('visibility','visible')
+	//$('.e1').css('visibility','visible')
 	display_perso(1,"void","void");
     display_perso(2,"void","void");
     display_perso(3,"void","void");
 	display_perso(4,"void","void");
 	$("#background").css("background-image","url('assets/background/fondecranMaxime.png')");
 	ecrit_text_popup("un labyrinthe ?");
+	$("#container_pop").css("visibility","visible");
 
-	$("#fleche_G").on('click',function(){
+	$('#element1_img').css({'position': 'absolute','top': '200px','left': '720px','height': '60px','width': '60px;','visibility': 'visible','display': 'block'}).attr("src","assets/symbole/flecheD.png")
+	$('#element2_img').css({'position': 'absolute','top': '200px','height': '60px','width': '60px;','visibility': 'visible','display': 'block'}).attr("src","assets/symbole/flecheG.png")
+
+	$("#element2").on('click',function(){
 		switch(l_score){
 			case 0 :
 				ecrit_text_popup("a gauche ? pourquoi pas...\n maintenant je vais à droite?");
@@ -105,10 +110,25 @@ function laby(){
 				ecrit_text_popup("Tiens un morceau de papier ? La recette de la raclette ?!")
 				l_score = 10;
 				break;
+			case 10:
+				//$('.e1').css('visibility','hidden')
+				$("#element1").css('display','none');
+				$("#element2").css('display','none');
+				end = setInterval(function(){
+					ecrit_text_popup("Un grand batiment... ça doit être ça !");
+					if (ywx == 1){
+						$('#pop').css("display","none");
+						clearInterval(end);
+					}else{
+						ywx++;
+					}
+				},1400)
+				end;
+				break;
 		}
 	})
 
-	$("#fleche_D").on('click',function(){
+	$("#element1").on('click',function(){
 		switch(l_score){
 			case 0 :
 				ecrit_text_popup("ce n'était pas a droite dommage");
@@ -143,13 +163,28 @@ function laby(){
 				l_score = 8;
 				break;
 			case 8:
-			ecrit_text_popup("Je pense que j\'y sera encore demain, non ? qui a fait ce foutu desert ?")
-			l_score = 6;
-			break;
-
+				ecrit_text_popup("Je pense que j\'y sera encore demain, non ? qui a fait ce foutu desert ?")
+				l_score = 6;
+				break;
 			case 9:
 				ecrit_text_popup("Bien j'avance pour le moment")
 				l_score =10;
+				break;
+			case 10:
+				//$('.e1').css('visibility','hidden')
+				$("#element1").css('display','none');
+				$("#element2").css('display','none');
+				
+				end = setInterval(function(){
+					ecrit_text_popup("Tiens ? Un batiment");
+					if (ywx == 1){
+						$('#pop').css("display","none");
+						clearInterval(end);
+					}else{
+						ywx++;
+					}
+				},1500)
+				end;
 				break;
 		}
 	})
@@ -157,7 +192,7 @@ function laby(){
 }
 
 
-laby();
+e1();
 
 $("#button_play").click(function(){
 	$("#pop").css("display", "block");
