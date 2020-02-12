@@ -331,14 +331,57 @@ $("#button_play.e6v").click(function(){
 	}
 })
 $("#button_play.e7").click(function(){
+	let hit = 3;
+	let boss_hp = 5;
 	$('#element1_img').attr('src','assets/symbole/boss.jpg').css({'height':'70px','width':'auto','position':'absolute','top':'230px','left':'330px'})
 
-	$('#element2_img').attr('src','assets/symbole/enemy.jpg').css({'height':'70px','width':'auto','position':'absolute'}).addClass('alive')
-	$('#element3_img').attr('src','assets/symbole/enemy.jpg').css({'height':'70px','width':'auto','position':'absolute'}).addClass('alive')
-	$('#element4_img').attr('src','assets/symbole/enemy.jpg').css({'height':'70px','width':'auto','position':'absolute'}).addClass('alive')
+	$('#element2_img').attr('src','assets/symbole/enemy.jpg').css({'height':'70px','width':'auto','position':'absolute','top':getRandomIntInclusive(10,540)+'px','left':getRandomIntInclusive(10,770)+'px'}).addClass('alive')
+	$('#element3_img').attr('src','assets/symbole/enemy.jpg').css({'height':'70px','width':'auto','position':'absolute','top':getRandomIntInclusive(10,540)+'px','left':getRandomIntInclusive(10,770)+'px'}).addClass('alive')
+	$('#element4_img').attr('src','assets/symbole/enemy.jpg').css({'height':'70px','width':'auto','position':'absolute','top':getRandomIntInclusive(10,540)+'px','left':getRandomIntInclusive(10,770)+'px'}).addClass('alive')
 
+	$("#container_pop").css({"height": "50px", "width": "50px", "top": "45px", "left": "700px","visibility":"visible"});
+	$("#text_pop").css({"margin": "8px", "font-size": "17px"});
+	
+	$("#text_pop").html(boss_hp+' PV')
+	
 	geneAleaEnemy =  window.setInterval(function(){
+		if($('#element2_img').hasClass('alive')){
+			$('#element2_img').css({'top':getRandomIntInclusive(10,540)+'px','left':getRandomIntInclusive(10,770)+'px'})
+		}
+		if($('#element3_img').hasClass('alive')){
+			$('#element3_img').css({'top':getRandomIntInclusive(10,540)+'px','left':getRandomIntInclusive(10,770)+'px'})
+		}
+		if($('#element4_img').hasClass('alive')){
+			$('#element4_img').css({'top':getRandomIntInclusive(10,540)+'px','left':getRandomIntInclusive(10,770)+'px'})
+		}
+
+		
 	},1000)
+
+	$('.alive').on('click',function(){
+		$(this).removeClass('alive').css("visibility","hidden")
+		hit --;
+	})
+
+	//faire des faintes
+
+	$('#element1_img').on('click',function(){
+		if(hit == 0){
+			boss_hp --;
+			$("#text_pop").html(boss_hp+' PV')
+			$('#element2_img').css({'top':getRandomIntInclusive(10,540)+'px','left':getRandomIntInclusive(10,770)+'px','visibility':'visible'}).addClass('alive')
+			$('#element3_img').css({'top':getRandomIntInclusive(10,540)+'px','left':getRandomIntInclusive(10,770)+'px','visibility':'visible'}).addClass('alive')
+			$('#element4_img').css({'top':getRandomIntInclusive(10,540)+'px','left':getRandomIntInclusive(10,770)+'px','visibility':'visible'}).addClass('alive')
+			hit = 3;
+
+			if(boss_hp == 0){
+				window.clearInterval(geneAleaEnemy);
+				$('#pop').css("display","none");
+				clear_minigame();
+				
+			}
+		}
+	})
 
 
 })
