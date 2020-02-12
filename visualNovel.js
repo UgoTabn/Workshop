@@ -30,6 +30,14 @@ function scene_1a(){
 	changeText($("#text_hold"),$("#text"),20);
 }
 
+//ALEA
+function getRandomIntInclusive(min, max) {
+  	min = Math.ceil(min);
+	max = Math.floor(max);
+	return Math.floor(Math.random() * (max - min +1)) + min;
+}
+
+
 $("#button_play.e1").click(function(){
 	let l_score = 0;
 	//$('.e1').css('visibility','visible')
@@ -322,7 +330,18 @@ $("#button_play.e6v").click(function(){
 		}
 	}
 })
+$("#button_play.e7").click(function(){
+	$('#element1_img').attr('src','assets/symbole/boss.jpg').css({'height':'70px','width':'auto','position':'absolute','top':'230px','left':'330px'})
 
+	$('#element2_img').attr('src','assets/symbole/enemy.jpg').css({'height':'70px','width':'auto','position':'absolute'}).addClass('alive')
+	$('#element3_img').attr('src','assets/symbole/enemy.jpg').css({'height':'70px','width':'auto','position':'absolute'}).addClass('alive')
+	$('#element4_img').attr('src','assets/symbole/enemy.jpg').css({'height':'70px','width':'auto','position':'absolute'}).addClass('alive')
+
+	geneAleaEnemy =  window.setInterval(function(){
+	},1000)
+
+
+})
 
 function display_perso(pos,nom,state){
 	$("#perso"+pos+"_img").attr("src","assets/character/"+nom+"_"+state+".png");
