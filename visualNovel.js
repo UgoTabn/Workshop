@@ -339,8 +339,8 @@ $("#button_play.e7").click(function(){
 	$('#element3_img').attr('src','assets/symbole/enemy.jpg').css({'height':'70px','width':'auto','position':'absolute','top':getRandomIntInclusive(10,540)+'px','left':getRandomIntInclusive(10,770)+'px'}).addClass('alive')
 	$('#element4_img').attr('src','assets/symbole/enemy.jpg').css({'height':'70px','width':'auto','position':'absolute','top':getRandomIntInclusive(10,540)+'px','left':getRandomIntInclusive(10,770)+'px'}).addClass('alive')
 
-	$("#container_pop").css({"height": "50px", "width": "50px", "top": "45px", "left": "700px","visibility":"visible"});
-	$("#text_pop").css({"margin": "8px", "font-size": "17px"});
+	$("#container_pop").css({"height": "55px", "width": "55px", "top": "45px", "left": "700px","visibility":"visible"});
+	$("#text_pop").css({"margin": "1px", "font-size": "25px"});
 	
 	$("#text_pop").html(boss_hp+' PV')
 	
