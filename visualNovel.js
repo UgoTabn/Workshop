@@ -62,6 +62,8 @@ function clear_minigame(){
 	$('#elements5').removeAttr( 'style' );
 	$('#elements6').removeAttr( 'style' );
 
+	$('#container_pop').removeAttr('style');
+
 }
 
 
@@ -203,14 +205,62 @@ function e1(){
 					}
 				},1500)
 				end;
+				clear_minigame();
 				break;
 		}
 	})
 
 }
 
+function e2(){
+	let vie = 3;
+	let game_end = 0;
+	$("#element1").css({'height':'70px','width':'550px','background-color':'white','position':'absolute','top':'65px','left':'120px','padding':'8px'})
+	$('#element3').css({'border':'solid','height':'400px','width':'65px','position':'absolute','top':'160px','left':'605px'})
+	$("#element4").css({'height':'50px','width':'50px','position':'absolute','top':'300px','left':'120px'})
+	$('#element4_img').css({'height':'50px','width':'50px','position':'absolute','top':'0px','left':'20px'}).attr("src","assets/symbole/touche.jpg")
+	$('#element2').css({'border':'solid','height':'400px','width':'550px','position':'absolute','top':'160px','left':'120px'})
+	$('#element5').css({'border':'solid','height':'50px','width':'50px','position':'absolute','top':'300px','left':'500px'})
+
+
+	$('#element4_img').draggable();
+	$('#element5').droppable({drop: function(event,ui){
+		console.log("OUI")
+		game_end = 1;
+
+	}})
+	
+	$("#element1").html("VIE RESTANTE : "+vie)
+
+	// si temps faire animation levier drag and drop ou flip
+
+	$("#element3").on('click',function(){
+		if(game_end == 0){
+			vie = vie - 1;
+			if(vie == 0){
+				$('#pop').css("display","none");
+				clear_minigame();
+			}
+			$("#element1").html("VIE RESTANTE : "+vie)
+		} else if(game_end == 1){
+			$('#pop').css("display","none");
+			clear_minigame();
+		}
+	})
+
+
+	
+	/*
+	if($('#element4_img').css("top") == '0px' ){
+		console.log('test valide')
+	}
+	*/
+
+}
+
 //e1();
 //clear_minigame();
+//e2()
 
 $("#button_play").click(function(){
 	$("#pop").css("display", "block");
