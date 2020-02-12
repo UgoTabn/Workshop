@@ -32,14 +32,94 @@ function scene_1a(){
 
 
 $("#button_play.e6").click(function e6(){
-	//$("#element1").css({"background-color": "red", "display": "block", "width": "500px", "height": "50px", "position": "absolute"});
-	//$("#element2").css({"background-image": "url('assets/symbole/flecheG.png')", "width": "30px", "height": "50px"})
-	//var vis = {""};
-	$("#element2_img").attr("src", "assets/symbole/flecheG.png");
-	$("#element2_img").css({"width": "30px", "height": "50px"});
+	var t1 = {value: 1};
+	var t2 = {value: 0};
+	var t3 = {value: 0};
+	var t4 = {value: 1};
+	var t5 = {value: 0};
+	var coup = {value: 15};
+	var lock = {value: 0};
 
+	var vis = {"background-color" : "white", "display" : "block", "width" : "20px", "height" : "150px", "position" : "absolute", "transition": "1s"};
+	$("#text_pop").css({"margin": "8px", "font-size": "30px"});
+	$("#text_pop").html("15");
+	$("#container_pop").css({"height": "50px", "width": "50px", "top": "45px", "left": "700px"});
+	$("#element1").css(vis);
+	$("#element1").css({"left": " 190px", "top": "180px"});
+	$("#element2").css(vis);
+	$("#element2").css({"left": " 290px", "top": "280px"});
+	$("#element3").css(vis);
+	$("#element3").css({"left": " 390px", "top": "280px"});
+	$("#element4").css(vis);
+	$("#element4").css({"left": " 490px", "top": "180px"});
+	$("#element5").css(vis);
+	$("#element5").css({"left": " 590px", "top": "280px"});
+	$("#element6").css({"background-color": "red", "display": "block", "width": "500px", "height": "150px", "position": "absolute", "left": "150px", "top": "300px"});
 
-
+	$("#element1").click(function(){
+		if (lock.value == 0){
+			nbr_update(t1,"#element1");
+			nbr_update(t3,"#element3");
+			nbr_update(t5,"#element5");
+			test(t1,t2,t3,t4,t5,coup);
+		}
+	})
+	$("#element2").click(function(){
+		if (lock.value == 0){
+			nbr_update(t1,"#element1");
+			nbr_update(t2,"#element2");
+			nbr_update(t4,"#element4");
+			nbr_update(t5,"#element5");
+			test(t1,t2,t3,t4,t5,coup);
+		}
+	})
+	$("#element3").click(function(){
+		if (lock.value == 0){
+			nbr_update(t3,"#element3");
+			nbr_update(t4,"#element4");
+			test(t1,t2,t3,t4,t5,coup);
+		}	
+	})
+	$("#element4").click(function(){
+		if (lock.value == 0){
+			nbr_update(t1,"#element1");
+			nbr_update(t4,"#element4");
+			test(t1,t2,t3,t4,t5,coup);
+		}
+	})
+	$("#element5").click(function(){
+		if (lock.value == 0){
+			nbr_update(t2,"#element2");
+			nbr_update(t5,"#element5");
+			test(t1,t2,t3,t4,t5,coup);
+		}	
+	})
+	function nbr_update(num,nom){
+		if (num.value == 0){
+			num.value = 1;
+		}else if (num.value == 1){
+			num.value = 0;
+		}
+		pos_update(num.value,nom);
+	}
+	function pos_update(num,nom){
+		if (num == 0){
+			$(nom).css("top", "280px");
+		}
+		if (num == 1){
+			$(nom).css("top", "180px");
+		}
+	}
+	function test(t1,t2,t3,t4,t5,coup){
+		coup.value -= 1;
+		$("#text_pop").html(coup.value)
+		if ((t1.value == t2.value) && (t2.value == t3.value) && (t3.value == t4.value) && (t4.value == t5.value) || (coup.value == 0)){
+			lock.value = 1;
+			end = setInterval(function(){
+					$('#pop').css("display","none");
+			},2000)
+		}
+	}
 })
 
 function display_perso(pos,nom,state){
