@@ -63,11 +63,12 @@ function e1(){
 	display_perso(4,"void","void");
 	$("#background").css("background-image","url('assets/background/fondecranMaxime.png')");
 	ecrit_text_popup("un labyrinthe ?");
+	$("#container_pop").css("visibility","visible");
 
 	$('#element1_img').css({'position': 'absolute','top': '200px','left': '720px','height': '60px','width': '60px;','visibility': 'visible','display': 'block'}).attr("src","assets/symbole/flecheD.png")
 	$('#element2_img').css({'position': 'absolute','top': '200px','height': '60px','width': '60px;','visibility': 'visible','display': 'block'}).attr("src","assets/symbole/flecheG.png")
 
-	$("#element1").on('click',function(){
+	$("#element2").on('click',function(){
 		switch(l_score){
 			case 0 :
 				ecrit_text_popup("a gauche ? pourquoi pas...\n maintenant je vais à droite?");
@@ -127,7 +128,7 @@ function e1(){
 		}
 	})
 
-	$("#element2").on('click',function(){
+	$("#element1").on('click',function(){
 		switch(l_score){
 			case 0 :
 				ecrit_text_popup("ce n'était pas a droite dommage");
