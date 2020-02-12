@@ -39,10 +39,8 @@ $("#button_play.e1").click(function e6(){
 	$("#background").css("background-image","url('assets/background/fondecranMaxime.png')");
 	ecrit_text_popup("un labyrinthe ?");
 	$("#container_pop").css("visibility","visible");
-
-	$('#element1_img').css({'position': 'absolute','top': '200px','left': '720px','height': '60px','width': '60px;','visibility': 'visible','display': 'block'}).attr("src","assets/symbole/flecheD.png")
-	$('#element2_img').css({'position': 'absolute','top': '200px','height': '60px','width': '60px;','visibility': 'visible','display': 'block'}).attr("src","assets/symbole/flecheG.png")
-
+	$('#element1_img').css({'position': 'absolute','top': '200px','left': '720px','height': '60px','width': '60px;','visibility': 'visible','display': 'block'}).attr("src","assets/symbole/flecheD.png");
+	$('#element2_img').css({'position': 'absolute','top': '200px','height': '60px','width': '60px;','visibility': 'visible','display': 'block'}).attr("src","assets/symbole/flecheG.png");
 	$("#element2").on('click',function(){
 		switch(l_score){
 			case 0 :
@@ -102,7 +100,6 @@ $("#button_play.e1").click(function e6(){
 				break;
 		}
 	})
-
 	$("#element1").on('click',function(){
 		switch(l_score){
 			case 0 :
@@ -110,7 +107,7 @@ $("#button_play.e1").click(function e6(){
 				l_score = 0;
 				break;
 			case 1:
-				ecrit_text_popup("Oups, me re voilà au départ !")
+				ecrit_text_popup("Oups, me re voilà au départ !");
 				l_score = 0;
 				break;
 			case 2 :
@@ -118,31 +115,31 @@ $("#button_play.e1").click(function e6(){
 				l_score = 3;
 				break;
 			case 3:
-				ecrit_text_popup("Hummm c'était tout droit cette fois ci")
+				ecrit_text_popup("Hummm c'était tout droit cette fois ci");
 				l_score = 4;
 				break;
 			case 4:
-				ecrit_text_popup("Bien jouer ! mais maintenant ? je vais à gauche ou à droite ?")
+				ecrit_text_popup("Bien jouer ! mais maintenant ? je vais à gauche ou à droite ?");
 				l_score = 5;
 				break;
 			case 5:
-				ecrit_text_popup("je serai pas en train de tourné en rond ?")
+				ecrit_text_popup("je serai pas en train de tourné en rond ?");
 				l_score = 5;
 				break;
 			case 6:
-				ecrit_text_popup("Il n'y a rien de particulier ici je vais essayer à gauche")
+				ecrit_text_popup("Il n'y a rien de particulier ici je vais essayer à gauche");
 				l_score = 7;
 				break;
 			case 7:
-				ecrit_text_popup("Mmmmm je suis sur de moi ?")
+				ecrit_text_popup("Mmmmm je suis sur de moi ?");
 				l_score = 8;
 				break;
 			case 8:
-				ecrit_text_popup("Je pense que j\'y sera encore demain, non ? qui a fait ce foutu desert ?")
+				ecrit_text_popup("Je pense que j\'y sera encore demain, non ? qui a fait ce foutu desert ?");
 				l_score = 6;
 				break;
 			case 9:
-				ecrit_text_popup("Bien j'avance pour le moment")
+				ecrit_text_popup("Bien j'avance pour le moment");
 				l_score =10;
 				break;
 			case 10:
@@ -159,16 +156,12 @@ $("#button_play.e1").click(function e6(){
 						ywx++;
 					}
 				},1500)
-				end;
 				clear_minigame();
 				break;
 		}
 	})
 
-}
-
-
-
+})
 $("#button_play.e2").click(function e6(){
 	let vie = 2;
 	let game_end = 0;
@@ -178,16 +171,12 @@ $("#button_play.e2").click(function e6(){
 	$('#element4_img').css({'height':'50px','width':'50px','position':'absolute','top':'0px','left':'20px'}).attr("src","assets/symbole/touche.jpg")
 	$('#element2').css({'border':'solid','height':'400px','width':'550px','position':'absolute','top':'160px','left':'120px'})
 	$('#element5').css({'border':'solid','height':'50px','width':'50px','position':'absolute','top':'300px','left':'500px'})
-
-
 	$('#element4_img').draggable();
 	$('#element5').droppable({drop: function(event,ui){
 		console.log("OUI")
 		game_end = 1;
 		$('#element4_img').css({'top':'2px','left':'382px'})
-
 	}})
-	
 	$("#element1").html("VIE RESTANTE : "+vie)
 
 	// si temps faire animation levier drag and drop ou flip
@@ -205,17 +194,7 @@ $("#button_play.e2").click(function e6(){
 			clear_minigame();
 		}
 	})
-
-
-	
-	/*
-	if($('#element4_img').css("top") == '0px' ){
-		console.log('test valide')
-	}
-	*/
-
-}
-
+})
 
 $("#button_play.e6").click(function e6(){
 	var t1 = {value: 1};
@@ -342,7 +321,6 @@ function clear_minigame(){
 	$('#elements6').removeAttr( 'style' );
 
 	$('#container_pop').removeAttr('style');
-
 }
 
 
