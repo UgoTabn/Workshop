@@ -255,23 +255,22 @@ $('#button_play.e5').click(function(){
 		if($('input').val() == 'grotte'){
 			$('#pop').css("display","none");
 			clear_minigame();
-		}else{
-			error--;
-			$('#element3').html($('#element3').html()+champi[i])
-			i++;
-			if(error == 0){
-				
-				setTimeout(end,2000);
+			window.clearInterval(errorI);
+		}})
+	errorI = window.setInterval(function(){
+		error--;
+		$('#element3').html($('#element3').html()+champi[i])
+		i++;
+		if(error == 0){	
+			setTimeout(end,2000);
 				function end(){
-					$('#pop').css("display","none");
-					window.clearInterval(end);
-					clear_minigame();
-				}
+				$('#pop').css("display","none");
+				window.clearInterval(errorI);
+				clear_minigame();
 			}
 		}
-
-	})	
-})
+	},2000)
+})	
 $("#button_play.e6v").click(function(){
 	var t1 = {value: 1};
 	var t2 = {value: 0};
