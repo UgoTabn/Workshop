@@ -700,7 +700,7 @@ function e5(){
 			}
 		}
 	},2000)
-})	
+}	
 $('body').on('click', '#button_play.e6v', function() {
     // do something
 	$('.popup').css("background-color", "blue");
@@ -918,7 +918,7 @@ $("#button_play.e6d").click(function(){
 			},2000)
 		}
 	}
-}
+})
 function e7(){
 	let hit = 3;
 	let boss_hp = 5;
