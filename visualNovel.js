@@ -6,19 +6,32 @@ var sec = 30;
 //document.addEventListener('keydown',key,false)
 
 
-function realisateur(index){
-	switch (index){
-		case 1 :
-			scene_1a();
-			break;
-		case 2:
-
-			break;
-		case 3:
-      
-			break;
+function scene_0a(){
+	let local =0;
+	document.addEventListener('keydown',key,false)
+	function key(event){
+		if(event.keyCode == 32 || event.keyCode == 13){
+			local++;
+			switch(local){
+				case 1:
+					$('#button_play').css('visibility','visible')
+					$('#button_play').addClass('e1')
+					break;
+			}
+		}
+		
 	}
+	display_perso(1,"void","void");
+    display_perso(2,"void","void");
+    display_perso(3,"void","void");
+	display_perso(4,"void","void");
+
+	ecrit_text("Vous êtes un jeune héros insouciant assez simplet (on va dire même très simplet). A la recherche d’une aventure particulière vous errez dans un immense canyon depuis un certain moment, plusieurs chemins s’offrent à vous il semble que vous soyez perdu.")
+	$("#button_play").css('visibility','hidden')
+
 }
+
+
 function scene_1a(){
 	let local = 0;
 	document.addEventListener('keydown',key,false)
@@ -28,6 +41,35 @@ function scene_1a(){
 			switch(local){
 				case 1:
 					scene_1b();
+					break;
+				case 2:
+					scene_1c();
+					break;
+				case 3:
+					scene_1d();
+					break;
+				case 4:
+					scene_1e();
+					break;
+				case 5:
+					scene_1f();
+					break;
+				case 6:
+					scene_1g();
+					break;
+				case 7:
+					scene_1h();
+					break;
+				case 8:
+					scene_1i();
+					break;
+				case 9:
+					scene_1j();
+					break;
+				case 10:
+					$('#button_play').css('visibility','visible')
+					$('#button_play').addClass('e2')
+
 			}
 		}
 		
@@ -35,25 +77,134 @@ function scene_1a(){
 	//change background
 	//$("#background").css("background-image","url('assets/background/fondecranMaxime.png')");
 	//senario
-	display_perso(1,"billy","idle");
+	//display_perso(1,"billy","idle");
     /*display_perso(2,"billy","idle");
     display_perso(3,"billy","idle");*/
-	display_perso(4,"billy","idle")
-	parle(1);
-	gris(4);
+	//display_perso(4,"billy","idle")
 
-	//dialogue("")
-	ecrit_text("Oah, mais super grand le bâtiment, qui a mit ça la ? ")
+	ecrit_text("Vous arrivez finalement à sortir de ce labyrinthe. Devant vous apparaît un large complexe de bâtiments entouré d’un vaste grillage lui même installé derrière une série de panneaux. Ce lieu vous fait penser à quelque chose, ça ne serait pas la zone 51 par hasard ?")
 
 	function scene_1b(){
-		gris(1);
-		parle(4);
-		ecrit_text("C’est qui ce guignol qu’on voit dans la caméra ?");
+		ecrit_text("A peine arrivé près du périmètre, un garde vous arrête")
 	}
-
+	function scene_1c(){
+		display_perso(1,"billy","idle");
+		display_perso(4,"billy","idle");
+		parle(1);gris(4);
+		ecrit_text("Halte monsieur ! où allez vous comme ça ?")
+	}
+	function scene_1d(){
+		gris(1);parle(4);
+		ecrit_text("Je cherche la zone 51");
+	}
+	function scene_1e(){
+		parle(4);gris(1);
+		ecrit_text("C’est interdit d’accès ici, allez voir à côté")
+	}
+	function scene_1f(){
+		display_perso(1,"void","void");
+		display_perso(4,"void","void");
+		ecrit_text("Vous repartez en route, et après quelques kilomètres de marche, vous arrivez devant un grand bâtiment délabré, un grillage éventré entourant son enceinte. Vous pouvez voir un écriteau cassé à l’entrée sur lequel est écrit “Bienvenue dans la zone 52, ici territoire d’accueil pour aventuriers en herbe");
+	}
+	function scene_1g(){
+		display_perso(1,"billy","idle");
+		display_perso(4,"billy","idle");
+		parle(4);gris(1);
+		ecrit_text("Oah, mais super grand le bâtiment, qui a mit ça la ? , bon allez je rentre ça à l’air cool")
+	}
+	function scene_1h(){
+		gris(4);parle(1);
+		ecrit_text("C’est qui ce guignol qu’on voit dans la caméra ?")
+	}
+	function scene_1i(){
+		display_perso(1,"void","void");
+		display_perso(4,"void","void");
+		ecrit_text("Vous pénétrez dans le bâtiment, la pièce dans laquelle vous arrivez et remplie de panneaux de commandes composés de voyants lumineux et de boutons de toutes sortes.")
+	}
+	function scene_1j(){
+		display_perso(4,"billy","idle");
+		parle(4);
+		ecrit_text("Woaww c’est quoi cette endroit??Les autres me croiront jamais, il faut que je prenne un souvenir , tiens je vais prendre ce truc là sur la table.\n*Prend un livre sur une table*\nVous vous approchez d’un des panneaux de commandes, lorsque une envie soudaine de toucher un peu à tout vous prend;")
+	}
 }
 
+function scene_finBonne(){
+	let local = 0;
+	document.addEventListener('keydown',key,false)
+	function key(event){
+		if(event.keyCode == 32 || event.keyCode == 13){
+			local++;
+			switch(local){
+				case 1:
+					scene_1b();
+					break;
+				case 2:
+					scene_1c();
+					break;
+				case 3:
+					scene_1d();
+					break;
+				case 4:
+					scene_1e();
+					break;
+				case 5:
+					scene_1f();
+					break;
+				case 6:
+					scene_1g();
+					break;
+				case 7:
+					scene_1h();
+					break;
+				case 8:
+					scene_1i();
+					break;
+				case 9:
+					scene_1j();
+					break;
+				case 10:
+					e2();
+					break;
+			}
+		}
+		
+	}
 
+	
+	function scene_1a(){
+		gris(1);parle(4); //le personnage principal parle, le mechant repond
+		ecrit_text("Que m’arrive-t-il ? j’ai mal au crâne, je me sens tout bizarre.");
+	}
+	function scene_1b(){
+		parle(1);gris(4); //le mechant parle 
+		ecrit_text("Tu me surprends je dois l’avouer, tu as passé pas mal d’épreuves avec brio.")
+	}
+	function scene_1c(){
+		parle(4);gris(1);
+		ecrit_text("Aie je sens qu’il y’a comme une porte qui s’est ouverte dans mon esprit, je commence à penser à plein de choses, à… réfléchir.")
+	}
+	function scene_1d(){
+		display_perso(1,"void","void");
+		display_perso(4,"void","void");
+		ecrit_text("Le robot retourne sur son épaule.");
+	}
+	function scene_1e(){
+		parle(1);gris(4);
+		ecrit_text("Hum intéressant, tu as peut-être beaucoup évolué au cours de ton voyage, mais en tout cas tu m’as beaucoup diverti et j’aimerais bien reprendre mon bouquin.")
+	}
+	function scene_1f(){
+		parle(4);gris(1);
+		ecrit_text("Depuis le début c’était vous le robot, ah j’aurais du m’en douter ! Tenez voila le livre je vous le rends.")
+	}
+	function scene_1g(){
+		parle(1);gris(4);
+		ecrit_text("Oh tu sais ce n’est que le cahier de recette de ma grand-mère, comme tu m’as beaucoup intrigué et beaucoup amusé tu peux le garder, et puis de toute façon les plats qu’il me mijote sont moisis.")
+	}
+	function scene_1f(){
+		parle(4);gris(1);
+		ecrit_text("Super ! je me suis beaucoup amusé aussi, j’ai l’impression d’être devenu un nouvel homme je me sens encore tout drôle ")
+	}
+}
 
 //ALEA
 function getRandomIntInclusive(min, max) {
@@ -62,8 +213,10 @@ function getRandomIntInclusive(min, max) {
 	return Math.floor(Math.random() * (max - min +1)) + min;
 }
 
-
-function e1(){
+$('main').on('click','#button_play.e1',function(){
+	$('#element1_img').addClass('flecheDroite');
+	$('#element2_img').addClass('flecheGauche');
+	$('#button_play').removeClass('e1');
 
 	let l_score = 0;
 	$('#pop').css("background-color","red")
@@ -71,7 +224,7 @@ function e1(){
 	$("#container_pop").css("visibility","visible")
 	$('#element1_img').css({'position': 'absolute','top': '200px','left': '720px','height': '60px','width': '60px;','visibility': 'visible','display': 'block'}).attr("src","assets/symbole/flecheD.png");
 	$('#element2_img').css({'position': 'absolute','top': '200px','height': '60px','width': '60px;','visibility': 'visible','display': 'block'}).attr("src","assets/symbole/flecheG.png");
-	$("#element2").on('click',function(){
+	$("body").on('click','#element2_img.flecheGauche',function(){
 		switch(l_score){
 			case 0 :
 				ecrit_text_popup("a gauche ? pourquoi pas...\n maintenant je vais à droite?");
@@ -117,16 +270,19 @@ function e1(){
 				//$('.e1').css('visibility','hidden')
 				$("#element1").css('display','none');
 				$("#element2").css('display','none');
+				$('#element1_img').removeClass('flecheDroite');
+				$('#element2_img').removeClass('flecheGauche');
 				ecrit_text_popup("Un grand batiment... ça doit être ça !");
 				setTimeout(end,2000);
 					function end(){
 					$('#pop').css("display","none");
 					clear_minigame();
+					scene_1a();
 				}
 				break;
 		}
 	})
-	$("#element1").on('click',function(){
+	$("body").on('click','#element1_img.flecheDroite',function(){
 		switch(l_score){
 			case 0 :
 				ecrit_text_popup("ce n'était pas a droite dommage");
@@ -172,19 +328,21 @@ function e1(){
 				//$('.e1').css('visibility','hidden')
 				$("#element1").css('display','none');
 				$("#element2").css('display','none');
+				$('#element1_img').removeClass('flecheDroite');
+				$('#element2_img').removeClass('flecheGauche');
 				ecrit_text_popup("Tiens ? Un batiment");
 				setTimeout(end,2000);
 					function end(){
 					$('#pop').css("display","none");
 					clear_minigame();
+					scene_1a();
 				}
 				break;
 		}
 	})
 
-}
-function e2(){
-	console.log('Test valide')
+})
+$('main').on('click','#button_play.e2',function(){
 	let vie = 2;
 	let game_end = 0;
 	$('.popup').css("background-color", "mediumorchid");
@@ -194,30 +352,50 @@ function e2(){
 	$('#element4_img').css({'height':'50px','width':'50px','position':'absolute','top':'0px','left':'20px'}).attr("src","assets/symbole/touche.jpg")
 	$('#element2').css({'border':'solid','height':'400px','width':'550px','position':'absolute','top':'160px','left':'120px'})
 	$('#element5').css({'border':'solid','height':'50px','width':'50px','position':'absolute','top':'300px','left':'500px'})
-	$('#element4_img').draggable();
-	$('#element5').droppable({drop: function(event,ui){
+	
+	$("#element1").addClass("tableauB")
+	$('#element3').addClass("tableauB")
+	$("#element4").addClass("tableauB")
+	$('#element4_img').addClass("tableauB")
+	$('#element2').addClass("tableauB")
+	$('#element5').addClass("tableauB")
+
+	$('#element4_img.tableauB').draggable();
+	$('#element5.tableauB').droppable({drop: function(event,ui){
 		game_end = 1;
-		$('#element4_img').css({'top':'2px','left':'382px'})
+		$('#element4_img.tableauB').css({'top':'2px','left':'382px'})
 	}})
-	$("#element1").html("VIE RESTANTE : "+vie)
+	$("#element1.tableauB").html("VIE RESTANTE : "+vie)
 
 	// si temps faire animation levier drag and drop ou flip
 
-	$("#element3").on('click',function(){
+	$(".popup").on('click','#element3.tableauB',function(){
 		if(game_end == 0){
 			vie = vie - 1;
 			if(vie == 0){
+				$("#element1").removeClass("tableauB")
+				$('#element3').removeClass("tableauB")
+				$("#element4").removeClass("tableauB")
+				$('#element4_img').removeClass("tableauB")
+				$('#element2').removeClass("tableauB")
+				$('#element5').removeClass("tableauB")
 				$('#pop').css("display","none");
 				clear_minigame();
 			}
-			$("#element1").html("VIE RESTANTE : "+vie)
+			$("#element1.tableauB").html("VIE RESTANTE : "+vie)
 		} else if(game_end == 1){
+			$("#element1").removeClass("tableauB")
+			$('#element3').removeClass("tableauB")
+			$("#element4").removeClass("tableauB")
+			$('#element4_img').removeClass("tableauB")
+			$('#element2').removeClass("tableauB")
+			$('#element5').removeClass("tableauB")
 			$('#pop').css("display","none");
 			clear_minigame();
 		}
 	})
-}
-function e3(){
+})
+$('main').on('click','#button_play.e3',function(){
 	var nb = 10;
 	$('.popup').css("background-color", "mediumorchid");
 	$('#element1').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'50px','left':'20px'}).addClass("clickable")
@@ -235,7 +413,8 @@ function e3(){
 	$("#text_pop").css({"margin": "8px", "font-size": "30px"});
 
 	$('.clickable').on('click',function(){
-		$(this).css("visivility","hidden").removeClass("clickable")
+		$(this).css("visivility","hidden")
+		$(this).removeClass("clickable")
 		nb --;
 		if(nb == 0){
 			$('#pop').css("display","none");
@@ -248,11 +427,14 @@ function e3(){
 		$("#text_pop").html(sec);
 		if(sec == -1){
 			$('#pop').css("display","none");
+			for (i = 1; i <= 10; i++) {
+				$('#element'+i).removeClass("clickable");
+			}
 			clear_minigame();
 			window.clearInterval(timer);
 		}
 	},1000)
-}
+})
 function e4v(){
 	$('.popup').css("background-color", "mediumorchid");
 	//fond jauge
@@ -812,6 +994,7 @@ function clear_minigame(){
 	for (i = 1; i <= 10; i++) {
 		$('#element'+i+'_img').attr('src','assets/character/void_void.png');
 		$('#element'+i).removeAttr( 'style' );
+		//$('#element'+i).html("");
 	}
 	$('.popup').removeAttr('style');
 	$('#container_pop').removeAttr('style');
@@ -835,7 +1018,7 @@ function ecrit_text_popup(chaine){
 
 $("#button_play").click(function(){
 	$("#pop").css("display", "block");
-	$("#button_play").css("display","none");
+	$("#button_play").css("visibility","collapse");
 })
 
 
@@ -845,6 +1028,3 @@ function parle(perso){
 function gris(perso){
 	$('#perso'+perso+'_img').removeClass('parle').css("width","187px").addClass("gray")
 }
-
-realisateur(1)
-
