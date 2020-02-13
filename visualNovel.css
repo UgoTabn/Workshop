@@ -93,10 +93,6 @@ input{
 	display: none;
 }
 
-.e1{
-	position: relative;
-	visibility: collapse;
-}
 #container_pop{
 	visibility: hidden;
 	position: relative;
@@ -112,4 +108,10 @@ input{
 #text_pop {
 	margin: 20px;
 	overflow: auto;
+}
+.gray{
+	filter: grayscale(100%);
+}
+.parle{
+	transition-duration: 0.5s;
 }
