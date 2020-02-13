@@ -1713,13 +1713,13 @@ $('main').on('click','#button_play.e1',function(){
 $('main').on('click','#button_play.e2',function(){
 	let vie = 2;
 	let game_end = 0;
-	$('.popup').css("background-color", "mediumorchid");
-	$("#element1").css({'height':'70px','width':'550px','background-color':'white','position':'absolute','top':'65px','left':'120px','padding':'8px'});
-	$('#element3').css({'border':'solid','height':'400px','width':'65px','position':'absolute','top':'160px','left':'605px'});
-	$("#element4").css({'height':'50px','width':'50px','position':'absolute','top':'300px','left':'120px'});
-	$('#element4_img').css({'height':'50px','width':'50px','position':'absolute','top':'0px','left':'20px'}).attr("src","assets/symbole/touche.jpg");
-	$('#element2').css({'border':'solid','height':'400px','width':'550px','position':'absolute','top':'160px','left':'120px'});
-	$('#element5').css({'border':'solid','height':'50px','width':'50px','position':'absolute','top':'300px','left':'500px'});
+	$('.popup').css("background-image", 'url(assets/symbole/tableau1.jpg)');
+	$("#element1").css({'height':'70px','width':'550px','position':'absolute','top':'95px','left':'150px','padding':'8px','color':'yellow'});
+	$('#element3').css({'height':'500px','width':'100px','position':'absolute','top':'25px','left':'520px'});
+	$("#element4").css({'height':'100px','width':'100px','position':'absolute','top':'300px','left':'120px'});
+	$('#element4_img').css({ 'height': '65px', 'width': '65px', 'position': 'absolute', 'top': '-65px', 'left': '-5px' }).attr("src","assets/symbole/bouton_orange.png");
+	$('#element2').css({'height': '400px', 'width': '550px', 'position': 'absolute', 'top': '160px', 'left': '120px'});
+	$('#element5').css({'height':'65px','width':'65px','position':'absolute','top':'235px','left':'400px'});
 	
 	$("#element1").addClass("e1");
 	$('#element3').addClass("e1");
@@ -1731,7 +1731,7 @@ $('main').on('click','#button_play.e2',function(){
 	$('#element4_img.e1').draggable();
 	$('#element5.e1').droppable({drop: function(event,ui){
 		game_end = 1;
-		$('#element4_img.e1').css({'top':'2px','left':'382px'});
+		$('#element4_img.e1').css({'top':'-65px','left':'282px'});
 	}})
 	$("#element1.e1").html("VIE RESTANTE : "+vie);
 
@@ -2396,5 +2396,3 @@ function parle(perso){
 function gris(perso){
 	$('#perso'+perso+'_img').removeClass('parle').css("width","187px").addClass("gray")
 }
-
-scene_finbien();
