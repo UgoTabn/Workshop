@@ -640,15 +640,13 @@ function e4d(){
 			}
 		}
 		if (end == 0){
-			stoptime = setInterval(function(){
+			stoptime = setTimeout(function(){
 				$('#pop').css("display","none");
-				window.clearInterval(stoptime);
 				clear_minigame();
 			},1500)
 		}else if (win == 4){
-			stoptime = setInterval(function(){
+			stoptime = setTimeout(function(){
 				$('#pop').css("display","none");
-				window.clearInterval(stoptime);
 				clear_minigame();
 			},1500)
 		}
@@ -702,12 +700,138 @@ function e5(){
 			}
 		}
 	},2000)
-}
-function e6d(){
+})	
+$('body').on('click', '#button_play.e6v', function() {
+    // do something
+	$('.popup').css("background-color", "blue");
+	//ammo
+	$("#element1").css({"background-color": "white", "width": "20px", "height": "70px", "position": "absolute", "left": "600px", "top": "0px", "transition": "0.2s"});
+	//obstacles
+	$("#element2").css({"background-color": "black", "width": "220px", "height": "20px", "left": "580px", "top": "220px", "position": "absolute"});
+	$("#element3").css({"background-color": "black", "width": "350px", "height": "20px", "left": "0px", "top": "300px", "position": "absolute"});
+	$("#element4").css({"background-color": "black", "width": "80px", "height": "20px", "left": "500px", "top": "360px", "position": "absolute"});
+	$("#element5").css({"background-color": "black", "width": "20px", "height": "160px", "left": "580px", "top": "220px", "position": "absolute"});
+	$("#element6").css({"background-color": "black", "width": "20px", "height": "300px", "left": "260px", "top": "300px", "position": "absolute"});
+	//bazooka
+	$("#element10").css({"background-color": "green", "width": "40px", "height": "60px", "position": "absolute", "left": "600px", "top": "540px"});
+
+
+	var x = {value: 600};
+	var y = {value: 0};
+	var timer = window.setInterval(function(){
+		y.value += 1;
+		$("#element1").css("top", y.value + "px");
+		//element2 coll
+		if ((y.value >= 220 - 70)&&(y.value <= 220 - 50)){
+			if (x.value >= 580){
+				$("#element10").html("perdu");
+				window.clearInterval(timer);
+				stoptime = setTimeout(function(){
+					$('#pop').css("display","none");
+					clear_minigame();
+				},500);
+			}
+		}
+		//element3 coll
+		if ((y.value >= 300 - 70)&&(y.value <= 300 + 20)){
+			if (x.value <= 350){
+				$("#element10").html("perdu");
+				window.clearInterval(timer);
+				stoptime = setTimeout(function(){
+					$('#pop').css("display","none");
+					clear_minigame();
+				},500)
+			}
+		}
+		//element4 coll
+		if ((y.value >= 360 - 70)&&(y.value <= 360 + 20)){
+			if ((x.value >= 500)&&(x.value <= 580)){
+				$("#element10").html("perdu");
+				window.clearInterval(timer);
+				stoptime = setTimeout(function(){
+					$('#pop').css("display","none");
+					clear_minigame();
+				},500)
+			}
+		}
+		//sol
+		if (y.value >= 540){
+			$("#element10").html("perdu");
+			window.clearInterval(timer);
+			stoptime = setTimeout(function(){
+				$('#pop').css("display","none");
+				clear_minigame();
+			},500)
+		}
+		//objectif
+		if ((y.value >= 540 - 70)&&(y.value <= 540 + 20)){
+			if ((x.value >= 600)&&(x.value <= 620)){
+				$("#element10").html("gagné");
+				if(x.value >= 600){
+					x.value = 600;
+				}
+				window.clearInterval(timer);
+				stoptime = setTimeout(function(){
+					$('#pop').css("display","none");
+					clear_minigame();
+				},500)
+			}
+		}
+	},10)
+
+	document.addEventListener("keydown",keyDownHandler, false)
+
+	function keyDownHandler(event) {
+		if (event.keyCode == 39){
+			x.value += 20 * 1;
+			$("#element1").css("left", x.value + "px");
+			//bord exterieur
+			if (x.value>=760){
+				x.value = 760;
+			}
+			//element5 coll
+			if ((y.value >= 200 - 70)&&(y.value <= 220 + 160)){
+				if (x.value >= 580 - 40){
+					x.value = 580 - 40;
+				}
+			}
+			//element4 coll
+			if ((y.value >= 340 - 70)&&(y.value <= 360 + 20)){
+				if (x.value >= 500 - 40){
+					x.value = 500 - 40;
+				}
+			}
+			//element
+ 
+		}
+		if (event.keyCode == 37){
+			x.value += 20 * -1;
+			$("#element1").css("left", x.value + "px");
+			//bord exterieur
+			if (x.value <= 20){
+				x.value = 20;
+			}
+			//element3 coll perfectible
+			if ((y.value >= 300 - 70)&&(y.value <= 300 + 20)){
+				if (x.value <= 350 + 40){
+					x.value = 350 + 40;
+				}
+			}
+			//element6 coll
+			if (y.value >= 300 - 70){
+				if (x.value <= 260 + 40){
+					x.value = 260 + 40;
+				}
+			}
+		}
+	}
+})
+
+$("#button_play.e6d").click(function(){
 	var t1 = {value: 1};
 	var t2 = {value: 0};
-	var t3 = {value: 0};
-	var t4 = {value: 1};
+	var t3 = {value: 1};
+	var t4 = {value: 0};
 	var t5 = {value: 0};
 	var coup = {value: 15};
 	var lock = {value: 0};
@@ -722,9 +846,9 @@ function e6d(){
 	$("#element2").css(vis);
 	$("#element2").css({"left": " 290px", "top": "280px"});
 	$("#element3").css(vis);
-	$("#element3").css({"left": " 390px", "top": "280px"});
+	$("#element3").css({"left": " 390px", "top": "180px"});
 	$("#element4").css(vis);
-	$("#element4").css({"left": " 490px", "top": "180px"});
+	$("#element4").css({"left": " 490px", "top": "280px"});
 	$("#element5").css(vis);
 	$("#element5").css({"left": " 590px", "top": "280px"});
 	$("#element6").css({"background-color": "red", "display": "block", "width": "500px", "height": "150px", "position": "absolute", "left": "150px", "top": "300px"});
@@ -828,7 +952,7 @@ function e7(){
 		hit --;
 	})
 
-	//faire des faintes
+	//faire des feintes
 
 	$('#element1_img').on('click',function(){
 		if(hit == 0){
@@ -904,5 +1028,3 @@ function parle(perso){
 function gris(perso){
 	$('#perso'+perso+'_img').removeClass('parle').css("width","187px").addClass("gray")
 }
-
-//scene_0a()
