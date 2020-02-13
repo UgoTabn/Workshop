@@ -1031,6 +1031,189 @@ function scene_E7(){
 	}
 }
 
+function scene_mondegeler() {
+    let local = 0;
+    document.addEventListener('keydown', key, false)
+
+    function key(event) {
+        if (event.keyCode == 32 || event.keyCode == 13) {
+            local++;
+            switch (local) {
+                case 1:
+                    scene_1k();
+                    break;
+                case 2:
+                    scene_1l();
+                    break;
+                case 3:
+                    scene_1m();
+                    break;
+                case 4:
+                    scene_1n();
+                    break;
+                case 5:
+                    scene_1o();
+                    break;
+                case 6:
+                    break;
+
+            }
+        }
+
+    }
+    //change background
+    //$("#background").css("background-image","url('assets/background/fondecranMaxime.png')");
+    //senario
+    //display_perso(1,"billy","idle");
+    /*display_perso(2,"billy","idle");
+    display_perso(3,"billy","idle");*/
+    //display_perso(4,"billy","idle")
+
+    ecrit_text("Vous arrivez dans monde gelé mais qui vous fait étrangement penser à univers Far West")
+
+
+    function scene_1k() {
+        display_perso(1, "billy", "idle");
+        display_perso(4, "billy", "idle");
+        gris(4);
+        parle(4);
+        ecrit_text("Mais qu’est ce que je fais là moi, ou suis-je ?");
+    }
+
+        function scene_1l() {
+            parle(1);
+            gris(4);
+            ecrit_text("Te voila dans un beau pétrin")
+        }
+
+        function scene_1m() {
+            gris(4);
+            parle(4);
+            ecrit_text("Qu’ est ce que… ? Tiens un robot qui parle!Vous m’ avez suivi ? ");
+        }
+
+        function scene_1n() {
+            parle(1);
+            gris(4);
+            ecrit_text("Oui je vais t’ accompagner, on va s’ échapper ensemble")
+        }
+
+        function scene_1o() {
+            gris(4);
+            parle(4);
+            ecrit_text("Ah chouette!J’ aperçois des bâtiments la - bas il doit y’ avoir des gens la - bas qui peuvent peut - être nous aider")
+        }
+}
+
+function scene_e3_e4v() {
+    let local = 0;
+    document.addEventListener('keydown', key, false)
+
+    function key(event) {
+        if (event.keyCode == 32 || event.keyCode == 13) {
+            local++;
+            switch (local) {
+                case 1:
+                    scene_e3Va();
+                    break;
+                case 2:
+                    scene_e3Vb();
+                    break;
+                case 3:
+                    scene_e3Vc();
+                    break;
+                case 4:
+                    scene_e3Vd();
+                    break;
+                case 5:
+                    scene_e3Ve();
+                    break;
+                case 6:
+                    scene_e3Vf();
+                    break;
+                case 7:
+                    scene_e3Vg();
+                    break;
+                case 8:
+                    scene_e3Vh();
+                    break;
+                case 9:
+                    scene_e3Vi();
+                    break;
+
+            }
+        }
+
+    }
+    //change background
+    //$("#background").css("background-image","url('assets/background/fondecranMaxime.png')");
+    //senario
+    //display_perso(1,"billy","idle");
+    /*display_perso(2,"billy","idle");
+    display_perso(3,"billy","idle");*/
+    //display_perso(4,"billy","idle")
+
+    ecrit_text("Vous arrivez non loin d’une grotte, et apercevez un être étrange qui ressemble au mélange étonnant entre un canon et animal doté d’une certaine intelligence, vous vous approchez de lui pour l’interpeller.")
+
+
+    function scene_e3Va() {
+        display_perso(1, "billy", "idle");
+        display_perso(2, "billy ","idle ");
+            display_perso(4, "billy", "idle"); gris(4); parle(4); ecrit_text("Hého ! Je cherche un animal qui peut créer des portails, il est dans le coin apparemment. Vous ne l’auriez pas vu par hasard ?");
+        }
+
+        function scene_e3Vb() {
+            parle(2);
+            gris(4);
+            ecrit_text(" * soupir * ")
+        }
+
+        function scene_e3Vc() {
+            parle(1);
+            gris(4);
+            ecrit_text("C’ est moi que vous cherchez, vous voulez aller où ? ")
+        }
+
+        function scene_e3Vd() {
+            parle(4);
+            gris(4);
+            ecrit_text("Je cherche à partir de ce monde et à rentrer chez moi")
+        }
+
+        function scene_e3Ve() {
+            parle(1);
+            gris(4);
+            ecrit_text("Très bien, mais attention: il faut pouvoir m’ utiliser de manière correcte.La précision du portail que je crée dépend aussi de la précision de mon utilisateur, ça n’ est pas aussi simple que vous ne le pensez, croyez moi.Si vous tremblez lors de la mise à feu, le portail risque d’ être un peu instable, bon j’ ai parfois l’ impression que comprendre des trucs c’ est pas trop votre domaine")
+        }
+
+        function scene_e3Vf() {
+            parle(4);
+            gris(4);
+            ecrit_text("Un domaine genre l’ endroit où on habite ? ")
+        }
+
+        function scene_e3Vg() {
+            parle(1);
+            gris(4);
+            ecrit_text("Bon bref, vous voyez les cibles là - bas ? Il vous faudra toucher leur centre le plus de fois possible.Si vous réussissez, il n’ y aura aucun problème pour que j’ active le portail; sinon, je ne serai malheureusement d’ aucune utilité.")
+        }
+
+        function scene_e3Vh() {
+            parle(4);
+            gris(4);
+            ecrit_text("Euh très bien je vous prends et je vais au stand de tir")
+        }
+
+
+        function scene_e3Vi() {
+            display_perso(1, "void", "void");
+            display_perso(2, "void ","void ");
+            display_perso(4, "void", "void"); 
+            ecrit_text("Pour toucher le centre des cibles, cliquez au moment où la jauge arrive au milieu de la barre de puissance.Vous devez réussir 3 essais sur 5.");
+        }
+}
+
+
 
 function scene_FinNulle(){
 	let local = 0;
