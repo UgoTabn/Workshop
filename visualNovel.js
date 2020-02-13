@@ -124,7 +124,7 @@ function scene_1a(){
 	function scene_1j(){
 		display_perso(4,"billy","idle");
 		parle(4);
-		ecrit_text("Woaww c’est quoi cette endroit??Les autres me croiront jamais, il faut que je prenne un souvenir , tiens je vais prendre ce truc là sur la table.\n*Prend un livre sur une table*\nVous vous approchez d’un des panneaux de commandes, lorsque une envie soudaine de toucher un peu à tout vous prend;")
+		ecrit_text("Woaww c’est quoi cette endroit ?? Les autres me croiront jamais, il faut que je prenne un souvenir , tiens je vais prendre ce truc là sur la table.\n*Prend un livre sur une table*\nVous vous approchez d’un des panneaux de commandes, lorsque une envie soudaine de toucher un peu à tout vous prend;")
 	}
 }
 
@@ -214,8 +214,8 @@ function getRandomIntInclusive(min, max) {
 }
 
 $('main').on('click','#button_play.e1',function(){
-	$('#element1_img').addClass('flecheDroite');
-	$('#element2_img').addClass('flecheGauche');
+	$('#element1_img').addClass('e1');
+	$('#element2_img').addClass('e1');
 	$('#button_play').removeClass('e1');
 
 	let l_score = 0;
@@ -224,7 +224,7 @@ $('main').on('click','#button_play.e1',function(){
 	$("#container_pop").css("visibility","visible")
 	$('#element1_img').css({'position': 'absolute','top': '200px','left': '720px','height': '60px','width': '60px;','visibility': 'visible','display': 'block'}).attr("src","assets/symbole/flecheD.png");
 	$('#element2_img').css({'position': 'absolute','top': '200px','height': '60px','width': '60px;','visibility': 'visible','display': 'block'}).attr("src","assets/symbole/flecheG.png");
-	$("body").on('click','#element2_img.flecheGauche',function(){
+	$("body").on('click','#element2_img.e1',function(){
 		switch(l_score){
 			case 0 :
 				ecrit_text_popup("a gauche ? pourquoi pas...\n maintenant je vais à droite?");
@@ -270,8 +270,8 @@ $('main').on('click','#button_play.e1',function(){
 				//$('.e1').css('visibility','hidden')
 				$("#element1").css('display','none');
 				$("#element2").css('display','none');
-				$('#element1_img').removeClass('flecheDroite');
-				$('#element2_img').removeClass('flecheGauche');
+				$('#element1_img').removeClass('e1');
+				$('#element2_img').removeClass('e1');
 				ecrit_text_popup("Un grand batiment... ça doit être ça !");
 				setTimeout(end,2000);
 					function end(){
@@ -282,7 +282,7 @@ $('main').on('click','#button_play.e1',function(){
 				break;
 		}
 	})
-	$("body").on('click','#element1_img.flecheDroite',function(){
+	$("body").on('click','#element1_img.e1',function(){
 		switch(l_score){
 			case 0 :
 				ecrit_text_popup("ce n'était pas a droite dommage");
@@ -328,8 +328,8 @@ $('main').on('click','#button_play.e1',function(){
 				//$('.e1').css('visibility','hidden')
 				$("#element1").css('display','none');
 				$("#element2").css('display','none');
-				$('#element1_img').removeClass('flecheDroite');
-				$('#element2_img').removeClass('flecheGauche');
+				$('#element1_img').removeClass('e1');
+				$('#element2_img').removeClass('e1');
 				ecrit_text_popup("Tiens ? Un batiment");
 				setTimeout(end,2000);
 					function end(){
@@ -346,50 +346,50 @@ $('main').on('click','#button_play.e2',function(){
 	let vie = 2;
 	let game_end = 0;
 	$('.popup').css("background-color", "mediumorchid");
-	$("#element1").css({'height':'70px','width':'550px','background-color':'white','position':'absolute','top':'65px','left':'120px','padding':'8px'})
-	$('#element3').css({'border':'solid','height':'400px','width':'65px','position':'absolute','top':'160px','left':'605px'})
-	$("#element4").css({'height':'50px','width':'50px','position':'absolute','top':'300px','left':'120px'})
-	$('#element4_img').css({'height':'50px','width':'50px','position':'absolute','top':'0px','left':'20px'}).attr("src","assets/symbole/touche.jpg")
-	$('#element2').css({'border':'solid','height':'400px','width':'550px','position':'absolute','top':'160px','left':'120px'})
-	$('#element5').css({'border':'solid','height':'50px','width':'50px','position':'absolute','top':'300px','left':'500px'})
+	$("#element1").css({'height':'70px','width':'550px','background-color':'white','position':'absolute','top':'65px','left':'120px','padding':'8px'});
+	$('#element3').css({'border':'solid','height':'400px','width':'65px','position':'absolute','top':'160px','left':'605px'});
+	$("#element4").css({'height':'50px','width':'50px','position':'absolute','top':'300px','left':'120px'});
+	$('#element4_img').css({'height':'50px','width':'50px','position':'absolute','top':'0px','left':'20px'}).attr("src","assets/symbole/touche.jpg");
+	$('#element2').css({'border':'solid','height':'400px','width':'550px','position':'absolute','top':'160px','left':'120px'});
+	$('#element5').css({'border':'solid','height':'50px','width':'50px','position':'absolute','top':'300px','left':'500px'});
 	
-	$("#element1").addClass("tableauB")
-	$('#element3').addClass("tableauB")
-	$("#element4").addClass("tableauB")
-	$('#element4_img').addClass("tableauB")
-	$('#element2').addClass("tableauB")
-	$('#element5').addClass("tableauB")
+	$("#element1").addClass("e1");
+	$('#element3').addClass("e1");
+	$("#element4").addClass("e1");
+	$('#element4_img').addClass("e1");
+	$('#element2').addClass("e1");
+	$('#element5').addClass("e1");
 
-	$('#element4_img.tableauB').draggable();
-	$('#element5.tableauB').droppable({drop: function(event,ui){
+	$('#element4_img.e1').draggable();
+	$('#element5.e1').droppable({drop: function(event,ui){
 		game_end = 1;
-		$('#element4_img.tableauB').css({'top':'2px','left':'382px'})
+		$('#element4_img.e1').css({'top':'2px','left':'382px'});
 	}})
-	$("#element1.tableauB").html("VIE RESTANTE : "+vie)
+	$("#element1.e1").html("VIE RESTANTE : "+vie);
 
 	// si temps faire animation levier drag and drop ou flip
 
-	$(".popup").on('click','#element3.tableauB',function(){
+	$(".popup").on('click','#element3.e1',function(){
 		if(game_end == 0){
 			vie = vie - 1;
 			if(vie == 0){
-				$("#element1").removeClass("tableauB")
-				$('#element3').removeClass("tableauB")
-				$("#element4").removeClass("tableauB")
-				$('#element4_img').removeClass("tableauB")
-				$('#element2').removeClass("tableauB")
-				$('#element5').removeClass("tableauB")
+				$("#element1").removeClass("e1");
+				$('#element3').removeClass("e1");
+				$("#element4").removeClass("e1");
+				$('#element4_img').removeClass("e1");
+				$('#element2').removeClass("e1");
+				$('#element5').removeClass("e1");
 				$('#pop').css("display","none");
 				clear_minigame();
 			}
-			$("#element1.tableauB").html("VIE RESTANTE : "+vie)
+			$("#element1.e1").html("VIE RESTANTE : "+vie)
 		} else if(game_end == 1){
-			$("#element1").removeClass("tableauB")
-			$('#element3').removeClass("tableauB")
-			$("#element4").removeClass("tableauB")
-			$('#element4_img').removeClass("tableauB")
-			$('#element2').removeClass("tableauB")
-			$('#element5').removeClass("tableauB")
+			$("#element1").removeClass("e1");
+			$('#element3').removeClass("e1");
+			$("#element4").removeClass("e1");
+			$('#element4_img').removeClass("e1");
+			$('#element2').removeClass("e1");
+			$('#element5').removeClass("e1");
 			$('#pop').css("display","none");
 			clear_minigame();
 		}
@@ -398,23 +398,23 @@ $('main').on('click','#button_play.e2',function(){
 $('main').on('click','#button_play.e3',function(){
 	var nb = 10;
 	$('.popup').css("background-color", "mediumorchid");
-	$('#element1').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'50px','left':'20px'}).addClass("clickable")
-	$('#element2').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'40px','left':'200px'}).addClass("clickable")
-	$('#element3').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'450px','left':'60px'}).addClass("clickable")
-	$('#element4').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'500px','left':'70px'}).addClass("clickable")
-	$('#element5').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'50px','left':'250px'}).addClass("clickable")
-	$('#element6').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'360px','left':'80px'}).addClass("clickable")
-	$('#element7').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'10px','left':'400px'}).addClass("clickable")
-	$('#element8').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'500px','left':'3px'}).addClass("clickable")
-	$('#element9').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'45px','left':'320px'}).addClass("clickable")
-	$('#element10').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'430px','left':'590px'}).addClass("clickable")
+	$('#element1').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'50px','left':'20px'}).addClass("e3");
+	$('#element2').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'40px','left':'200px'}).addClass("e3");
+	$('#element3').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'450px','left':'60px'}).addClass("e3");
+	$('#element4').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'500px','left':'70px'}).addClass("e3");
+	$('#element5').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'50px','left':'250px'}).addClass("e3");
+	$('#element6').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'360px','left':'80px'}).addClass("e3");
+	$('#element7').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'10px','left':'400px'}).addClass("e3");
+	$('#element8').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'500px','left':'3px'}).addClass("e3");
+	$('#element9').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'45px','left':'320px'}).addClass("e3");
+	$('#element10').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'430px','left':'590px'}).addClass("e3");
 
 	$("#container_pop").css({"height": "50px", "width": "50px", "top": "45px", "left": "700px","visibility":"visible"});
 	$("#text_pop").css({"margin": "8px", "font-size": "30px"});
 
-	$('.clickable').on('click',function(){
-		$(this).css("visivility","hidden")
-		$(this).removeClass("clickable")
+	$('.e3').on('click',function(){
+		$(this).css("visivility","hidden");
+		$(this).removeClass("e3");
 		nb --;
 		if(nb == 0){
 			$('#pop').css("display","none");
@@ -428,7 +428,7 @@ $('main').on('click','#button_play.e3',function(){
 		if(sec == -1){
 			$('#pop').css("display","none");
 			for (i = 1; i <= 10; i++) {
-				$('#element'+i).removeClass("clickable");
+				$('#element'+i).removeClass("e3");
 			}
 			clear_minigame();
 			window.clearInterval(timer);
@@ -448,6 +448,8 @@ function e4v(){
 	//text
 	$("#element5").css({"width": "600px", "font-size": "40px", "top": "450px", "left": "150px", "position": "absolute"});
 	$("#element5").html("Appuyez sur la barre Espace !");
+
+
 	var x = 235;
 	var y = 1;
 	var percent = 0;
@@ -508,23 +510,23 @@ function e4d(){
 	$("#text_pop").html("6");
 	$("#container_pop").css({"height": "50px", "width": "50px", "top": "45px", "left": "700px"});
 	var carte = {"background-color" : "white", "display" : "block", "width" : "100px", "height" : "150px", "position" : "absolute", "transition": "0.5s"};
-	$("#element10").css(carte);
+	$("#element10").css(carte).addClass("e4d");
 	$("#element10").css({"left": "200px", "top": "50px"});
-	$("#element2").css(carte);
+	$("#element2").css(carte).addClass("e4d");
 	$("#element2").css({"left": "350px", "top": "50px"});
-	$("#element3").css(carte);
+	$("#element3").css(carte).addClass("e4d");
 	$("#element3").css({"left": "500px", "top": "50px"});
-	$("#element4").css(carte);
+	$("#element4").css(carte).addClass("e4d");
 	$("#element4").css({"left": "200px", "top": "225px"});
-	$("#element5").css(carte);
+	$("#element5").css(carte).addClass("e4d");
 	$("#element5").css({"left": "350px", "top": "225px"});
-	$("#element6").css(carte);
+	$("#element6").css(carte).addClass("e4d");
 	$("#element6").css({"left": "500px", "top": "225px"});
-	$("#element7").css(carte);
+	$("#element7").css(carte).addClass("e4d");
 	$("#element7").css({"left": "200px", "top": "400px"});
-	$("#element8").css(carte);
+	$("#element8").css(carte).addClass("e4d");
 	$("#element8").css({"left": "350px", "top": "400px"});
-	$("#element9").css(carte);
+	$("#element9").css(carte).addClass("e4d");
 	$("#element9").css({"left": "500px", "top": "400px"});
 
 	$("#element1").css({"background-color": "green","position": "absolute", "left": "150px", "top": "25px", "width": "500px", "height": "550px"});
@@ -535,7 +537,7 @@ function e4d(){
 	var lock = {value: 0};
 	var count = {value: 0};
 	var carte1 = 1, carte2 = 4, carte3 = 0, carte4 = 1, carte5 = 2, carte6 = 4, carte7 = 3, carte8 = 3, carte9 = 2;
-	$(".element").click(function(){
+	$(".e4d").click(function(){
 		if (lock.value == 0){
 			switch (this.id){
 				case ("element10") :
@@ -674,14 +676,14 @@ function e5(){
 	var error = 10;
 	var champi = 'champignon';
 	var i=0;
-	$('input').css({"visibility":"visible",'height':'30px','width':'100px','position':'absolute','top':'200px','left':'350px','padding':'12px'})
-	$('#element1').css({'height':'30px','width':'100px','background-color':'white','position':'absolute','top':'100px','left':'350px','padding':'12px'})
-	$('#element1').html("fqnssd")
-	$('#element2').css({'height':'30px','width':'100px','background-color':'white','position':'absolute','top':'300px','left':'350px','padding':'12px'})
-	$('#element2').html('Envoyer code')
-	$('#element3').css({'height':'30px','width':'100px','background-color':'white','position':'absolute','top':'400px','left':'350px','padding':'12px'})
+	$('input').css({"visibility":"visible",'height':'30px','width':'100px','position':'absolute','top':'200px','left':'350px','padding':'12px'});
+	$('#element1').css({'height':'30px','width':'100px','background-color':'white','position':'absolute','top':'100px','left':'350px','padding':'12px'});
+	$('#element1').html("fqnssd");
+	$('#element2').css({'height':'30px','width':'100px','background-color':'white','position':'absolute','top':'300px','left':'350px','padding':'12px'}).addClass("e5");
+	$('#element2').html('Envoyer code');
+	$('#element3').css({'height':'30px','width':'100px','background-color':'white','position':'absolute','top':'400px','left':'350px','padding':'12px'});
 
-	$('#element2').click(function(){
+	$('body').on('click', '#element2.e5', function() {
 		if($('input').val() == 'grotte'){
 			$('#pop').css("display","none");
 			clear_minigame();
@@ -700,7 +702,8 @@ function e5(){
 			}
 		}
 	},2000)
-}	
+}
+
 $('body').on('click', '#button_play.e6v', function() {
     // do something
 	$('.popup').css("background-color", "blue");
@@ -841,19 +844,19 @@ $("#button_play.e6d").click(function(){
 	$("#text_pop").css({"margin": "8px", "font-size": "30px", "display": "block"});
 	$("#text_pop").html("15");
 	$("#container_pop").css({"height": "50px", "width": "50px", "top": "45px", "left": "700px", "display": "block"});
-	$("#element1").css(vis);
+	$("#element1").css(vis).addClass("e6d");
 	$("#element1").css({"left": " 190px", "top": "180px"});
-	$("#element2").css(vis);
+	$("#element2").css(vis).addClass("e6d");
 	$("#element2").css({"left": " 290px", "top": "280px"});
-	$("#element3").css(vis);
+	$("#element3").css(vis).addClass("e6d");
 	$("#element3").css({"left": " 390px", "top": "180px"});
-	$("#element4").css(vis);
+	$("#element4").css(vis).addClass("e6d");
 	$("#element4").css({"left": " 490px", "top": "280px"});
-	$("#element5").css(vis);
+	$("#element5").css(vis).addClass("e6d");
 	$("#element5").css({"left": " 590px", "top": "280px"});
 	$("#element6").css({"background-color": "red", "display": "block", "width": "500px", "height": "150px", "position": "absolute", "left": "150px", "top": "300px"});
 
-	$("#element1").click(function(){
+	$('body').on('click', '#element1.e6d', function() {
 		if (lock.value == 0){
 			nbr_update(t1,"#element1");
 			nbr_update(t3,"#element3");
@@ -861,7 +864,7 @@ $("#button_play.e6d").click(function(){
 			test(t1,t2,t3,t4,t5,coup);
 		}
 	})
-	$("#element2").click(function(){
+	$('body').on('click', '#element2.e6d', function() {
 		if (lock.value == 0){
 			nbr_update(t1,"#element1");
 			nbr_update(t2,"#element2");
@@ -870,21 +873,21 @@ $("#button_play.e6d").click(function(){
 			test(t1,t2,t3,t4,t5,coup);
 		}
 	})
-	$("#element3").click(function(){
+	$('body').on('click', '#element3.e6d', function() {
 		if (lock.value == 0){
 			nbr_update(t3,"#element3");
 			nbr_update(t4,"#element4");
 			test(t1,t2,t3,t4,t5,coup);
 		}	
 	})
-	$("#element4").click(function(){
+	$('body').on('click', '#element4.e6d', function() {
 		if (lock.value == 0){
 			nbr_update(t1,"#element1");
 			nbr_update(t4,"#element4");
 			test(t1,t2,t3,t4,t5,coup);
 		}
 	})
-	$("#element5").click(function(){
+	$('body').on('click', '#element5.e6d', function() {
 		if (lock.value == 0){
 			nbr_update(t2,"#element2");
 			nbr_update(t5,"#element5");
@@ -922,11 +925,11 @@ $("#button_play.e6d").click(function(){
 function e7(){
 	let hit = 3;
 	let boss_hp = 5;
-	$('#element1_img').attr('src','assets/symbole/boss.jpg').css({'height':'70px','width':'auto','position':'absolute','top':'230px','left':'330px'})
+	$('#element1_img').attr('src','assets/symbole/boss.jpg').css({'height':'70px','width':'auto','position':'absolute','top':'230px','left':'330px'}).addClass("e7");
 
-	$('#element2_img').attr('src','assets/symbole/enemy.jpg').css({'height':'70px','width':'auto','position':'absolute','top':getRandomIntInclusive(10,540)+'px','left':getRandomIntInclusive(10,770)+'px'}).addClass('alive')
-	$('#element3_img').attr('src','assets/symbole/enemy.jpg').css({'height':'70px','width':'auto','position':'absolute','top':getRandomIntInclusive(10,540)+'px','left':getRandomIntInclusive(10,770)+'px'}).addClass('alive')
-	$('#element4_img').attr('src','assets/symbole/enemy.jpg').css({'height':'70px','width':'auto','position':'absolute','top':getRandomIntInclusive(10,540)+'px','left':getRandomIntInclusive(10,770)+'px'}).addClass('alive')
+	$('#element2_img').attr('src','assets/symbole/enemy.jpg').css({'height':'70px','width':'auto','position':'absolute','top':getRandomIntInclusive(10,540)+'px','left':getRandomIntInclusive(10,770)+'px'}).addClass('alive').addClass("e7");
+	$('#element3_img').attr('src','assets/symbole/enemy.jpg').css({'height':'70px','width':'auto','position':'absolute','top':getRandomIntInclusive(10,540)+'px','left':getRandomIntInclusive(10,770)+'px'}).addClass('alive').addClass("e7");
+	$('#element4_img').attr('src','assets/symbole/enemy.jpg').css({'height':'70px','width':'auto','position':'absolute','top':getRandomIntInclusive(10,540)+'px','left':getRandomIntInclusive(10,770)+'px'}).addClass('alive').addClass("e7");
 
 	$("#container_pop").css({"height": "55px", "width": "55px", "top": "45px", "left": "700px","visibility":"visible"});
 	$("#text_pop").css({"margin": "1px", "font-size": "25px"});
@@ -935,13 +938,13 @@ function e7(){
 	
 	geneAleaEnemy =  window.setInterval(function(){
 		if($('#element2_img').hasClass('alive')){
-			$('#element2_img').css({'top':getRandomIntInclusive(10,540)+'px','left':getRandomIntInclusive(10,770)+'px'})
+			$('#element2_img').css({'top':getRandomIntInclusive(10,540)+'px','left':getRandomIntInclusive(10,770)+'px'});
 		}
 		if($('#element3_img').hasClass('alive')){
-			$('#element3_img').css({'top':getRandomIntInclusive(10,540)+'px','left':getRandomIntInclusive(10,770)+'px'})
+			$('#element3_img').css({'top':getRandomIntInclusive(10,540)+'px','left':getRandomIntInclusive(10,770)+'px'});
 		}
 		if($('#element4_img').hasClass('alive')){
-			$('#element4_img').css({'top':getRandomIntInclusive(10,540)+'px','left':getRandomIntInclusive(10,770)+'px'})
+			$('#element4_img').css({'top':getRandomIntInclusive(10,540)+'px','left':getRandomIntInclusive(10,770)+'px'});
 		}
 
 		
@@ -954,13 +957,13 @@ function e7(){
 
 	//faire des feintes
 
-	$('#element1_img').on('click',function(){
+	$('body').on('click', '#element1_img.e7', function() {
 		if(hit == 0){
 			boss_hp --;
 			$("#text_pop").html(boss_hp+' PV')
-			$('#element2_img').css({'top':getRandomIntInclusive(10,540)+'px','left':getRandomIntInclusive(10,770)+'px','visibility':'visible'}).addClass('alive')
-			$('#element3_img').css({'top':getRandomIntInclusive(10,540)+'px','left':getRandomIntInclusive(10,770)+'px','visibility':'visible'}).addClass('alive')
-			$('#element4_img').css({'top':getRandomIntInclusive(10,540)+'px','left':getRandomIntInclusive(10,770)+'px','visibility':'visible'}).addClass('alive')
+			$('#element2_img').css({'top':getRandomIntInclusive(10,540)+'px','left':getRandomIntInclusive(10,770)+'px','visibility':'visible'}).addClass('alive');
+			$('#element3_img').css({'top':getRandomIntInclusive(10,540)+'px','left':getRandomIntInclusive(10,770)+'px','visibility':'visible'}).addClass('alive');
+			$('#element4_img').css({'top':getRandomIntInclusive(10,540)+'px','left':getRandomIntInclusive(10,770)+'px','visibility':'visible'}).addClass('alive');
 			hit = 3;
 
 			if(boss_hp == 0){
