@@ -1120,7 +1120,7 @@ function e6(param){
 		var coup = {value: 15};
 		var lock = {value: 0};
 
-		var vis = {"background-color" : "white", "display" : "block", "width" : "200px", "height" : "150px", "position" : "absolute", "transition": "1s", "background-image": "url(assets/symbole/clou.png)"};
+		var vis = {"background-image" : "url(assets/symbole/clou.png)", "display" : "block", "width" : "20px", "height" : "150px", "position" : "absolute", "transition": "1s", "background-image": "url(assets/symbole/clou.png)"};
 		$('.popup').css("background-color", "blue");
 		$("#text_pop").css({"margin": "8px", "font-size": "30px", "display": "block"});
 		$("#text_pop").html("15");
