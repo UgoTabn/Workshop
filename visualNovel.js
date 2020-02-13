@@ -1765,17 +1765,17 @@ $('main').on('click','#button_play.e2',function(){
 })
 $('main').on('click','#button_play.e3',function(){
 	var nb = 10;
-	$('.popup').css("background-color", "mediumorchid");
-	$('#element1').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'50px','left':'20px'}).addClass("e3");
-	$('#element2').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'40px','left':'200px'}).addClass("e3");
-	$('#element3').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'450px','left':'60px'}).addClass("e3");
-	$('#element4').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'500px','left':'70px'}).addClass("e3");
-	$('#element5').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'50px','left':'250px'}).addClass("e3");
-	$('#element6').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'360px','left':'80px'}).addClass("e3");
-	$('#element7').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'10px','left':'400px'}).addClass("e3");
-	$('#element8').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'500px','left':'3px'}).addClass("e3");
-	$('#element9').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'45px','left':'320px'}).addClass("e3");
-	$('#element10').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'430px','left':'590px'}).addClass("e3");
+	$('.popup').css("background-image", "url(assets/background/grotte.jpg)");
+	$('#element1').css({'height':'50px','width':'80px','position':'absolute','top':'39px','left':'60px'}).addClass("e3");
+	$('#element2').css({'height':'80px','width':'30px','position':'absolute','top':'60px','left':'710px'}).addClass("e3");
+	$('#element3').css({'height':'80px','width':'150px','position':'absolute','top':'230px','left':'170px'}).addClass("e3");
+	$('#element4').css({'height':'40px','width':'200px','position':'absolute','top':'520px','left':'50px'}).addClass("e3");
+	$('#element5').css({'height':'60px','width':'80px','position':'absolute','top':'370px','left':'680px'}).addClass("e3");
+	$('#element6').css({'height':'40px','width':'30px','position':'absolute','top':'390px','left':'90px'}).addClass("e3");
+	$('#element7').css({'height':'80px','width':'250px','position':'absolute','top':'235px','left':'460px'}).addClass("e3");
+	$('#element8').css({'height': '40px', 'width':'200px','position':'absolute','top':'500px','left':'430px'}).addClass("e3");
+	$('#element9').css({'height':'60px','width':'40px','position':'absolute','top':'360px','left':'345px'}).addClass("e3");
+	$('#element10').css({'height':'100px','width':'80px','position':'absolute','top':'470px','left':'670px'}).addClass("e3");
 
 	$("#container_pop").css({"height": "50px", "width": "50px", "top": "45px", "left": "700px","visibility":"visible"});
 	$("#text_pop").css({"margin": "8px", "font-size": "30px"});
