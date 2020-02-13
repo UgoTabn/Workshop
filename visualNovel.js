@@ -27,7 +27,6 @@ function scene_0a(){
 
 }
 
-
 function scene_1a(){
 	let local = 0;
 	document.addEventListener('keydown',key,false)
@@ -124,7 +123,138 @@ function scene_1a(){
 	}
 }
 
-function scene_finBonne(){
+function scene_(){
+	let local = 0;
+	document.addEventListener('keydown',key,false)
+	function key(event){
+		if(event.keyCode == 32 || event.keyCode == 13){
+			local++;
+			switch(local){
+				case 1:
+					scene_1a();
+					break;
+				case 2:
+					scene_1b();
+					break;
+				case 3:
+					scene_1c();
+					break;
+				case 4:
+					scene_1d();
+					break;
+				case 5:
+					scene_1e();
+					break;
+				case 6:
+					break;
+			}
+		}
+		
+	}
+	function scene_1a(){
+		display_perso(1,"mechant","idle");
+		display_perso(4,"billy","idle");
+		parle(1);gris(4);
+		ecrit_text("Oui, ça ! Si tu me le donne gentillement, tout se passera bien pour toi.")
+	}
+	function scene_1b(){
+		gris(1);parle(4);
+		ecrit_text("C’est à moi ! Donner c’est donner, repeindre ses volets !");
+	}
+	function scene_1c(){
+		parle(1);gris(4);
+		ecrit_text("Mais c’est toi que  je vais repeindre oui ! Et puis.. ou tu le donne ou je te tue !")
+	}
+	function scene_1d(){
+		parle(4);gris(1);
+		ecrit_text("Oh ouais non mais si les gens trichent aussi..")
+	}
+	function scene_1e(){
+		parle(1);gris(4);
+		ecrit_text("Ooh Oh, le petit se révolte même pas ? Bon fini de jouer ! GAAAAAAAAAAARDES!")
+	}
+
+}
+
+function scene_FinNulle(){
+	let local = 0;
+	document.addEventListener('keydown',key,false)
+	function key(event){
+		if(event.keyCode == 32 || event.keyCode == 13){
+			local++;
+			switch(local){
+				case 1:
+					scene_1b();
+					break;
+				case 2:
+					scene_1c();
+					break;
+				case 3:
+					scene_1d();
+					break;
+				case 4:
+					scene_1e();
+					break;
+				case 5:
+					scene_1f();
+					break;
+				case 6:
+					scene_1g();
+					break;
+				case 7:
+					scene_1h();
+					break;
+				case 8:
+					scene_1i();
+					break;
+				case 9:
+					break;
+			}
+		}
+		
+	}
+	function scene_1a(){
+		display_perso(1,"mechant","idle");
+		display_perso(4,"billy","idle");
+		parle(4);gris(1);
+		ecrit_text("C'est terminé maintenant ? ");
+	}
+	function scene_1b(){
+		parle(1);gris(4);
+		ecrit_text("C'est pas toi qui décide, c'est que le début.");
+	}
+	function scene_1c(){
+		parle(4);gris(1);
+		ecrit_text("Hein, mais non je pars, c'est crêpe ce soir à la maison.");
+	}
+	function scene_1d(){
+		parle(1);gris(4);
+		ecrit_text("Tu pars pas mon petit, pas ce soir.");
+	}
+	function scene_1e(){
+		gris(1);gris(4);
+		ecrit_text("Le robot retourne sur son épaule.");
+	}
+	function scene_1f(){
+		parle(4);gris(1);
+		ecrit_text("Donc c'était vous depuis le début qui me parlais ?? J'ai pas de voix dans ma tête ? .");
+	}	
+	function scene_1g(){
+		parle(1);gris(4);
+		ecrit_text("Je m'amusais un peu avec toi, en plus il me fallais que me rendre mon bouquin, c'est le cahier de recette de ma grand-mère.");
+	}	
+	function scene_1h(){
+		parle(4);gris(1);
+		ecrit_text("Donc je me baladais dans un monde parallèle au péril de ma vie tout ça pour ça?");
+	}	
+	function scene_1i(){
+		parle(1);gris(4);
+		ecrit_text("Oui, maintenant tu es mon esclave.");
+	}
+
+}
+
+function scene_FinBof(){
 	let local = 0;
 	document.addEventListener('keydown',key,false)
 	function key(event){
@@ -166,40 +296,128 @@ function scene_finBonne(){
 		
 	}
 
-	function scene_1a(){
-		gris(1);parle(4); //le personnage principal parle, le mechant repond
-		ecrit_text("Que m’arrive-t-il ? j’ai mal au crâne, je me sens tout bizarre.");
-	}
-	function scene_1b(){
-		parle(1);gris(4); //le mechant parle 
-		ecrit_text("Tu me surprends je dois l’avouer, tu as passé pas mal d’épreuves avec brio.")
-	}
+
 	function scene_1c(){
+		display_perso(1,"mechant","idle");
+		display_perso(4,"billy","idle");
 		parle(4);gris(1);
-		ecrit_text("Aie je sens qu’il y a comme une porte qui s’est ouverte dans mon esprit, je commence à penser à plein de choses, à… réfléchir.")
+		ecrit_text("C'est terminé maintenant ?")
 	}
 	function scene_1d(){
-		display_perso(1,"void","void");
-		display_perso(4,"void","void");
+		gris(4);parle(1);
+		ecrit_text("Oui enfin, bon rends moi le bouquin maintenant.");
+	}
+	function scene_1e(){
+		parle(4);gris(1);
+		ecrit_text("Attends mais t'as la meme voix que la voix dans ma tête.")
+	}
+
+	function scene_1h(){
+		gris(4);parle(1);
+		ecrit_text("Idiot, il n'y a jamais eu de voix dans ta tete, c'etait mon robot et je t'ais guidé pour récupérer mon bouquin.")
+	}
+	function scene_1e(){
+		gris(1);gris(4);
 		ecrit_text("Le robot retourne sur son épaule.");
 	}
 	function scene_1e(){
+		parle(4);gris(1);
+		ecrit_text("Aah mais mais, je croyais qu'on était pote, mon pote.");
+	}	
+	function scene_1e(){
 		parle(1);gris(4);
-		ecrit_text("Hum intéressant, tu as peut-être beaucoup évolué au cours de ton voyage, mais en tout cas tu m’as beaucoup diverti et j’aimerais bien reprendre mon bouquin.")
+		ecrit_text("Je suis pas ton pote, mon gars, bon maintenant tire toi avant que j'appelle le reste de la sécurité.");
+	}	
+	function scene_1e(){
+		parle(4);gris(1);
+		ecrit_text("Mais pourquoi tout ceci, pour ce simple bouquin ?");
 	}
-	function scene_1f(){
+	function scene_1e(){
+		parle(1);gris(4);
+		ecrit_text("C'est le livre de recette de ma grand-mère, je voulais pas me faire tuer.");
+	}	
+	function scene_1e(){
+		parle(1);gris(4);
+		ecrit_text("Rentres chez toi gamin maintenant.");
+	}
+	
+}
+
+function scene_finbien(){
+	let local = 0;
+	document.addEventListener('keydown',key,false)
+	function key(event){
+		if(event.keyCode == 32 || event.keyCode == 13){
+			local++;
+			switch(local){
+				case 1:
+					scene_1a();
+					break;
+				case 2:
+					scene_1b();
+					break;
+				case 3:
+					scene_1c();
+					break;
+				case 4:
+					scene_1d();
+					break;
+				case 5:
+					scene_1e();
+					break;
+				case 6:
+					scene_1f();
+					break;
+				case 7:
+					scene_1g();
+					break;
+				case 8:
+					scene_1h();
+					break;
+				case 9:
+					break;
+			}
+		}
+		
+	}
+  
+	function scene_1a(){
+		display_perso(1,"mechant","idle");
+		display_perso(4,"billy","idle");
+		gris(1);parle(4); //le personnage principal parle, le mechant repond
+		ecrit_text("Que m’arrive-t-il ? j’ai mal au crâne, je me sens tout bizarre.");
+	}
+	function scene_1b(){ //le mechant parle
+		parle(1);gris(4);
+		ecrit_text("Tu me surprends je dois l’avouer, tu as passé pas mal d’épreuves avec brio.");
+	}
+	function scene_1c(){ //le mechant parle
+		parle(4);gris(1);
+		ecrit_text("Aie je sens qu’il y a comme une porte qui s’est ouverte dans mon esprit, je commence à penser à plein de choses, à… réfléchir.")
+	}
+
+	function scene_1d(){ //le mechant parle
+		gris(1);gris(4);
+		ecrit_text("Le robot retourne sur son épaule.");
+	}
+	function scene_1e(){ //le mechant parle
+		parle(1);gris(4);
+		ecrit_text("Hum intéressant, tu as peut-être beaucoup évolué au cours de ton voyage, mais en tout cas tu m’as beaucoup diverti et j’aimerais bien reprendre mon bouquin.");
+	}
+	function scene_1f(){ //le mechant parle
 		parle(4);gris(1);
 		ecrit_text("Depuis le début c’était vous le robot, ah j’aurais du m’en douter ! Tenez voila le livre, je vous le rends.")
 	}
-	function scene_1g(){
+	function scene_1g(){ //le mechant parle
 		parle(1);gris(4);
 		ecrit_text("Oh tu sais ce n’est que le cahier de recette de ma grand-mère, comme tu m’as beaucoup intrigué et amusé tu peux le garder, et puis de toute façon les plats qu’elle me mijote sont moisis.")
 	}
-	function scene_1f(){
+	function scene_1h(){ //le mechant parle
 		parle(4);gris(1);
 		ecrit_text("Super ! Je me suis beaucoup amusé aussi, j’ai l’impression d’être devenu un nouvel homme, je me sens encore tout drôle ")
 	}
 }
+
 
 //ALEA
 function getRandomIntInclusive(min, max) {
@@ -1023,3 +1241,5 @@ function parle(perso){
 function gris(perso){
 	$('#perso'+perso+'_img').removeClass('parle').css("width","187px").addClass("gray")
 }
+
+scene_finbien();
