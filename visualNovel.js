@@ -155,30 +155,26 @@ function scene_FinNulle(){
 					scene_1i();
 					break;
 				case 9:
-					scene_1j();
-					break;
-				case 10:
-					e2();
 					break;
 			}
 		}
 		
 	}
-	function scene_1c(){
+	function scene_1a(){
 		display_perso(1,"mechant","idle");
 		display_perso(4,"billy","idle");
 		parle(4);gris(1);
 		ecrit_text("C'est terminé maintenant ? ");
 	}
-	function scene_1e(){
+	function scene_1b(){
 		parle(1);gris(4);
 		ecrit_text("C'est pas toi qui décide, c'est que le début.");
 	}
-	function scene_1e(){
+	function scene_1c(){
 		parle(4);gris(1);
 		ecrit_text("Hein, mais non je pars, c'est crêpe ce soir à la maison.");
 	}
-	function scene_1e(){
+	function scene_1d(){
 		parle(1);gris(4);
 		ecrit_text("Tu pars pas mon petit, pas ce soir.");
 	}
@@ -186,19 +182,19 @@ function scene_FinNulle(){
 		gris(1);gris(4);
 		ecrit_text("Le robot retourne sur son épaule.");
 	}
-	function scene_1e(){
+	function scene_1f(){
 		parle(4);gris(1);
 		ecrit_text("Donc c'était vous depuis le début qui me parlais ?? J'ai pas de voix dans ma tête ? .");
 	}	
-	function scene_1e(){
+	function scene_1g(){
 		parle(1);gris(4);
 		ecrit_text("Je m'amusais un peu avec toi, en plus il me fallais que me rendre mon bouquin, c'est le cahier de recette de ma grand-mère.");
 	}	
-	function scene_1e(){
+	function scene_1h(){
 		parle(4);gris(1);
 		ecrit_text("Donc je me baladais dans un monde parallèle au péril de ma vie tout ça pour ça?");
 	}	
-	function scene_1e(){
+	function scene_1i(){
 		parle(1);gris(4);
 		ecrit_text("Oui, maintenant tu es mon esclave.");
 	}
