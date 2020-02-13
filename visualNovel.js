@@ -106,21 +106,21 @@ function scene_1a(){
 		display_perso(1,"billy","idle");
 		display_perso(4,"billy","idle");
 		parle(4);gris(1);
-		ecrit_text("Oah, mais super grand le bâtiment, qui a mit ça la ? , bon allez je rentre ça à l’air cool")
+		ecrit_text("Oah, mais super grand le bâtiment, qui a mit ça là ? , bon allez je rentre ça à l’air cool");
 	}
 	function scene_1h(){
 		gris(4);parle(1);
-		ecrit_text("C’est qui ce guignol qu’on voit dans la caméra ?")
+		ecrit_text("C’est qui ce guignol qu’on voit dans la caméra ?");
 	}
 	function scene_1i(){
 		display_perso(1,"void","void");
 		display_perso(4,"void","void");
-		ecrit_text("Vous pénétrez dans le bâtiment, la pièce dans laquelle vous arrivez et remplie de panneaux de commandes composés de voyants lumineux et de boutons de toutes sortes.")
+		ecrit_text("Vous pénétrez dans le bâtiment, la pièce dans laquelle vous arrivez et remplie de panneaux de commandes composés de voyants lumineux et de boutons de toutes sortes.");
 	}
 	function scene_1j(){
 		display_perso(4,"billy","idle");
 		parle(4);
-		ecrit_text("Woaww c’est quoi cette endroit ?? Les autres me croiront jamais, il faut que je prenne un souvenir , tiens je vais prendre ce truc là sur la table.  *Prend un livre sur une table*   Vous vous approchez d’un des panneaux de commandes, lorsque une envie soudaine de toucher un peu à tout vous prend;")
+		ecrit_text("Woaww c’est quoi cette endroit ?? Les autres me croiront jamais, il faut que je prenne un souvenir , tiens je vais prendre ce truc là sur la table.  *Prend un livre sur une table*  Vous vous approchez d’un des panneaux de commandes, lorsque une soudaine envie de toucher à tout fait son apparition.");
 	}
 }
 
