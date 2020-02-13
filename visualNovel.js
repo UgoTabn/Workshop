@@ -6,19 +6,32 @@ var sec = 30;
 //document.addEventListener('keydown',key,false)
 
 
-function realisateur(index){
-	switch (index){
-		case 1 :
-			scene_1a();
-			break;
-		case 2:
-
-			break;
-		case 3:
-      
-			break;
+function scene_0a(){
+	let local =0;
+	document.addEventListener('keydown',key,false)
+	function key(event){
+		if(event.keyCode == 32 || event.keyCode == 13){
+			local++;
+			switch(local){
+				case 1:
+					$('#button_play').css('visibility','visible')
+					$('#button_play').addClass('e1')
+					break;
+			}
+		}
+		
 	}
+	display_perso(1,"void","void");
+    display_perso(2,"void","void");
+    display_perso(3,"void","void");
+	display_perso(4,"void","void");
+
+	ecrit_text("Vous êtes un jeune héros insouciant assez simplet (on va dire même très simplet). A la recherche d’une aventure particulière vous errez dans un immense canyon depuis un certain moment, plusieurs chemins s’offrent à vous il semble que vous soyez perdu.")
+	$("#button_play").css('visibility','hidden')
+
 }
+
+
 function scene_1a(){
 	let local = 0;
 	document.addEventListener('keydown',key,false)
@@ -28,6 +41,35 @@ function scene_1a(){
 			switch(local){
 				case 1:
 					scene_1b();
+					break;
+				case 2:
+					scene_1c();
+					break;
+				case 3:
+					scene_1d();
+					break;
+				case 4:
+					scene_1e();
+					break;
+				case 5:
+					scene_1f();
+					break;
+				case 6:
+					scene_1g();
+					break;
+				case 7:
+					scene_1h();
+					break;
+				case 8:
+					scene_1i();
+					break;
+				case 9:
+					scene_1j();
+					break;
+				case 10:
+					$('#button_play').css('visibility','visible')
+					$('#button_play').addClass('e2')
+
 			}
 		}
 		
@@ -35,22 +77,55 @@ function scene_1a(){
 	//change background
 	//$("#background").css("background-image","url('assets/background/fondecranMaxime.png')");
 	//senario
-	display_perso(1,"billy","idle");
+	//display_perso(1,"billy","idle");
     /*display_perso(2,"billy","idle");
     display_perso(3,"billy","idle");*/
-	display_perso(4,"billy","idle")
-	parle(1);
-	gris(4);
+	//display_perso(4,"billy","idle")
 
-	//dialogue("")
-	ecrit_text("Oah, mais super grand le bâtiment, qui a mit ça la ? ")
+	ecrit_text("Vous arrivez finalement à sortir de ce labyrinthe. Devant vous apparaît un large complexe de bâtiments entouré d’un vaste grillage lui même installé derrière une série de panneaux. Ce lieu vous fait penser à quelque chose, ça ne serait pas la zone 51 par hasard ?")
 
 	function scene_1b(){
-		gris(1);
-		parle(4);
-		ecrit_text("C’est qui ce guignol qu’on voit dans la caméra ?");
+		ecrit_text("A peine arrivé près du périmètre, un garde vous arrête")
 	}
-
+	function scene_1c(){
+		display_perso(1,"billy","idle");
+		display_perso(4,"billy","idle");
+		parle(1);gris(4);
+		ecrit_text("Halte monsieur ! où allez vous comme ça ?")
+	}
+	function scene_1d(){
+		gris(1);parle(4);
+		ecrit_text("Je cherche la zone 51");
+	}
+	function scene_1e(){
+		parle(4);gris(1);
+		ecrit_text("C’est interdit d’accès ici, allez voir à côté")
+	}
+	function scene_1f(){
+		display_perso(1,"void","void");
+		display_perso(4,"void","void");
+		ecrit_text("Vous repartez en route, et après quelques kilomètres de marche, vous arrivez devant un grand bâtiment délabré, un grillage éventré entourant son enceinte. Vous pouvez voir un écriteau cassé à l’entrée sur lequel est écrit “Bienvenue dans la zone 52, ici territoire d’accueil pour aventuriers en herbe");
+	}
+	function scene_1g(){
+		display_perso(1,"billy","idle");
+		display_perso(4,"billy","idle");
+		parle(4);gris(1);
+		ecrit_text("Oah, mais super grand le bâtiment, qui a mit ça la ? , bon allez je rentre ça à l’air cool")
+	}
+	function scene_1h(){
+		gris(4);parle(1);
+		ecrit_text("C’est qui ce guignol qu’on voit dans la caméra ?")
+	}
+	function scene_1i(){
+		display_perso(1,"void","void");
+		display_perso(4,"void","void");
+		ecrit_text("Vous pénétrez dans le bâtiment, la pièce dans laquelle vous arrivez et remplie de panneaux de commandes composés de voyants lumineux et de boutons de toutes sortes.")
+	}
+	function scene_1j(){
+		display_perso(4,"billy","idle");
+		parle(4);
+		ecrit_text("Woaww c’est quoi cette endroit??Les autres me croiront jamais, il faut que je prenne un souvenir , tiens je vais prendre ce truc là sur la table.\n*Prend un livre sur une table*\nVous vous approchez d’un des panneaux de commandes, lorsque une envie soudaine de toucher un peu à tout vous prend;")
+	}
 }
 
 
@@ -62,8 +137,10 @@ function getRandomIntInclusive(min, max) {
 	return Math.floor(Math.random() * (max - min +1)) + min;
 }
 
-
-function e1(){
+$('main').on('click','#button_play.e1',function(){
+	$('#element1_img').addClass('flecheDroite');
+	$('#element2_img').addClass('flecheGauche');
+	$('#button_play').removeClass('e1');
 
 	let l_score = 0;
 	$('#pop').css("background-color","red")
@@ -71,7 +148,7 @@ function e1(){
 	$("#container_pop").css("visibility","visible")
 	$('#element1_img').css({'position': 'absolute','top': '200px','left': '720px','height': '60px','width': '60px;','visibility': 'visible','display': 'block'}).attr("src","assets/symbole/flecheD.png");
 	$('#element2_img').css({'position': 'absolute','top': '200px','height': '60px','width': '60px;','visibility': 'visible','display': 'block'}).attr("src","assets/symbole/flecheG.png");
-	$("#element2").on('click',function(){
+	$("body").on('click','#element2_img.flecheGauche',function(){
 		switch(l_score){
 			case 0 :
 				ecrit_text_popup("a gauche ? pourquoi pas...\n maintenant je vais à droite?");
@@ -117,16 +194,19 @@ function e1(){
 				//$('.e1').css('visibility','hidden')
 				$("#element1").css('display','none');
 				$("#element2").css('display','none');
+				$('#element1_img').removeClass('flecheDroite');
+				$('#element2_img').removeClass('flecheGauche');
 				ecrit_text_popup("Un grand batiment... ça doit être ça !");
 				setTimeout(end,2000);
 					function end(){
 					$('#pop').css("display","none");
 					clear_minigame();
+					scene_1a();
 				}
 				break;
 		}
 	})
-	$("#element1").on('click',function(){
+	$("body").on('click','#element1_img.flecheDroite',function(){
 		switch(l_score){
 			case 0 :
 				ecrit_text_popup("ce n'était pas a droite dommage");
@@ -172,19 +252,21 @@ function e1(){
 				//$('.e1').css('visibility','hidden')
 				$("#element1").css('display','none');
 				$("#element2").css('display','none');
+				$('#element1_img').removeClass('flecheDroite');
+				$('#element2_img').removeClass('flecheGauche');
 				ecrit_text_popup("Tiens ? Un batiment");
 				setTimeout(end,2000);
 					function end(){
 					$('#pop').css("display","none");
 					clear_minigame();
+					scene_1a();
 				}
 				break;
 		}
 	})
 
-}
-function e2(){
-	console.log('Test valide')
+})
+$('main').on('click','#button_play.e2',function(){
 	let vie = 2;
 	let game_end = 0;
 	$('.popup').css("background-color", "mediumorchid");
@@ -216,7 +298,7 @@ function e2(){
 			clear_minigame();
 		}
 	})
-}
+})
 function e3(){
 	var nb = 10;
 	$('.popup').css("background-color", "mediumorchid");
@@ -711,7 +793,7 @@ function ecrit_text_popup(chaine){
 
 $("#button_play").click(function(){
 	$("#pop").css("display", "block");
-	$("#button_play").css("display","none");
+	$("#button_play").css("visibility","collapse");
 })
 
 
@@ -722,4 +804,4 @@ function gris(perso){
 	$('#perso'+perso+'_img').removeClass('parle').css("width","187px").addClass("gray")
 }
 
-realisateur(1)
+scene_0a()
