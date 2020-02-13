@@ -1,7 +1,7 @@
 //Var globales
 let ywx = 0;
 var sec = 30;
-scene_0a();
+e6(1);
 function scene_0a(){
 	let local =0;
 	document.addEventListener('keydown',key,false)
@@ -1103,157 +1103,65 @@ $('main').on('click','#button_play.e5',function(){
 		}
 	},2000)
 })
-$('body').on('click', '#button_play.e6v', function() {
-    // do something
-	$('.popup').css("background-color", "blue");
-	//ammo
-	$("#element1").css({"background-color": "white", "width": "20px", "height": "70px", "position": "absolute", "left": "600px", "top": "0px", "transition": "0.2s"});
-	//obstacles
-	$("#element2").css({"background-color": "black", "width": "220px", "height": "20px", "left": "580px", "top": "220px", "position": "absolute"});
-	$("#element3").css({"background-color": "black", "width": "350px", "height": "20px", "left": "0px", "top": "300px", "position": "absolute"});
-	$("#element4").css({"background-color": "black", "width": "80px", "height": "20px", "left": "500px", "top": "360px", "position": "absolute"});
-	$("#element5").css({"background-color": "black", "width": "20px", "height": "160px", "left": "580px", "top": "220px", "position": "absolute"});
-	$("#element6").css({"background-color": "black", "width": "20px", "height": "300px", "left": "260px", "top": "300px", "position": "absolute"});
-	//bazooka
-	$("#element10").css({"background-color": "green", "width": "40px", "height": "60px", "position": "absolute", "left": "600px", "top": "540px"});
-
-
-	var x = {value: 600};
-	var y = {value: 0};
-	var timer = window.setInterval(function(){
-		y.value += 1;
-		$("#element1").css("top", y.value + "px");
-		//element2 coll
-		if ((y.value >= 220 - 70)&&(y.value <= 220 - 50)){
-			if (x.value >= 580){
-				$("#element10").html("perdu");
-				window.clearInterval(timer);
-				stoptime = setTimeout(function(){
-					$('#pop').css("display","none");
-					clear_minigame();
-				},500);
-			}
-		}
-		//element3 coll
-		if ((y.value >= 300 - 70)&&(y.value <= 300 + 20)){
-			if (x.value <= 350){
-				$("#element10").html("perdu");
-				window.clearInterval(timer);
-				stoptime = setTimeout(function(){
-					$('#pop').css("display","none");
-					clear_minigame();
-				},500)
-			}
-		}
-		//element4 coll
-		if ((y.value >= 360 - 70)&&(y.value <= 360 + 20)){
-			if ((x.value >= 500)&&(x.value <= 580)){
-				$("#element10").html("perdu");
-				window.clearInterval(timer);
-				stoptime = setTimeout(function(){
-					$('#pop').css("display","none");
-					clear_minigame();
-				},500)
-			}
-		}
-		//sol
-		if (y.value >= 540){
-			$("#element10").html("perdu");
-			window.clearInterval(timer);
-			stoptime = setTimeout(function(){
-				$('#pop').css("display","none");
-				clear_minigame();
-			},500)
-		}
-		//objectif
-		if ((y.value >= 540 - 70)&&(y.value <= 540 + 20)){
-			if ((x.value >= 600)&&(x.value <= 620)){
-				$("#element10").html("gagné");
-				if(x.value >= 600){
-					x.value = 600;
-				}
-				window.clearInterval(timer);
-				stoptime = setTimeout(function(){
-					$('#pop').css("display","none");
-					clear_minigame();
-				},500)
-			}
-		}
-	},10)
-
-	document.addEventListener("keydown",keyDownHandler, false)
-
-	function keyDownHandler(event) {
-		if (event.keyCode == 39){
-			x.value += 20 * 1;
-			$("#element1").css("left", x.value + "px");
-			//bord exterieur
-			if (x.value>=760){
-				x.value = 760;
-			}
-			//element5 coll
-			if ((y.value >= 200 - 70)&&(y.value <= 220 + 160)){
-				if (x.value >= 580 - 40){
-					x.value = 580 - 40;
-				}
-			}
-			//element4 coll
-			if ((y.value >= 340 - 70)&&(y.value <= 360 + 20)){
-				if (x.value >= 500 - 40){
-					x.value = 500 - 40;
-				}
-			}
-			//element
- 
-		}
-		if (event.keyCode == 37){
-			x.value += 20 * -1;
-			$("#element1").css("left", x.value + "px");
-			//bord exterieur
-			if (x.value <= 20){
-				x.value = 20;
-			}
-			//element3 coll perfectible
-			if ((y.value >= 300 - 70)&&(y.value <= 300 + 20)){
-				if (x.value <= 350 + 40){
-					x.value = 350 + 40;
-				}
-			}
-			//element6 coll
-			if (y.value >= 300 - 70){
-				if (x.value <= 260 + 40){
-					x.value = 260 + 40;
-				}
-			}
-		}
-	}
-})
+$('main').on('click', '#button_play.e6v',function(){
+ 	e6(1);
+ });
 $('main').on('click','#button_play.e6d',function(){
-	var t1 = {value: 1};
-	var t2 = {value: 0};
-	var t3 = {value: 1};
-	var t4 = {value: 0};
-	var t5 = {value: 0};
-	var coup = {value: 15};
-	var lock = {value: 0};
+ 	e6(1);
+ });
 
-	var vis = {"background-color" : "white", "display" : "block", "width" : "20px", "height" : "150px", "position" : "absolute", "transition": "1s"};
-	$('.popup').css("background-color", "blue");
-	$("#text_pop").css({"margin": "8px", "font-size": "30px", "display": "block"});
-	$("#text_pop").html("15");
-	$("#container_pop").css({"height": "50px", "width": "50px", "top": "45px", "left": "700px", "display": "block"});
-	$("#element1").css(vis).addClass("e6d");
-	$("#element1").css({"left": " 190px", "top": "180px"});
-	$("#element2").css(vis).addClass("e6d");
-	$("#element2").css({"left": " 290px", "top": "280px"});
-	$("#element3").css(vis).addClass("e6d");
-	$("#element3").css({"left": " 390px", "top": "180px"});
-	$("#element4").css(vis).addClass("e6d");
-	$("#element4").css({"left": " 490px", "top": "280px"});
-	$("#element5").css(vis).addClass("e6d");
-	$("#element5").css({"left": " 590px", "top": "280px"});
-	$("#element6").css({"background-color": "red", "display": "block", "width": "500px", "height": "150px", "position": "absolute", "left": "150px", "top": "300px"});
+function e6(param){
+	if (param == 1){
+		var t1 = {value: 1};
+		var t2 = {value: 0};
+		var t3 = {value: 1};
+		var t4 = {value: 0};
+		var t5 = {value: 0};
+		var coup = {value: 15};
+		var lock = {value: 0};
 
+		var vis = {"background-color" : "white", "display" : "block", "width" : "200px", "height" : "150px", "position" : "absolute", "transition": "1s", "background-image": "url(assets/symbole/clou.png)"};
+		$('.popup').css("background-color", "blue");
+		$("#text_pop").css({"margin": "8px", "font-size": "30px", "display": "block"});
+		$("#text_pop").html("15");
+		$("#container_pop").css({"height": "50px", "width": "50px", "top": "45px", "left": "700px", "display": "block"});
+		$("#element1").css(vis).addClass("e6d");
+		$("#element1").css({"left": " 190px", "top": "180px"});
+		$("#element2").css(vis).addClass("e6d");
+		$("#element2").css({"left": " 290px", "top": "280px"});
+		$("#element3").css(vis).addClass("e6d");
+		$("#element3").css({"left": " 390px", "top": "180px"});
+		$("#element4").css(vis).addClass("e6d");
+		$("#element4").css({"left": " 490px", "top": "280px"});
+		$("#element5").css(vis).addClass("e6d");
+		$("#element5").css({"left": " 590px", "top": "280px"});
+		$("#element6").css({"display": "block", "width": "500px", "height": "250px", "position": "absolute", "left": "150px", "top": "300px", "background-image": "url(assets/symbole/crate.jpg)", "background-size": "250px"});
+	}else{
+		var t1 = {value: 0};
+		var t2 = {value: 1};
+		var t3 = {value: 0};
+		var t4 = {value: 1};
+		var t5 = {value: 1};
+		var coup = {value: 15};
+		var lock = {value: 0};
+
+		var vis = {"background-color" : "white", "display" : "block", "width" : "20px", "height" : "150px", "position" : "absolute", "transition": "1s"};
+		$('.popup').css("background-color", "blue");
+		$("#text_pop").css({"margin": "8px", "font-size": "30px", "display": "block"});
+		$("#text_pop").html("15");
+		$("#container_pop").css({"height": "50px", "width": "50px", "top": "45px", "left": "700px", "display": "block"});
+		$("#element1").css(vis).addClass("e6d");
+		$("#element1").css({"left": " 190px", "top": "280px"});
+		$("#element2").css(vis).addClass("e6d");
+		$("#element2").css({"left": " 290px", "top": "180px"});
+		$("#element3").css(vis).addClass("e6d");
+		$("#element3").css({"left": " 390px", "top": "280px"});
+		$("#element4").css(vis).addClass("e6d");
+		$("#element4").css({"left": " 490px", "top": "180px"});
+		$("#element5").css(vis).addClass("e6d");
+		$("#element5").css({"left": " 590px", "top": "180px"});
+		$("#element6").css({"display": "block", "width": "500px", "height": "250px", "position": "absolute", "left": "150px", "top": "300px", "background-image": "url(assets/symbole/crate.jpg)", "background-size": "250px"});
+	}
 	$('body').on('click', '#element1.e6d', function() {
 		if (lock.value == 0){
 			nbr_update(t1,"#element1");
@@ -1311,7 +1219,7 @@ $('main').on('click','#button_play.e6d',function(){
 	function test(t1,t2,t3,t4,t5,coup){
 		coup.value -= 1;
 		$("#text_pop").html(coup.value);
-		if ((t1.value == t2.value) && (t2.value == t3.value) && (t3.value == t4.value) && (t4.value == t5.value) || (coup.value == 0)){
+		if ((t1.value == t2.value) && (t2.value == t3.value) && (t3.value == t4.value) && (t4.value == t5.value)){
 			lock.value = 1;
 			end = setInterval(function(){
 					$('#pop').css("display","none");
@@ -1319,7 +1227,7 @@ $('main').on('click','#button_play.e6d',function(){
 			},2000)
 		}
 	}
-})
+}
 $('main').on('click','#button_play.e7',function(){
 	let hit = 3;
 	let boss_hp = 5;
@@ -1429,5 +1337,3 @@ function parle(perso){
 function gris(perso){
 	$('#perso'+perso+'_img').removeClass('parle').css("width","187px").addClass("gray")
 }
-
-scene_finbien();
