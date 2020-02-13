@@ -29,7 +29,6 @@ function scene_1a(){
 	$("#text_hold").html("lol c'est drôle, regarde moi ça c'est trop cool !!!");
 	changeText($("#text_hold"),$("#text"),20);
 }
-
 //ALEA
 function getRandomIntInclusive(min, max) {
   	min = Math.ceil(min);
