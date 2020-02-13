@@ -1,221 +1,224 @@
 //Var globales
 let ywx = 0;
 var sec = 30;
-
+var textOn = {value: 0};
 //cette variable sera altérée par les minijeux anoçant la victoire ou la défaite du joueur
 var result = {value: 0};
+var nbr = {value: 0};
+var letter = {value: "intro"};
+display_perso(1,"void","void");
+display_perso(2,"void","void");
+display_perso(3,"void","void");
+display_perso(4,"void","void");
 
 document.addEventListener("keydown",realisateur, false)
 
 function realisateur(event){
-	var nbr = 0;
-	var letter = "intro";
-	if ((event.keyCode == 32)||(event.keyCode == 13)) {
-		switch (letter){
-			case ("intro"):
-				if (nbr < 2){
-					nbr++;
-				}
-				switch (nbr){
-					case 1:
-						intro1();
-						break;
-					case 2:
-						intro2();//mise en place pour le bouton jouer
-						$('#button_play').css("display", "block");
-						$('#button_play').addClass("e1");
-						if (result.value == 1){
-							letter = "a";
-							nbr = 0;
-						}else{
-							letter = "b";
-							nbr = 0;
-						}
-						break;
-				}
-				break;
-			case ("a"):
-				if (nbr < 2){
-					nbr++;
-				}
-				switch (nbr){
-					case 1:
-						break;
-				}
-				break;
-			case ("b"):
-				if (nbr < 2){
-					nbr++;
-				}
-				switch (nbr){
-					case 1:
-						break;
-				}
-				break;
-			case ("c"):
-				if (nbr < 2){
-					nbr++;
-				}
-				switch (nbr){
-					case 1:
-						break;
-				}
-				break;
-			case ("d"):
-				if (nbr < 2){
-					nbr++;
-				}
-				switch (nbr){
-					case 1:
-						break;
-				}
-				break;
-			case ("e"):
-				if (nbr < 2){
-					nbr++;
-				}
-				switch (nbr){
-					case 1:
-						break;
-				}
-				break;
-			case ("f"):
-				if (nbr < 2){
-					nbr++;
-				}
-				switch (nbr){
-					case 1:
-						break;
-				}
-				break;
-			case ("g"):
-				if (nbr < 2){
-					nbr++;
-				}
-				switch (nbr){
-					case 1:
-						break;
-				}
-				break;
-			case ("h"):
-				if (nbr < 2){
-					nbr++;
-				}
-				switch (nbr){
-					case 1:
-						break;
-				}
-				break;
-			case ("i"):
-				if (nbr < 2){
-					nbr++;
-				}
-				switch (nbr){
-					case 1:
-						break;
-				}
-				break;
-			case ("j"):
-				if (nbr < 2){
-					nbr++;
-				}
-				switch (nbr){
-					case 1:
-						break;
-				}
-				break;
-			case ("k"):
-				if (nbr < 2){
-					nbr++;
-				}
-				switch (nbr){
-					case 1:
-						break;
-				}
-				break;
-			case ("l"):
-				if (nbr < 2){
-					nbr++;
-				}
-				switch (nbr){
-					case 1:
-						break;
-				}
-				break;
-			case ("m"):
-				if (nbr < 2){
-					nbr++;
-				}
-				switch (nbr){
-					case 1:
-						break;
-				}
-				break;
-			case ("n"):
-				if (nbr < 2){
-					nbr++;
-				}
-				switch (nbr){
-					case 1:
-						break;
-				}
-				break;
-			case ("o"):
-				if (nbr < 2){
-					nbr++;
-				}
-				switch (nbr){
-					case 1:
-						break;
-				}
-				break;
-			case ("p"):
-				if (nbr < 2){
-					nbr++;
-				}
-				switch (nbr){
-					case 1:
-						break;
-				}
-				break;
-			case ("q"):
-				if (nbr < 2){
-					nbr++;
-				}
-				switch (nbr){
-					case 1:
-						break;
-				}
-				break;
-			case ("r"):
-				if (nbr < 2){
-					nbr++;
-				}
-				switch (nbr){
-					case 1:
-						break;
-				}
-				break;
-			
-			
-
-
-
+	
+	if (textOn.value == 0) {
+		if ((event.keyCode == 32)||(event.keyCode == 13)) {
+			switch (letter.value){
+				case ("intro"):
+					if (nbr.value < 2){
+						nbr.value++;
+					}
+					switch (nbr.value){
+						case 1:
+							intro1();
+							break;
+						case 2:
+							intro2();//mise en place pour le bouton jouer
+							if (result.value == 1){
+								letter.value = "a";
+								nbr.value = 0;
+								$('#button_play').css("display", "none");
+								$('#button_play').removeClass("e1");
+							}else if (result.value == 2) {
+								letter.value = "b";
+								nbr.value = 0;
+								$('#button_play').css("display", "none");
+								$('#button_play').removeClass("e1");
+							}
+							break;
+					}
+					break;
+				case ("a"):
+					if (nbr.value < 2){
+						nbr.value++;
+					}
+					switch (nbr.value){
+						case 1:
+							break;
+					}
+					break;
+				case ("b"):
+					if (nbr.value < 2){
+						nbr.value++;
+					}
+					switch (nbr.value){
+						case 1:
+							break;
+					}
+					break;
+				case ("c"):
+					if (nbr.value < 2){
+						nbr.value++;
+					}
+					switch (nbr.value){
+						case 1:
+							break;
+					}
+					break;
+				case ("d"):
+					if (nbr.value < 2){
+						nbr.value++;
+					}
+					switch (nbr.value){
+						case 1:
+							break;
+					}
+					break;
+				case ("e"):
+					if (nbr.value < 2){
+						nbr.value++;
+					}
+					switch (nbr.value){
+						case 1:
+							break;
+					}
+					break;
+				case ("f"):
+					if (nbr.value < 2){
+						nbr.value++;
+					}
+					switch (nbr.value){
+						case 1:
+							break;
+					}
+					break;
+				case ("g"):
+					if (nbr.value < 2){
+						nbr.value++;
+					}
+					switch (nbr.value){
+						case 1:
+							break;
+					}
+					break;
+				case ("h"):
+					if (nbr.value < 2){
+						nbr.value++;
+					}
+					switch (nbr.value){
+						case 1:
+							break;
+					}
+					break;
+				case ("i"):
+					if (nbr.value < 2){
+						nbr.value++;
+					}
+					switch (nbr.value){
+						case 1:
+							break;
+					}
+					break;
+				case ("j"):
+					if (nbr.value < 2){
+						nbr.value++;
+					}
+					switch (nbr.value){
+						case 1:
+							break;
+					}
+					break;
+				case ("k"):
+					if (nbr.value < 2){
+						nbr.value++;
+					}
+					switch (nbr.value){
+						case 1:
+							break;
+					}
+					break;
+				case ("l"):
+					if (nbr.value < 2){
+						nbr.value++;
+					}
+					switch (nbr.value){
+						case 1:
+							break;
+					}
+					break;
+				case ("m"):
+					if (nbr.value < 2){
+						nbr.value++;
+					}
+					switch (nbr.value){
+						case 1:
+							break;
+					}
+					break;
+				case ("n"):
+					if (nbr.value < 2){
+						nbr.value++;
+					}
+					switch (nbr.value){
+						case 1:
+							break;
+					}
+					break;
+				case ("o"):
+					if (nbr.value < 2){
+						nbr.value++;
+					}
+					switch (nbr.value){
+						case 1:
+							break;
+					}
+					break;
+				case ("p"):
+					if (nbr.value < 2){
+						nbr.value++;
+					}
+					switch (nbr.value){
+						case 1:
+							break;
+					}
+					break;
+				case ("q"):
+					if (nbr.value < 2){
+						nbr.value++;
+					}
+					switch (nbr.value){
+						case 1:
+							break;
+					}
+					break;
+				case ("r"):
+					if (nbr.value < 2){
+						nbr.value++;
+					}
+					switch (nbr.value){
+						case 1:
+							break;
+					}
+					break;
+			}
 		}
-
-
-
-		intro1();
-		intro2();//mise en place pour le bouton jouer
-		$('#button_play').css("display", "block");
-		$('#button_play').addClass("e1");
-		if result
-
-
-
-
 	}
 }
+
+//texte (accrochez vous)
+function intro1(){
+	ecrit_text("Vous êtes un jeune héros insouciant assez simplet (on va dire même très simplet). A la recherche d’une aventure particulière, vous errez dans un immense canyon depuis un certain moment, plusieurs chemins s’offrent à vous il semblerait que vous soyez perdu.");
+}
+function intro2(){
+	ecrit_text("");
+	$('#button_play').css("display", "block");
+	$('#button_play').addClass("e1");
+}
+
 
 //ALEA
 function getRandomIntInclusive(min, max) {
@@ -988,17 +991,21 @@ function display_perso(pos,nom,state){
 }
 
 function changeText(cont1,cont2,speed){
+	textOn.value = 1;
 	var Otext=cont1.text();
 	var Ocontent=Otext.split("");
 	var i=0;
 	function show(){
-		if(i<Ocontent.length)
-		{		
+		if(i<Ocontent.length) {		
 			cont2.append(Ocontent[i]);
 			i=i+1;
 		};
 	};
-		var Otimer=setInterval(show,speed);	
+	var Otimer=setInterval(show,speed);
+	var Atimer=setTimeout(function(){
+		textOn.value = 0;
+		clearInterval(Otimer);
+	},Ocontent.length*speed);
 };
 
 function clear_minigame(){
@@ -1017,14 +1024,14 @@ function ecrit_text(chaine){
 	$("#text").html("");
 	$("#text_hold").html("");
 	$("#text_hold").html(chaine);
-	changeText($("#text_hold"),$("#text"),20);
+	changeText($("#text_hold"),$("#text"),5);
 }
 
 function ecrit_text_popup(chaine){
 	$("#text_pop").html("");
 	$("#text_pop_hold").html("");
 	$("#text_pop_hold").html(chaine);
-	changeText($("#text_pop_hold"),$("#text_pop"),20);
+	changeText($("#text_pop_hold"),$("#text_pop"),5);
 }
 
 $("#button_play").click(function(){
@@ -1039,5 +1046,3 @@ function parle(perso){
 function gris(perso){
 	$('#perso'+perso+'_img').removeClass('parle').css("width","187px").addClass("gray")
 }
-
-scene_finbien();

@@ -75,7 +75,7 @@
 
 #button_play {
 	margin:50px;
-	display: block;
+	display: none;
 	position: absolute;
 	height: 60px;
 	background-color: red;
