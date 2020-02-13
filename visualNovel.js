@@ -22,7 +22,7 @@ function scene_0a(){
     display_perso(3,"void","void");
 	display_perso(4,"void","void");
 
-	ecrit_text("Vous êtes un jeune héros insouciant assez simplet (on va dire même très simplet). A la recherche d’une aventure particulière, vous errez dans un immense canyon depuis un certain moment, plusieurs chemins s’offrent à vous il semblerait que vous soyez perdu.")
+	ecrit_text("Vous êtes un jeune héros insouciant assez simplet (on va dire même très simplet). A la recherche d’une aventure particulière, vous errez dans un immense canyon depuis un certain moment, plusieurs chemins s’offrent à vous il semblerait que vous soyez perdu.");
 	$("#button_play").css('visibility','hidden')
 
 }
@@ -105,21 +105,21 @@ function scene_1a(){
 		display_perso(1,"billy","idle");
 		display_perso(4,"billy","idle");
 		parle(4);gris(1);
-		ecrit_text("Oah, mais super grand le bâtiment, qui a mit ça la ? , bon allez je rentre ça à l’air cool")
+		ecrit_text("Oah, mais super grand le bâtiment, qui a mit ça là ? , bon allez je rentre ça à l’air cool");
 	}
 	function scene_1h(){
 		gris(4);parle(1);
-		ecrit_text("C’est qui ce guignol qu’on voit dans la caméra ?")
+		ecrit_text("C’est qui ce guignol qu’on voit dans la caméra ?");
 	}
 	function scene_1i(){
 		display_perso(1,"void","void");
 		display_perso(4,"void","void");
-		ecrit_text("Vous pénétrez dans le bâtiment, la pièce dans laquelle vous arrivez et remplie de panneaux de commandes composés de voyants lumineux et de boutons de toutes sortes.")
+		ecrit_text("Vous pénétrez dans le bâtiment, la pièce dans laquelle vous arrivez et remplie de panneaux de commandes composés de voyants lumineux et de boutons de toutes sortes.");
 	}
 	function scene_1j(){
 		display_perso(4,"billy","idle");
 		parle(4);
-		ecrit_text("Woaww c’est quoi cette endroit ?? Les autres me croiront jamais, il faut que je prenne un souvenir , tiens je vais prendre ce truc là sur la table.\n*Prend un livre sur une table*\nVous vous approchez d’un des panneaux de commandes, lorsque une envie soudaine de toucher un peu à tout vous prend;")
+		ecrit_text("Woaww c’est quoi cette endroit ?? Les autres me croiront jamais, il faut que je prenne un souvenir , tiens je vais prendre ce truc là sur la table.  *Prend un livre sur une table*  Vous vous approchez d’un des panneaux de commandes, lorsque une soudaine envie de toucher à tout fait son apparition.");
 	}
 }
 
@@ -296,6 +296,7 @@ function scene_FinBof(){
 		
 	}
 
+
 	function scene_1c(){
 		display_perso(1,"mechant","idle");
 		display_perso(4,"billy","idle");
@@ -379,7 +380,7 @@ function scene_finbien(){
 		}
 		
 	}
-
+  
 	function scene_1a(){
 		display_perso(1,"mechant","idle");
 		display_perso(4,"billy","idle");
@@ -392,7 +393,7 @@ function scene_finbien(){
 	}
 	function scene_1c(){ //le mechant parle
 		parle(4);gris(1);
-		ecrit_text("Aie je sens qu’il y’a comme une porte qui s’est ouverte dans mon esprit, je commence à penser à plein de choses, à… réfléchir.");
+		ecrit_text("Aie je sens qu’il y a comme une porte qui s’est ouverte dans mon esprit, je commence à penser à plein de choses, à… réfléchir.")
 	}
 
 	function scene_1d(){ //le mechant parle
@@ -405,15 +406,15 @@ function scene_finbien(){
 	}
 	function scene_1f(){ //le mechant parle
 		parle(4);gris(1);
-		ecrit_text("Depuis le début c’était vous le robot, ah j’aurais du m’en douter ! Tenez voila le livre je vous le rends.");
+		ecrit_text("Depuis le début c’était vous le robot, ah j’aurais du m’en douter ! Tenez voila le livre, je vous le rends.")
 	}
 	function scene_1g(){ //le mechant parle
 		parle(1);gris(4);
-		ecrit_text("Oh tu sais ce n’est que le cahier de recette de ma grand-mère, comme tu m’as beaucoup intrigué et beaucoup amusé tu peux le garder, et puis de toute façon les plats qu’elle me mijote sont moisis.");
+		ecrit_text("Oh tu sais ce n’est que le cahier de recette de ma grand-mère, comme tu m’as beaucoup intrigué et amusé tu peux le garder, et puis de toute façon les plats qu’elle me mijote sont moisis.")
 	}
 	function scene_1h(){ //le mechant parle
 		parle(4);gris(1);
-		ecrit_text("Super ! je me suis beaucoup amusé aussi, j’ai l’impression d’être devenu un nouvel homme je me sens encore tout drôle .");
+		ecrit_text("Super ! Je me suis beaucoup amusé aussi, j’ai l’impression d’être devenu un nouvel homme, je me sens encore tout drôle ")
 	}
 }
 
