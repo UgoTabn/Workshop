@@ -96,16 +96,12 @@ $("#button_play.e1").click(function(){
 				//$('.e1').css('visibility','hidden')
 				$("#element1").css('display','none');
 				$("#element2").css('display','none');
-				end = setInterval(function(){
-					ecrit_text_popup("Un grand batiment... ça doit être ça !");
-					if (ywx == 1){
-						$('#pop').css("display","none");
-						clearInterval(end);
-					}else{
-						ywx++;
-					}
-				},1400)
-				end;
+				ecrit_text_popup("Un grand batiment... ça doit être ça !");
+				setTimeout(end,2000);
+					function end(){
+					$('#pop').css("display","none");
+					clear_minigame();
+				}
 				break;
 		}
 	})
@@ -155,17 +151,12 @@ $("#button_play.e1").click(function(){
 				//$('.e1').css('visibility','hidden')
 				$("#element1").css('display','none');
 				$("#element2").css('display','none');
-				
-				end = setInterval(function(){
-					ecrit_text_popup("Tiens ? Un batiment");
-					if (ywx == 1){
-						$('#pop').css("display","none");
-						clearInterval(end);
-					}else{
-						ywx++;
-					}
-				},1500)
-				clear_minigame();
+				ecrit_text_popup("Tiens ? Un batiment");
+				setTimeout(end,2000);
+					function end(){
+					$('#pop').css("display","none");
+					clear_minigame();
+				}
 				break;
 		}
 	})
