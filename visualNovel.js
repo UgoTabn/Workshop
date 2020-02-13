@@ -1213,7 +1213,123 @@ function scene_e3_e4v() {
         }
 }
 
+function scene_e6_e7() { // E6/E7 V
+    let local = 0;
+    document.addEventListener('keydown', key, false)
 
+    function key(event) {
+        if (event.keyCode == 32 || event.keyCode == 13) {
+            local++;
+            switch (local) {
+                case 1:
+                    scene_1b();
+                    break;
+                case 2:
+                    scene_1c();
+                    break;
+                case 3:
+                    scene_1d();
+                    break;
+                case 4:
+                    scene_1e();
+                    break;
+                case 5:
+                    scene_1f();
+                    break;
+                case 6:
+                    scene_1g();
+                    break;
+                case 7:
+                    scene_1h();
+                    break;
+                case 8:
+                    break;
+            }
+        }
+
+    }
+    //change background
+    //$("#background").css("background-image","url('assets/background/fondecranMaxime.png')");
+    //senario
+    //display_perso(1,"billy","idle");
+    /*display_perso(2,"billy","idle");
+    display_perso(3,"billy","idle");*/
+    //display_perso(4,"billy","idle")
+
+    ecrit_text("Vous arrivez dans la ville")
+
+    function scene_1b() {
+        display_perso(1, "réparateur", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(1);
+        gris(4);
+        gris(3);
+        ecrit_text("Bravo, vous avez parfaitement bien travaillé.Voilà pour vous votre bazooka comme neuf.")
+    }
+
+    function scene_1c() {
+        display_perso(1, "réparateur", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(4);
+        gris(3);
+        gris(1);
+        ecrit_text("Super on va pouvoir repartir chez nous!!")
+    }
+
+    function scene_1d() {
+        display_perso(1, "réparateur", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(3);
+        gris(4);
+        gris(1);
+        ecrit_text("Oui enfin si ca marche.Merci de nous aider . Allez gogol active le portail.");
+    }
+
+    function scene_1e() {
+        display_perso(1, "réparateur", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(1);
+        gris(3);
+        gris(4);
+        ecrit_text("Avec plaisir,faite attention a vous")
+    }
+
+    function scene_1f() {
+        display_perso(1, "réparateur", "idle");
+        display_perso(2, "réparateur", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(2);
+        gris(4);
+        gris(1);
+        gris(3);
+        ecrit_text("Merci encore à vous de m’avoir sauvé");
+    }
+
+    function scene_1g() {
+        display_perso(1, "réparateur", "idle");
+        display_perso(2, "réparateur", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(4);
+        gris(2);
+        gris(3);
+        gris(1);
+        ecrit_text("A bientot les copains");
+    }
+
+    function scene_1h() {
+        display_perso(1, "void", "void");
+        display_perso(2, "void", "void");
+        display_perso(3, "void", "void");
+        display_perso(4, "void", "void");
+		ecrit_text("gogol tire et disparaît avec le robot dans un éclair")
+	}
+}
 
 function scene_FinNulle(){
 	let local = 0;
