@@ -545,6 +545,79 @@ function scene_monde2() {
 
 }
 
+function scene_E7(){
+	let local = 0;
+	document.addEventListener('keydown',key,false)
+	function key(event){
+		if(event.keyCode == 32 || event.keyCode == 13){
+			local++;
+			switch(local){
+				case 1:
+					scene_1a();
+					break;
+				case 2:
+					scene_1b();
+					break;
+				case 3:
+					scene_1c();
+					break;
+				case 4:
+					scene_1d();
+					break;
+				case 5:
+					scene_1e();
+					break;
+				case 6:
+					scene_1f();
+					break;
+				case 7:
+					scene_1g();
+					break;
+				case 8:
+					scene_1h();
+					break;
+				case 9:
+					break;
+			}
+		}
+		
+	}
+	function scene_1a(){
+		display_perso(1,"mechant","idle");
+		display_perso(4,"billy","idle");
+		parle(4);gris(1);
+		ecrit_text("Hein ? Mais.. brrr.. Où suis-je ?")
+	}
+	function scene_1b(){
+		gris(4);parle(1);
+		ecrit_text(" Et bien et bien.. Qu’avons-nous là ?Notre cher cobaye est revenu à la maison ");
+	}
+	function scene_1c(){
+		parle(4);gris(1);
+		ecrit_text("Un cobaye ?  où ? Je vois pas de rat ?! hein ?! T’es qui ? ")
+	}
+	function scene_1d(){
+		parle(1);gris(4);
+		ecrit_text("Je suis le chef de la zone 52, tu m’as dérobé quelque chose qui m’appartient !")
+	}
+	function scene_1e(){
+		parle(4);gris(1);
+		ecrit_text("Des robes ? J’ai pas ça moi.")
+	}
+	function scene_1f(){
+		parle(1);gris(4);
+		ecrit_text("Non, dérobé du verb.. Bon.. TU M’AS PRIS QUELQUE CHOSE, RENDS LE MOI !")
+	}
+	function scene_1g(){
+		parle(4);gris(1);
+		ecrit_text("uh ? ça ?")
+	}
+	function scene_1h(){
+		gris(1);gris(4);
+		ecrit_text("Cherche dans ses poches, puis montre le livre.");
+	}
+}
+
 
 function scene_FinNulle(){
 	let local = 0;
