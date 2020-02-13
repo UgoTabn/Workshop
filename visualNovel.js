@@ -123,6 +123,59 @@ function scene_1a(){
 	}
 }
 
+function scene_(){
+	let local = 0;
+	document.addEventListener('keydown',key,false)
+	function key(event){
+		if(event.keyCode == 32 || event.keyCode == 13){
+			local++;
+			switch(local){
+				case 1:
+					scene_1a();
+					break;
+				case 2:
+					scene_1b();
+					break;
+				case 3:
+					scene_1c();
+					break;
+				case 4:
+					scene_1d();
+					break;
+				case 5:
+					scene_1e();
+					break;
+				case 6:
+					break;
+			}
+		}
+		
+	}
+	function scene_1a(){
+		display_perso(1,"mechant","idle");
+		display_perso(4,"billy","idle");
+		parle(1);gris(4);
+		ecrit_text("Oui, ça ! Si tu me le donne gentillement, tout se passera bien pour toi.")
+	}
+	function scene_1b(){
+		gris(1);parle(4);
+		ecrit_text("C’est à moi ! Donner c’est donner, repeindre ses volets !");
+	}
+	function scene_1c(){
+		parle(1);gris(4);
+		ecrit_text("Mais c’est toi que  je vais repeindre oui ! Et puis.. ou tu le donne ou je te tue !")
+	}
+	function scene_1d(){
+		parle(4);gris(1);
+		ecrit_text("Oh ouais non mais si les gens trichent aussi..")
+	}
+	function scene_1e(){
+		parle(1);gris(4);
+		ecrit_text("Ooh Oh, le petit se révolte même pas ? Bon fini de jouer ! GAAAAAAAAAAARDES!")
+	}
+
+}
+
 function scene_FinNulle(){
 	let local = 0;
 	document.addEventListener('keydown',key,false)
