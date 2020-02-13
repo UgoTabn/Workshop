@@ -128,7 +128,83 @@ function scene_1a(){
 	}
 }
 
+function scene_finBonne(){
+	let local = 0;
+	document.addEventListener('keydown',key,false)
+	function key(event){
+		if(event.keyCode == 32 || event.keyCode == 13){
+			local++;
+			switch(local){
+				case 1:
+					scene_1b();
+					break;
+				case 2:
+					scene_1c();
+					break;
+				case 3:
+					scene_1d();
+					break;
+				case 4:
+					scene_1e();
+					break;
+				case 5:
+					scene_1f();
+					break;
+				case 6:
+					scene_1g();
+					break;
+				case 7:
+					scene_1h();
+					break;
+				case 8:
+					scene_1i();
+					break;
+				case 9:
+					scene_1j();
+					break;
+				case 10:
+					e2();
+					break;
+			}
+		}
+		
+	}
 
+	
+	function scene_1a(){
+		gris(1);parle(4); //le personnage principal parle, le mechant repond
+		ecrit_text("Que m’arrive-t-il ? j’ai mal au crâne, je me sens tout bizarre.");
+	}
+	function scene_1b(){
+		parle(1);gris(4); //le mechant parle 
+		ecrit_text("Tu me surprends je dois l’avouer, tu as passé pas mal d’épreuves avec brio.")
+	}
+	function scene_1c(){
+		parle(4);gris(1);
+		ecrit_text("Aie je sens qu’il y’a comme une porte qui s’est ouverte dans mon esprit, je commence à penser à plein de choses, à… réfléchir.")
+	}
+	function scene_1d(){
+		display_perso(1,"void","void");
+		display_perso(4,"void","void");
+		ecrit_text("Le robot retourne sur son épaule.");
+	}
+	function scene_1e(){
+		parle(1);gris(4);
+		ecrit_text("Hum intéressant, tu as peut-être beaucoup évolué au cours de ton voyage, mais en tout cas tu m’as beaucoup diverti et j’aimerais bien reprendre mon bouquin.")
+	}
+	function scene_1f(){
+		parle(4);gris(1);
+		ecrit_text("Depuis le début c’était vous le robot, ah j’aurais du m’en douter ! Tenez voila le livre je vous le rends.")
+	}
+	function scene_1g(){
+		parle(1);gris(4);
+		ecrit_text("Oh tu sais ce n’est que le cahier de recette de ma grand-mère, comme tu m’as beaucoup intrigué et beaucoup amusé tu peux le garder, et puis de toute façon les plats qu’il me mijote sont moisis.")
+	}
+	function scene_1f(){
+		parle(4);gris(1);
+		ecrit_text("Super ! je me suis beaucoup amusé aussi, j’ai l’impression d’être devenu un nouvel homme je me sens encore tout drôle ")
+	}
+}
 
 //ALEA
 function getRandomIntInclusive(min, max) {
@@ -276,30 +352,50 @@ $('main').on('click','#button_play.e2',function(){
 	$('#element4_img').css({'height':'50px','width':'50px','position':'absolute','top':'0px','left':'20px'}).attr("src","assets/symbole/touche.jpg")
 	$('#element2').css({'border':'solid','height':'400px','width':'550px','position':'absolute','top':'160px','left':'120px'})
 	$('#element5').css({'border':'solid','height':'50px','width':'50px','position':'absolute','top':'300px','left':'500px'})
-	$('#element4_img').draggable();
-	$('#element5').droppable({drop: function(event,ui){
+	
+	$("#element1").addClass("tableauB")
+	$('#element3').addClass("tableauB")
+	$("#element4").addClass("tableauB")
+	$('#element4_img').addClass("tableauB")
+	$('#element2').addClass("tableauB")
+	$('#element5').addClass("tableauB")
+
+	$('#element4_img.tableauB').draggable();
+	$('#element5.tableauB').droppable({drop: function(event,ui){
 		game_end = 1;
-		$('#element4_img').css({'top':'2px','left':'382px'})
+		$('#element4_img.tableauB').css({'top':'2px','left':'382px'})
 	}})
-	$("#element1").html("VIE RESTANTE : "+vie)
+	$("#element1.tableauB").html("VIE RESTANTE : "+vie)
 
 	// si temps faire animation levier drag and drop ou flip
 
-	$("#element3").on('click',function(){
+	$(".popup").on('click','#element3.tableauB',function(){
 		if(game_end == 0){
 			vie = vie - 1;
 			if(vie == 0){
+				$("#element1").removeClass("tableauB")
+				$('#element3').removeClass("tableauB")
+				$("#element4").removeClass("tableauB")
+				$('#element4_img').removeClass("tableauB")
+				$('#element2').removeClass("tableauB")
+				$('#element5').removeClass("tableauB")
 				$('#pop').css("display","none");
 				clear_minigame();
 			}
-			$("#element1").html("VIE RESTANTE : "+vie)
+			$("#element1.tableauB").html("VIE RESTANTE : "+vie)
 		} else if(game_end == 1){
+			$("#element1").removeClass("tableauB")
+			$('#element3').removeClass("tableauB")
+			$("#element4").removeClass("tableauB")
+			$('#element4_img').removeClass("tableauB")
+			$('#element2').removeClass("tableauB")
+			$('#element5').removeClass("tableauB")
 			$('#pop').css("display","none");
 			clear_minigame();
 		}
 	})
 })
-function e3(){
+$('main').on('click','#button_play.e3',function(){
 	var nb = 10;
 	$('.popup').css("background-color", "mediumorchid");
 	$('#element1').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'50px','left':'20px'}).addClass("clickable")
@@ -317,7 +413,8 @@ function e3(){
 	$("#text_pop").css({"margin": "8px", "font-size": "30px"});
 
 	$('.clickable').on('click',function(){
-		$(this).css("visivility","hidden").removeClass("clickable")
+		$(this).css("visivility","hidden")
+		$(this).removeClass("clickable")
 		nb --;
 		if(nb == 0){
 			$('#pop').css("display","none");
@@ -330,11 +427,14 @@ function e3(){
 		$("#text_pop").html(sec);
 		if(sec == -1){
 			$('#pop').css("display","none");
+			for (i = 1; i <= 10; i++) {
+				$('#element'+i).removeClass("clickable");
+			}
 			clear_minigame();
 			window.clearInterval(timer);
 		}
 	},1000)
-}
+})
 function e4v(){
 	$('.popup').css("background-color", "mediumorchid");
 	//fond jauge
@@ -770,6 +870,7 @@ function clear_minigame(){
 	for (i = 1; i <= 10; i++) {
 		$('#element'+i+'_img').attr('src','assets/character/void_void.png');
 		$('#element'+i).removeAttr( 'style' );
+		//$('#element'+i).html("");
 	}
 	$('.popup').removeAttr('style');
 	$('#container_pop').removeAttr('style');
@@ -804,4 +905,4 @@ function gris(perso){
 	$('#perso'+perso+'_img').removeClass('parle').css("width","187px").addClass("gray")
 }
 
-scene_0a()
+//scene_0a()
