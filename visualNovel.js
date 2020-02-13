@@ -2,6 +2,10 @@
 let ywx = 0;
 var sec = 30;
 
+
+//document.addEventListener('keydown',key,false)
+
+
 function realisateur(index){
 	switch (index){
 		case 1 :
@@ -16,19 +20,40 @@ function realisateur(index){
 	}
 }
 function scene_1a(){
+	let local = 0;
+	document.addEventListener('keydown',key,false)
+	function key(event){
+		if(event.keyCode == 32 || event.keyCode == 13){
+			local++;
+			switch(local){
+				case 1:
+					scene_1b();
+			}
+		}
+		
+	}
 	//change background
-	$("#background").css("background-image","url('assets/background/fondecranMaxime.png')");
-	display_perso(2,"nom","state");
+	//$("#background").css("background-image","url('assets/background/fondecranMaxime.png')");
 	//senario
 	display_perso(1,"billy","idle");
-    display_perso(2,"billy","idle");
-    display_perso(3,"billy","idle");
-    display_perso(4,"billy","idle");
+    /*display_perso(2,"billy","idle");
+    display_perso(3,"billy","idle");*/
+	display_perso(4,"billy","idle")
+	parle(1);
+	gris(4);
 
 	//dialogue("")
-	$("#text_hold").html("lol c'est drôle, regarde moi ça c'est trop cool !!!");
-	changeText($("#text_hold"),$("#text"),20);
+	ecrit_text("Oah, mais super grand le bâtiment, qui a mit ça la ? ")
+
+	function scene_1b(){
+		gris(1);
+		parle(4);
+		ecrit_text("C’est qui ce guignol qu’on voit dans la caméra ?");
+	}
+
 }
+
+
 
 //ALEA
 function getRandomIntInclusive(min, max) {
@@ -38,16 +63,12 @@ function getRandomIntInclusive(min, max) {
 }
 
 
-$("#button_play.e1").click(function(){
+function e1(){
+
 	let l_score = 0;
-	//$('.e1').css('visibility','visible')
-	display_perso(1,"void","void");
-    display_perso(2,"void","void");
-    display_perso(3,"void","void");
-	display_perso(4,"void","void");
-	$("#background").css("background-image","url('assets/background/fondecranMaxime.png')");
+	$('#pop').css("background-color","red")
 	ecrit_text_popup("un labyrinthe ?");
-	$("#container_pop").css("visibility","visible");
+	$("#container_pop").css("visibility","visible")
 	$('#element1_img').css({'position': 'absolute','top': '200px','left': '720px','height': '60px','width': '60px;','visibility': 'visible','display': 'block'}).attr("src","assets/symbole/flecheD.png");
 	$('#element2_img').css({'position': 'absolute','top': '200px','height': '60px','width': '60px;','visibility': 'visible','display': 'block'}).attr("src","assets/symbole/flecheG.png");
 	$("#element2").on('click',function(){
@@ -96,16 +117,12 @@ $("#button_play.e1").click(function(){
 				//$('.e1').css('visibility','hidden')
 				$("#element1").css('display','none');
 				$("#element2").css('display','none');
-				end = setInterval(function(){
-					ecrit_text_popup("Un grand batiment... ça doit être ça !");
-					if (ywx == 1){
-						$('#pop').css("display","none");
-						clearInterval(end);
-					}else{
-						ywx++;
-					}
-				},1400)
-				end;
+				ecrit_text_popup("Un grand batiment... ça doit être ça !");
+				setTimeout(end,2000);
+					function end(){
+					$('#pop').css("display","none");
+					clear_minigame();
+				}
 				break;
 		}
 	})
@@ -155,23 +172,19 @@ $("#button_play.e1").click(function(){
 				//$('.e1').css('visibility','hidden')
 				$("#element1").css('display','none');
 				$("#element2").css('display','none');
-				
-				end = setInterval(function(){
-					ecrit_text_popup("Tiens ? Un batiment");
-					if (ywx == 1){
-						$('#pop').css("display","none");
-						clearInterval(end);
-					}else{
-						ywx++;
-					}
-				},1500)
-				clear_minigame();
+				ecrit_text_popup("Tiens ? Un batiment");
+				setTimeout(end,2000);
+					function end(){
+					$('#pop').css("display","none");
+					clear_minigame();
+				}
 				break;
 		}
 	})
 
-})
-$("#button_play.e2").click(function(){
+}
+function e2(){
+	console.log('Test valide')
 	let vie = 2;
 	let game_end = 0;
 	$('.popup').css("background-color", "mediumorchid");
@@ -203,8 +216,8 @@ $("#button_play.e2").click(function(){
 			clear_minigame();
 		}
 	})
-})
-$('#button_play.e3').click(function(){
+}
+function e3(){
 	var nb = 10;
 	$('.popup').css("background-color", "mediumorchid");
 	$('#element1').css({'border':'solid red','height':'20px','width':'20px','position':'absolute','top':'50px','left':'20px'}).addClass("clickable")
@@ -239,9 +252,8 @@ $('#button_play.e3').click(function(){
 			window.clearInterval(timer);
 		}
 	},1000)
-})
-
-$("#button_play.e4v").click(function(){
+}
+function e4v(){
 	$('.popup').css("background-color", "mediumorchid");
 	//fond jauge
 	$("#element1").css({"height": "100px", "width": "550px", "left": "125px", "top": "250px", "background-color": "blue", "position": "absolute"});
@@ -306,9 +318,8 @@ $("#button_play.e4v").click(function(){
 			}
 		}
 	}
-})
-
-$("#button_play.e4d").click(function(){
+}
+function e4d(){
 
 	$('.popup').css("background-color", "mediumorchid");
 	$("#text_pop").css({"margin": "8px", "font-size": "30px", "display": "block"});
@@ -475,9 +486,9 @@ $("#button_play.e4d").click(function(){
 			},500)
 		}
 	}
-})
+}
 
-$('#button_play.e5').click(function(){
+function e5(){
 	var error = 10;
 	var champi = 'champignon';
 	var i=0;
@@ -725,8 +736,8 @@ $("#button_play.e6d").click(function(){
 			},2000)
 		}
 	}
-})
-$("#button_play.e7").click(function(){
+}
+function e7(){
 	let hit = 3;
 	let boss_hp = 5;
 	$('#element1_img').attr('src','assets/symbole/boss.jpg').css({'height':'70px','width':'auto','position':'absolute','top':'230px','left':'330px'})
@@ -777,7 +788,7 @@ $("#button_play.e7").click(function(){
 			}
 		}
 	})
-})
+}
 
 function display_perso(pos,nom,state){
 	$("#perso"+pos+"_img").attr("src","assets/character/"+nom+"_"+state+".png");
@@ -808,6 +819,12 @@ function clear_minigame(){
 	$('#text_pop').html('');
 }
 
+function ecrit_text(chaine){
+	$("#text").html("");
+	$("#text_hold").html("");
+	$("#text_hold").html(chaine);
+	changeText($("#text_hold"),$("#text"),20);
+}
 
 function ecrit_text_popup(chaine){
 	$("#text_pop").html("");
@@ -819,5 +836,15 @@ function ecrit_text_popup(chaine){
 $("#button_play").click(function(){
 	$("#pop").css("display", "block");
 	$("#button_play").css("display","none");
-	$("#button_play").addClass("e6v");
 })
+
+
+function parle(perso){
+	$('#perso'+perso+'_img').removeClass('gray').addClass("parle").css("width","200px")
+}
+function gris(perso){
+	$('#perso'+perso+'_img').removeClass('parle').css("width","187px").addClass("gray")
+}
+
+realisateur(1)
+
