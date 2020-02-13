@@ -176,6 +176,601 @@ function scene_e2_defaite(){
 
 }
 
+/*function scene_E7(){
+	let local = 0;
+	document.addEventListener('keydown',key,false)
+	function key(event){
+		if(event.keyCode == 32 || event.keyCode == 13){
+			local++;
+			switch(local){
+				case 1:
+					scene_e2Vb();
+					break;
+				case 2:
+					scene_e2Vb();
+					break;
+				case 3:
+					scene_e2Vc();
+					break;
+				case 4:
+					scene_e2Da();
+					break;
+				case 5:
+					scene_e2Db();
+					break;
+				case 6:
+					scene_e2Dc();
+					break;
+				case 7:
+					break;
+			}
+		}
+		
+	}
+
+	function scene_e2Va(){
+		display_perso(1,"billy","idle");
+		display_perso(4,"billy","idle");
+		parle(4);gris(4);
+		ecrit_text("Ho mais les boutons sont utilisables ! Je vais essayer d’activer les deux gros" )
+	}
+
+	function scene_e2Vb(){
+		gris(4);parle(1);
+		ecrit_text("Non ne touchez à rien ! Sécurité envoyez le robot ! ");
+	}
+
+	function scene_e2Vc(){
+		display_perso(1,"void","void");
+		display_perso(4,"void","void");
+		ecrit_text("A cet instant, une large trappe que vous n’aviez pas remarqué s’enclenche sous vos pieds. Vous tombez dans une sorte de vortex ; aspiré par cette étrange force, vous serrez le bouquin dans vos bras. Vous n’avez pas vu qu'un petit robot vous avait rejoint dans votre chute.");
+	}
+
+	function scene_e2Da(){
+		display_perso(1,"billy","idle");
+		display_perso(4,"billy","idle");
+		parle(4);gris(4);
+		ecrit_text("Ah ça ne marche pas, bon il reste plus qu’a rentrer " )
+	}
+
+	function scene_e2Db(){
+		gris(4);parle(1);
+		ecrit_text("Il va partir ! Vite, sécurité envoyez le robot !");
+	}
+
+	function scene_e2Dc(){
+		display_perso(1,"void","void");
+		display_perso(4,"void","void");
+		ecrit_text("Vous vous retournez et commencez à rebrousser chemin lorsque tout à  coup la porte de la pièce se referme, Une large trappe que vous n’aviez pas remarqué s’enclenche sous vos pieds. Vous tombez dans une sorte de vortex ; aspiré par cette étrange force, vous serrez le bouquin dans vos bras. Vous n’avez pas vu qu’un petit robot vous avait rejoint dans votre chute");
+	}
+
+}
+*/
+
+function scene_Reparation_suite() { // E6 -> Réparation (suite)
+    let local = 0;
+    document.addEventListener('keydown', key, false)
+
+    function key(event) {
+        if (event.keyCode == 32 || event.keyCode == 13) {
+            local++;
+            switch (local) {
+                case 1:
+                    scene_1b();
+                    break;
+                case 2:
+                    scene_1c();
+                    break;
+                case 3:
+                    scene_1d();
+                    break;
+                case 4:
+                    scene_1e();
+                    break;
+                case 5:
+                    scene_1f();
+                    break;
+                case 6:
+                    scene_1g();
+                    break;
+                case 7:
+                    scene_1h();
+                    break;
+                case 8:
+                    scene_1i();
+                    break;
+                case 9:
+                    break;
+            }
+        }
+
+    }
+    //change background
+    //$("#background").css("background-image","url('assets/background/fondecranMaxime.png')");
+    //senario
+    //display_perso(1,"billy","idle");
+    /*display_perso(2,"billy","idle");
+    display_perso(3,"billy","idle");*/
+    //display_perso(4,"billy","idle")
+
+    ecrit_text("Vous arrivez dans la ville")
+
+    function scene_1b() {
+        display_perso(1, "champignon", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(3);
+        gris(4);
+        gris(1);
+        ecrit_text("Alors ou est-il ce meccano de génie??")
+    }
+
+    function scene_1c() {
+        display_perso(1, "champignon", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(1);
+        gris(3);
+        gris(4);
+        ecrit_text("Juste un peu plus loin devant.")
+    }
+
+    function scene_1d() {
+        display_perso(1, "réparateur", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(1);
+        gris(4);
+        gris(3);
+        ecrit_text("Bonjour, voyageurs que puis-je faire pour vous? ");
+    }
+
+    function scene_1e() {
+        display_perso(1, "réparateur", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(4);
+        gris(3);
+        gris(1);
+        ecrit_text("Faut nous réparer le bazooka.")
+    }
+
+    function scene_1f() {
+        display_perso(1, "réparateur", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(3);
+        gris(4);
+        gris(1);
+        ecrit_text("Ce que mon collègue essaye (habilement) de vous demander c’est est-ce qu’il est possible pour vous de réparer notre équipement?");
+    }
+
+    function scene_1g() {
+        display_perso(1, "réparateur", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(1);
+        gris(4);
+        gris(3);
+        ecrit_text("Je vais voir ce que je peux faire...Humm ca va être compliqué.");
+    }
+
+    function scene_1h() {
+        display_perso(1, "réparateur", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(3);
+        gris(4);
+        gris(1);
+        ecrit_text("OK, dis nous ce qu’on doit faire");
+    }
+
+    function scene_1i() {
+        display_perso(1, "réparateur", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(1);
+        gris(4);
+        gris(3);
+        ecrit_text("Je vous explique..");
+    }
+
+}
+
+function scene_e6defaite(){
+	let local = 0;
+	document.addEventListener('keydown',key,false)
+	function key(event){
+		if(event.keyCode == 32 || event.keyCode == 13){
+			local++;
+			switch(local){
+				case 1:
+					scene_1b();
+					break;
+				case 2:
+					scene_1c();
+					break;
+				case 3:
+					scene_1d();
+					break;
+				case 4:
+					scene_1e();
+					break;
+				case 5:
+					scene_1f();
+					break;
+				case 6:
+					break;
+			}
+		}
+		
+	}
+	function scene_1b(){
+		display_perso(1,"PA","idle");
+		display_perso(4,"billy","idle");
+		parle(4);gris(1);
+		ecrit_text("C’est t’y pas beau tout ça ?")
+	}
+	function scene_1c(){
+		gris(4);parle(1);
+		ecrit_text("Oulaah, mais c’est quoi ce travail d’amateur ?!");
+	}
+	function scene_1d(){
+		parle(4);gris(1);
+		ecrit_text("ça fera parfaitement l’affaire, aller, RETOUR MAISON ! ")
+	}
+	function scene_1e(){
+		display_perso(1,"champi","idle");
+		display_perso(2,"PA","idle");
+		parle(1);gris(2);
+		ecrit_text("Tu es sûr que c’est une bonne idée ?");
+	}
+	function scene_1f(){
+		parle(2);gris(1);
+		ecrit_text("Bon bah c’est plus mon problème!")
+	}
+
+}
+
+function scene_rechargement_suite() { // E6 -> Réparation (suite)
+    let local = 0;
+    document.addEventListener('keydown', key, false)
+
+    function key(event) {
+        if (event.keyCode == 32 || event.keyCode == 13) {
+            local++;
+            switch (local) {
+                case 1:
+                    scene_1b();
+                    break;
+                case 2:
+                    scene_1c();
+                    break;
+                case 3:
+                    scene_1d();
+                    break;
+                case 4:
+                    scene_1e();
+                    break;
+                case 5:
+                    scene_1f();
+                    break;
+                case 6:
+                    scene_1g();
+                    break;
+                case 7:
+                    scene_1h();
+                    break;
+                case 8:
+                    scene_1i();
+                    break;
+                case 9:
+                    scene_1j();
+                    break;
+                case 10:
+                    scene_1k();
+                    break;
+                case 11:
+                    break;
+            }
+        }
+
+    }
+    //change background
+    //$("#background").css("background-image","url('assets/background/fondecranMaxime.png')");
+    //senario
+    //display_perso(1,"billy","idle");
+    /*display_perso(2,"billy","idle");
+    display_perso(3,"billy","idle");*/
+    //display_perso(4,"billy","idle")
+
+    ecrit_text("Vous arrivez dans la ville")
+
+    function scene_1b() {
+        display_perso(1, "champignon", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(3);
+        gris(4);
+        gris(1);
+        ecrit_text("Alors ou est-il ce meccano de génie??")
+    }
+
+    function scene_1c() {
+        display_perso(1, "champignon", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(1);
+        gris(3);
+        gris(4);
+        ecrit_text("Juste un peu plus loin devant.")
+    }
+
+    function scene_1d() {
+        display_perso(1, "réparateur", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(1);
+        gris(4);
+        gris(3);
+        ecrit_text("Bonjour, voyageurs que puis-je faire pour vous? ");
+    }
+
+    function scene_1e() {
+        display_perso(1, "réparateur", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(4);
+        gris(3);
+        gris(1);
+        ecrit_text("Il nous faut une batterie !")
+    }
+
+    function scene_1f() {
+        display_perso(1, "réparateur", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(3);
+        gris(4);
+        gris(1);
+        ecrit_text("Ce que mon collègue essaye (habilement) de vous dire c’est qu’on désire une recharge pour notre bazooka. ");
+    }
+
+    function scene_1g() {
+        display_perso(1, "réparateur", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(1);
+        gris(4);
+        gris(3);
+        ecrit_text("Je vais voir ce que je peux faire...Humm ca va être compliqué ce n'est pas une simple batterie je vais voir...");
+    }
+
+    function scene_1h() {
+        display_perso(1, "réparateur", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(3);
+        gris(4);
+        gris(1);
+        ecrit_text("On en a besoin absolument besoin");
+    }
+
+    function scene_1i() {
+        display_perso(1, "réparateur", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(1);
+        gris(4);
+        gris(3);
+        ecrit_text("C’est possible mais dangereux et compliqué si vous faites un mauvais mouvement s’en ai terminé de votre bazooka.");
+    }
+
+    function scene_1j() {
+        display_perso(1, "réparateur", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(3);
+        gris(4);
+        gris(1);
+        ecrit_text("OK, dis nous ce qu’on doit faire");
+    }
+
+    function scene_1k() {
+        display_perso(1, "réparateur", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(1);
+        gris(4);
+        gris(3);
+        ecrit_text("Je vous explique.");
+    }
+
+}
+
+
+function scene_reparation() { // E6 -> Réparation
+    let local = 0;
+    document.addEventListener('keydown', key, false)
+
+    function key(event) {
+        if (event.keyCode == 32 || event.keyCode == 13) {
+            local++;
+            switch (local) {
+                case 1:
+                    scene_1b();
+                    break;
+                case 2:
+                    scene_1c();
+                    break;
+                case 3:
+                    scene_1d();
+                    break;
+                case 4:
+                    scene_1e();
+                    break;
+                case 5:
+                    scene_1f();
+                    break;
+                case 6:
+                    break;
+            }
+        }
+
+    }
+    //change background
+    //$("#background").css("background-image","url('assets/background/fondecranMaxime.png')");
+    //senario
+    //display_perso(1,"billy","idle");
+    /*display_perso(2,"billy","idle");
+    display_perso(3,"billy","idle");*/
+    //display_perso(4,"billy","idle")
+
+    //    ecrit_text("Sonné par la téléportation, vous ne voyez que un puissant rayon de soleil. Après s'être habitué à la luminosité ambiante il fut déçu de voir que ce n'était toujours pas chez lui.")
+
+    function scene_1b() {
+        display_perso(1, "champignon", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(3);
+        gris(4);
+        gris(1);
+        ecrit_text("Effectivement ,nous avons besoin de savoir comment réparer notre bazooka")
+    }
+
+    function scene_1c() {
+        display_perso(1, "champignon", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(1);
+        gris(3);
+        gris(4);
+        ecrit_text("Je ne le connais pas personnellement mais il y a un reparateur qui se trouve dans la ville la plus proche.")
+    }
+
+    function scene_1d() {
+        display_perso(1, "champignon", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(4);
+        gris(1);
+        gris(3);
+        ecrit_text("Très bien ,on vous suit alors.");
+    }
+
+    function scene_1e() {
+        display_perso(1, "champignon", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(3);
+        gris(4);
+        gris(1);
+        ecrit_text("En espérant qu’on ai de la chance")
+    }
+
+    function scene_1f() {
+        display_perso(1, "champignon", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(1);
+        gris(4);
+        gris(3);
+        ecrit_text("C’est parti !");
+    }
+
+}
+
+function scene_recharge() { // E6 -> Recharge
+    let local = 0;
+    document.addEventListener('keydown', key, false)
+
+    function key(event) {
+        if (event.keyCode == 32 || event.keyCode == 13) {
+            local++;
+            switch (local) {
+                case 1:
+                    scene_1b();
+                    break;
+                case 2:
+                    scene_1c();
+                    break;
+                case 3:
+                    scene_1d();
+                    break;
+                case 4:
+                    scene_1e();
+                    break;
+                case 5:
+                    scene_1f();
+                    break;
+                case 6:
+                    break;
+            }
+        }
+
+    }
+    //change background
+    //$("#background").css("background-image","url('assets/background/fondecranMaxime.png')");
+    //senario
+    //display_perso(1,"billy","idle");
+    /*display_perso(2,"billy","idle");
+    display_perso(3,"billy","idle");*/
+    //display_perso(4,"billy","idle")
+
+    //    ecrit_text("Sonné par la téléportation, vous ne voyez que un puissant rayon de soleil. Après s'être habitué à la luminosité ambiante il fut déçu de voir que ce n'était toujours pas chez lui.")
+
+    function scene_1b() {
+        display_perso(1, "champignon", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(3);
+        gris(4);
+        gris(1);
+        ecrit_text("Effectivement, nous avons besoin de savoir ou trouver une recharge pour notre bazooka")
+    }
+
+    function scene_1c() {
+        display_perso(1, "champignon", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(1);
+        gris(3);
+        gris(4);
+        ecrit_text("Je ne peux pas vous aider,du moins le mieux que je puisse faire c’est vous emmener à la prochaine ville vous trouverez forcément votre recharge.")
+    }
+
+    function scene_1d() {
+        display_perso(1, "champignon", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(4);
+        gris(1);
+        gris(3);
+        ecrit_text("Très bien ,on vous suit alors.");
+    }
+
+    function scene_1e() {
+        display_perso(1, "champignon", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(3);
+        gris(4);
+        gris(1);
+        ecrit_text("En espérant qu’on ai de la chance")
+    }
+
+    function scene_1f() {
+        display_perso(1, "champignon", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(1);
+        gris(4);
+        gris(3);
+        ecrit_text("C’est parti !");
+    }
+
+}
+
 function scene_monde2() {
     let local = 0;
     document.addEventListener('keydown', key, false)
@@ -363,6 +958,378 @@ function scene_monde2() {
 
 }
 
+function scene_E7(){
+	let local = 0;
+	document.addEventListener('keydown',key,false)
+	function key(event){
+		if(event.keyCode == 32 || event.keyCode == 13){
+			local++;
+			switch(local){
+				case 1:
+					scene_1a();
+					break;
+				case 2:
+					scene_1b();
+					break;
+				case 3:
+					scene_1c();
+					break;
+				case 4:
+					scene_1d();
+					break;
+				case 5:
+					scene_1e();
+					break;
+				case 6:
+					scene_1f();
+					break;
+				case 7:
+					scene_1g();
+					break;
+				case 8:
+					scene_1h();
+					break;
+				case 9:
+					break;
+			}
+		}
+		
+	}
+	function scene_1a(){
+		display_perso(1,"mechant","idle");
+		display_perso(4,"billy","idle");
+		parle(4);gris(1);
+		ecrit_text("Hein ? Mais.. brrr.. Où suis-je ?")
+	}
+	function scene_1b(){
+		gris(4);parle(1);
+		ecrit_text(" Et bien et bien.. Qu’avons-nous là ?Notre cher cobaye est revenu à la maison ");
+	}
+	function scene_1c(){
+		parle(4);gris(1);
+		ecrit_text("Un cobaye ?  où ? Je vois pas de rat ?! hein ?! T’es qui ? ")
+	}
+	function scene_1d(){
+		parle(1);gris(4);
+		ecrit_text("Je suis le chef de la zone 52, tu m’as dérobé quelque chose qui m’appartient !")
+	}
+	function scene_1e(){
+		parle(4);gris(1);
+		ecrit_text("Des robes ? J’ai pas ça moi.")
+	}
+	function scene_1f(){
+		parle(1);gris(4);
+		ecrit_text("Non, dérobé du verb.. Bon.. TU M’AS PRIS QUELQUE CHOSE, RENDS LE MOI !")
+	}
+	function scene_1g(){
+		parle(4);gris(1);
+		ecrit_text("uh ? ça ?")
+	}
+	function scene_1h(){
+		gris(1);gris(4);
+		ecrit_text("Cherche dans ses poches, puis montre le livre.");
+	}
+}
+
+function scene_mondegeler() {
+    let local = 0;
+    document.addEventListener('keydown', key, false)
+
+    function key(event) {
+        if (event.keyCode == 32 || event.keyCode == 13) {
+            local++;
+            switch (local) {
+                case 1:
+                    scene_1k();
+                    break;
+                case 2:
+                    scene_1l();
+                    break;
+                case 3:
+                    scene_1m();
+                    break;
+                case 4:
+                    scene_1n();
+                    break;
+                case 5:
+                    scene_1o();
+                    break;
+                case 6:
+                    break;
+
+            }
+        }
+
+    }
+    //change background
+    //$("#background").css("background-image","url('assets/background/fondecranMaxime.png')");
+    //senario
+    //display_perso(1,"billy","idle");
+    /*display_perso(2,"billy","idle");
+    display_perso(3,"billy","idle");*/
+    //display_perso(4,"billy","idle")
+
+    ecrit_text("Vous arrivez dans monde gelé mais qui vous fait étrangement penser à univers Far West")
+
+
+    function scene_1k() {
+        display_perso(1, "billy", "idle");
+        display_perso(4, "billy", "idle");
+        gris(4);
+        parle(4);
+        ecrit_text("Mais qu’est ce que je fais là moi, ou suis-je ?");
+    }
+
+        function scene_1l() {
+            parle(1);
+            gris(4);
+            ecrit_text("Te voila dans un beau pétrin")
+        }
+
+        function scene_1m() {
+            gris(4);
+            parle(4);
+            ecrit_text("Qu’ est ce que… ? Tiens un robot qui parle!Vous m’ avez suivi ? ");
+        }
+
+        function scene_1n() {
+            parle(1);
+            gris(4);
+            ecrit_text("Oui je vais t’ accompagner, on va s’ échapper ensemble")
+        }
+
+        function scene_1o() {
+            gris(4);
+            parle(4);
+            ecrit_text("Ah chouette!J’ aperçois des bâtiments la - bas il doit y’ avoir des gens la - bas qui peuvent peut - être nous aider")
+        }
+}
+
+function scene_e3_e4v() {
+    let local = 0;
+    document.addEventListener('keydown', key, false)
+
+    function key(event) {
+        if (event.keyCode == 32 || event.keyCode == 13) {
+            local++;
+            switch (local) {
+                case 1:
+                    scene_e3Va();
+                    break;
+                case 2:
+                    scene_e3Vb();
+                    break;
+                case 3:
+                    scene_e3Vc();
+                    break;
+                case 4:
+                    scene_e3Vd();
+                    break;
+                case 5:
+                    scene_e3Ve();
+                    break;
+                case 6:
+                    scene_e3Vf();
+                    break;
+                case 7:
+                    scene_e3Vg();
+                    break;
+                case 8:
+                    scene_e3Vh();
+                    break;
+                case 9:
+                    scene_e3Vi();
+                    break;
+
+            }
+        }
+
+    }
+    //change background
+    //$("#background").css("background-image","url('assets/background/fondecranMaxime.png')");
+    //senario
+    //display_perso(1,"billy","idle");
+    /*display_perso(2,"billy","idle");
+    display_perso(3,"billy","idle");*/
+    //display_perso(4,"billy","idle")
+
+    ecrit_text("Vous arrivez non loin d’une grotte, et apercevez un être étrange qui ressemble au mélange étonnant entre un canon et animal doté d’une certaine intelligence, vous vous approchez de lui pour l’interpeller.")
+
+
+    function scene_e3Va() {
+        display_perso(1, "billy", "idle");
+        display_perso(2, "billy ","idle ");
+            display_perso(4, "billy", "idle"); gris(4); parle(4); ecrit_text("Hého ! Je cherche un animal qui peut créer des portails, il est dans le coin apparemment. Vous ne l’auriez pas vu par hasard ?");
+        }
+
+        function scene_e3Vb() {
+            parle(2);
+            gris(4);
+            ecrit_text(" * soupir * ")
+        }
+
+        function scene_e3Vc() {
+            parle(1);
+            gris(4);
+            ecrit_text("C’ est moi que vous cherchez, vous voulez aller où ? ")
+        }
+
+        function scene_e3Vd() {
+            parle(4);
+            gris(4);
+            ecrit_text("Je cherche à partir de ce monde et à rentrer chez moi")
+        }
+
+        function scene_e3Ve() {
+            parle(1);
+            gris(4);
+            ecrit_text("Très bien, mais attention: il faut pouvoir m’ utiliser de manière correcte.La précision du portail que je crée dépend aussi de la précision de mon utilisateur, ça n’ est pas aussi simple que vous ne le pensez, croyez moi.Si vous tremblez lors de la mise à feu, le portail risque d’ être un peu instable, bon j’ ai parfois l’ impression que comprendre des trucs c’ est pas trop votre domaine")
+        }
+
+        function scene_e3Vf() {
+            parle(4);
+            gris(4);
+            ecrit_text("Un domaine genre l’ endroit où on habite ? ")
+        }
+
+        function scene_e3Vg() {
+            parle(1);
+            gris(4);
+            ecrit_text("Bon bref, vous voyez les cibles là - bas ? Il vous faudra toucher leur centre le plus de fois possible.Si vous réussissez, il n’ y aura aucun problème pour que j’ active le portail; sinon, je ne serai malheureusement d’ aucune utilité.")
+        }
+
+        function scene_e3Vh() {
+            parle(4);
+            gris(4);
+            ecrit_text("Euh très bien je vous prends et je vais au stand de tir")
+        }
+
+
+        function scene_e3Vi() {
+            display_perso(1, "void", "void");
+            display_perso(2, "void ","void ");
+            display_perso(4, "void", "void"); 
+            ecrit_text("Pour toucher le centre des cibles, cliquez au moment où la jauge arrive au milieu de la barre de puissance.Vous devez réussir 3 essais sur 5.");
+        }
+}
+
+function scene_e6_e7() { // E6/E7 V
+    let local = 0;
+    document.addEventListener('keydown', key, false)
+
+    function key(event) {
+        if (event.keyCode == 32 || event.keyCode == 13) {
+            local++;
+            switch (local) {
+                case 1:
+                    scene_1b();
+                    break;
+                case 2:
+                    scene_1c();
+                    break;
+                case 3:
+                    scene_1d();
+                    break;
+                case 4:
+                    scene_1e();
+                    break;
+                case 5:
+                    scene_1f();
+                    break;
+                case 6:
+                    scene_1g();
+                    break;
+                case 7:
+                    scene_1h();
+                    break;
+                case 8:
+                    break;
+            }
+        }
+
+    }
+    //change background
+    //$("#background").css("background-image","url('assets/background/fondecranMaxime.png')");
+    //senario
+    //display_perso(1,"billy","idle");
+    /*display_perso(2,"billy","idle");
+    display_perso(3,"billy","idle");*/
+    //display_perso(4,"billy","idle")
+
+    ecrit_text("Vous arrivez dans la ville")
+
+    function scene_1b() {
+        display_perso(1, "réparateur", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(1);
+        gris(4);
+        gris(3);
+        ecrit_text("Bravo, vous avez parfaitement bien travaillé.Voilà pour vous votre bazooka comme neuf.")
+    }
+
+    function scene_1c() {
+        display_perso(1, "réparateur", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(4);
+        gris(3);
+        gris(1);
+        ecrit_text("Super on va pouvoir repartir chez nous!!")
+    }
+
+    function scene_1d() {
+        display_perso(1, "réparateur", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(3);
+        gris(4);
+        gris(1);
+        ecrit_text("Oui enfin si ca marche.Merci de nous aider . Allez gogol active le portail.");
+    }
+
+    function scene_1e() {
+        display_perso(1, "réparateur", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(1);
+        gris(3);
+        gris(4);
+        ecrit_text("Avec plaisir,faite attention a vous")
+    }
+
+    function scene_1f() {
+        display_perso(1, "réparateur", "idle");
+        display_perso(2, "réparateur", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(2);
+        gris(4);
+        gris(1);
+        gris(3);
+        ecrit_text("Merci encore à vous de m’avoir sauvé");
+    }
+
+    function scene_1g() {
+        display_perso(1, "réparateur", "idle");
+        display_perso(2, "réparateur", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(4);
+        gris(2);
+        gris(3);
+        gris(1);
+        ecrit_text("A bientot les copains");
+    }
+
+    function scene_1h() {
+        display_perso(1, "void", "void");
+        display_perso(2, "void", "void");
+        display_perso(3, "void", "void");
+        display_perso(4, "void", "void");
+		ecrit_text("gogol tire et disparaît avec le robot dans un éclair")
+	}
+}
 
 function scene_FinNulle(){
 	let local = 0;
