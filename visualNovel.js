@@ -432,6 +432,162 @@ function scene_e6defaite(){
 
 }
 
+function scene_rechargement_suite() { // E6 -> Réparation (suite)
+    let local = 0;
+    document.addEventListener('keydown', key, false)
+
+    function key(event) {
+        if (event.keyCode == 32 || event.keyCode == 13) {
+            local++;
+            switch (local) {
+                case 1:
+                    scene_1b();
+                    break;
+                case 2:
+                    scene_1c();
+                    break;
+                case 3:
+                    scene_1d();
+                    break;
+                case 4:
+                    scene_1e();
+                    break;
+                case 5:
+                    scene_1f();
+                    break;
+                case 6:
+                    scene_1g();
+                    break;
+                case 7:
+                    scene_1h();
+                    break;
+                case 8:
+                    scene_1i();
+                    break;
+                case 9:
+                    scene_1j();
+                    break;
+                case 10:
+                    scene_1k();
+                    break;
+                case 11:
+                    break;
+            }
+        }
+
+    }
+    //change background
+    //$("#background").css("background-image","url('assets/background/fondecranMaxime.png')");
+    //senario
+    //display_perso(1,"billy","idle");
+    /*display_perso(2,"billy","idle");
+    display_perso(3,"billy","idle");*/
+    //display_perso(4,"billy","idle")
+
+    ecrit_text("Vous arrivez dans la ville")
+
+    function scene_1b() {
+        display_perso(1, "champignon", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(3);
+        gris(4);
+        gris(1);
+        ecrit_text("Alors ou est-il ce meccano de génie??")
+    }
+
+    function scene_1c() {
+        display_perso(1, "champignon", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(1);
+        gris(3);
+        gris(4);
+        ecrit_text("Juste un peu plus loin devant.")
+    }
+
+    function scene_1d() {
+        display_perso(1, "réparateur", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(1);
+        gris(4);
+        gris(3);
+        ecrit_text("Bonjour, voyageurs que puis-je faire pour vous? ");
+    }
+
+    function scene_1e() {
+        display_perso(1, "réparateur", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(4);
+        gris(3);
+        gris(1);
+        ecrit_text("Il nous faut une batterie !")
+    }
+
+    function scene_1f() {
+        display_perso(1, "réparateur", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(3);
+        gris(4);
+        gris(1);
+        ecrit_text("Ce que mon collègue essaye (habilement) de vous dire c’est qu’on désire une recharge pour notre bazooka. ");
+    }
+
+    function scene_1g() {
+        display_perso(1, "réparateur", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(1);
+        gris(4);
+        gris(3);
+        ecrit_text("Je vais voir ce que je peux faire...Humm ca va être compliqué ce n'est pas une simple batterie je vais voir...");
+    }
+
+    function scene_1h() {
+        display_perso(1, "réparateur", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(3);
+        gris(4);
+        gris(1);
+        ecrit_text("On en a besoin absolument besoin");
+    }
+
+    function scene_1i() {
+        display_perso(1, "réparateur", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(1);
+        gris(4);
+        gris(3);
+        ecrit_text("C’est possible mais dangereux et compliqué si vous faites un mauvais mouvement s’en ai terminé de votre bazooka.");
+    }
+
+    function scene_1j() {
+        display_perso(1, "réparateur", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(3);
+        gris(4);
+        gris(1);
+        ecrit_text("OK, dis nous ce qu’on doit faire");
+    }
+
+    function scene_1k() {
+        display_perso(1, "réparateur", "idle");
+        display_perso(3, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(1);
+        gris(4);
+        gris(3);
+        ecrit_text("Je vous explique.");
+    }
+
+}
+
 
 function scene_reparation() { // E6 -> Réparation
     let local = 0;
