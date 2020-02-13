@@ -123,7 +123,7 @@ function scene_1a(){
 	}
 }
 
-function scene_(){
+function scene_e2_defaite(){
 	let local = 0;
 	document.addEventListener('keydown',key,false)
 	function key(event){
@@ -175,6 +175,194 @@ function scene_(){
 	}
 
 }
+
+function scene_monde2() {
+    let local = 0;
+    document.addEventListener('keydown', key, false)
+    function key(event) {
+        if (event.keyCode == 32 || event.keyCode == 13) {
+            local++;
+            switch (local) {
+                case 1:
+                    scene_1a();
+                    break;
+                case 2:
+                    scene_1b();
+                    break;
+                case 3:
+                    scene_1c();
+                    break;
+                case 4:
+                    scene_1d();
+                    break;
+                case 5:
+                    scene_1e();
+                    break;
+                case 6:
+                    scene_1f();
+                    break;
+                case 7:
+                    scene_1g();
+                    break;
+                case 8:
+                    scene_1h();
+                    break;
+                case 9:
+                    scene_1i();
+                    break;
+                case 10:
+                    scene_1j();
+					break;
+				case 11:
+					scene_1k();
+					break;
+				case 12:
+					scene_1l();
+					break;
+				case 13:
+					scene_1m();
+					break;
+				case 14:
+					scene_1n();
+					break;
+				case 15:
+					scene_1o();
+					break;
+            }
+        }
+
+    }
+    //change background
+    //$("#background").css("background-image","url('assets/background/fondecranMaxime.png')");
+    //senario
+    //display_perso(1,"billy","idle");
+    /*display_perso(2,"billy","idle");
+    display_perso(3,"billy","idle");*/
+    //display_perso(4,"billy","idle")
+
+    ecrit_text("Sonné par la téléportation, vous ne voyez que un puissant rayon de soleil. Après s'être habitué à la luminosité ambiante il fut déçu de voir que ce n'était toujours pas chez lui.")
+
+    function scene_1a() {
+        display_perso(1, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(4);
+        gris(1);
+        ecrit_text("Qu’est ce que cette endroit?!Pourquoi ca n’a pas marché??Je veux partir, téléporte moi tout de suite!!!")
+    }
+
+    function scene_1b() {
+        display_perso(1, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(1);
+        gris(4);
+        ecrit_text("Calme toi !Je suis coincé avec toi donc on va s’en sortir tout les deux ensemble.")
+    }
+
+    function scene_1c() {
+        display_perso(1, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        gris(1);
+        parle(4);
+        ecrit_text("Promis?");
+    }
+
+    function scene_1d() {
+        display_perso(1, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(1);
+        gris(4);
+        ecrit_text("Oui je ne repartirais pas sans toi, tu peux me croire")
+    }
+
+    function scene_1e() {
+        display_perso(1, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(4);
+        gris(1);
+        ecrit_text("Quelle est cette endroit?Pourquoi ces champignons sont si gigantesques?");
+    }
+
+    function scene_1f() {
+        display_perso(1, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(1);
+        gris(4);
+        ecrit_text("Je ne sais pas mais méfie toi, on ne sait jamais. Re-tire avec ton bazooka fait nous partir d’ici")
+    }
+
+    function scene_1g() {
+        display_perso(1, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(4);
+        gris(1);
+        ecrit_text("J’essaye mais ça ne marche pas, on dirait qu’il a besoin d’une autre recharge ou bien qu'il est cassé ")
+    }
+
+    function scene_1h() {
+        display_perso(1, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(1);
+        gris(4);
+        ecrit_text("Et où allons nous trouver ça ?? ")
+
+    }
+
+    function scene_1i() {
+        display_perso(1, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(4);
+        gris(1);
+        ecrit_text("Ohh regarde par terre !!Qu’es ce que c’est ? ")
+    }
+
+    function scene_1j() {
+        display_perso(1, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(4);
+        gris(1);
+        ecrit_text("Et où allons nous trouver ça ?? ")
+    }
+
+    function scene_1k() {
+        display_perso(1, "robot", "idle");
+        display_perso(4, "billy", "idle");
+        parle(1);
+        gris(4);
+        ecrit_text("EH OH tu m'écoutes??")
+    }
+
+    function scene_1l() {
+        display_perso(1, "void", "void");
+        display_perso(4, "void", "void");
+        ecrit_text("Vous attrapez le champignon, celui-ci semble résister. Vous tirez plus fort puis vous voyez une tête émerger du sol, puis un corps et des jambes. Apparaît devant vous un grand bonhomme coiffé d’un champignon en guise de chapeau.")
+    }
+
+    function scene_1m() {
+        display_perso(1, "champignon", "idle");
+        display_perso(4, "billy", "idle");
+        parle(4);
+        gris(1);
+        ecrit_text("Ohh nobles voyageurs merci de m’avoir sorti de ma tourmente!!")
+    }
+
+    function scene_1n() {
+        display_perso(1, "champignon", "idle");
+        display_perso(4, "billy", "idle");
+        parle(4);
+        gris(1);
+        ecrit_text("AAAAH ! Un champignon qui parle ?!")
+    }
+
+    function scene_1o() {
+        display_perso(1, "champignon", "idle");
+        display_perso(4, "billy", "idle");
+        parle(4);
+        gris(1);
+        ecrit_text("Bien-sûr ! Vous êtes à la champiflammière, un lieu magique où nous y habitons. J'ai maintenant une dette envers vous.")
+    }
+
+}
+
 
 function scene_FinNulle(){
 	let local = 0;
