@@ -1,3 +1,11 @@
+@font-face {
+	font-family: minya;
+	src: url("font/minya.ttf");
+}
+
+* {
+	font-family: "minya",sans-serif;
+}
 #background {
 	margin:50px;
     height: 600px;
@@ -60,6 +68,7 @@
 }
 
 #text {
+	font-size: 1.25em;
 	margin: 20px;
 	overflow: auto;
 }

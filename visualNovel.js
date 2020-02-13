@@ -1,7 +1,7 @@
 //Var globales
 let ywx = 0;
 var sec = 30;
-
+scene_0a();
 function scene_0a(){
 	let local =0;
 	document.addEventListener('keydown',key,false)
@@ -22,7 +22,7 @@ function scene_0a(){
     display_perso(3,"void","void");
 	display_perso(4,"void","void");
 
-	ecrit_text("Vous êtes un jeune héros insouciant assez simplet (on va dire même très simplet). A la recherche d’une aventure particulière vous errez dans un immense canyon depuis un certain moment, plusieurs chemins s’offrent à vous il semble que vous soyez perdu.")
+	ecrit_text("Vous êtes un jeune héros insouciant assez simplet (on va dire même très simplet). A la recherche d’une aventure particulière, vous errez dans un immense canyon depuis un certain moment, plusieurs chemins s’offrent à vous il semblerait que vous soyez perdu.")
 	$("#button_play").css('visibility','hidden')
 
 }
