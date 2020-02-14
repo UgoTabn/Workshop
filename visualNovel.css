@@ -10,30 +10,27 @@
 	margin:50px;
     height: 600px;
     width: 800px;
+    background-color: black;
 }
 #perso1_img{
-	position:relative;
-	top: 180px;
-	left: 0px;
-	width: 187px;
+	position:absolute;
+	top: 80px;
+	left: -100px;
 }
 #perso2_img{
-	position:relative;
+	position:absolute;
 	top: 180px;
-	left: 187px;
-	width: 187px;
+	left: 100px;
 }
 #perso3_img{
-	position:relative;
+	position:absolute;
 	top: 180px;
-	left: 375px;
-	width: 187px;
+	left: 300px;
 }
 #perso4_img{
-	position:relative;
-	top: 180px;
-	left: 562px;
-	width: 187px;
+	position:absolute;
+	top: 80px;
+	left: 500px;
 }
 .perso{
 	position:absolute;
@@ -47,7 +44,7 @@
 	width:810px;
 	background-color: rgba(255,255,255,0.5);
 	border-top-style: solid;
-	border-color: red;
+	border-color: black;
 	border-width: 10px;
 }
 #border {
@@ -77,11 +74,16 @@
 	margin:50px;
 	display: none;
 	position: absolute;
-	height: 60px;
+	height: 80px;
 	background-color: red;
 	width: 500px;
 	left: 150px;
 	top : 480px;
+	text-align: center;
+	font-size: 3em;
+	color: white;
+	border-radius:60px;
+	line-height: 80px;
 }
 
 .popup{

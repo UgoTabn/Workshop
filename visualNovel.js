@@ -5,7 +5,7 @@ var textOn = {value: 0};
 //cette variable sera altérée par les minijeux anoçant la victoire ou la défaite du joueur
 var result = {value: 0};
 var nbr = {value: 0};
-var letter = {value: "intro"};
+var letter = {value: "a"};
 display_perso(1,"void","void");
 display_perso(2,"void","void");
 display_perso(3,"void","void");
@@ -43,38 +43,170 @@ function realisateur(event){
 					}
 					break;
 				case ("a"):
-					if (nbr.value < 2){
+					if (nbr.value < 11){
 						nbr.value++;
 					}
 					switch (nbr.value){
 						case 1:
+							a1();
+							break;
+						case 2:
+							a2();
+							break;
+						case 3:
+							a3();
+							break;
+						case 4:
+							a4();
+							break;
+						case 5:
+							a5();
+							break;
+						case 6:
+							a6();
+							break;
+						case 7:
+							a7();
+							break;
+						case 8:
+							a8();
+							break;
+						case 9:
+							a9();
+							break;
+						case 10:
+							a10();
+							break;
+						case 11:
+							a11();
+							if (result.value == 1){
+								letter.value = "b";
+								nbr.value = 0;
+								$('#button_play').css("display", "none");
+								$('#button_play').removeClass("e2");
+							}else if (result.value == 2) {
+								letter.value = "c";
+								nbr.value = 0;
+								$('#button_play').css("display", "none");
+								$('#button_play').removeClass("e2");
+							}
 							break;
 					}
 					break;
 				case ("b"):
-					if (nbr.value < 2){
+					if (nbr.value < 3){
 						nbr.value++;
 					}
 					switch (nbr.value){
 						case 1:
+							b1();
+							break;
+						case 2:
+							b2();
+							break;
+						case 3:
+							b3();
+							letter.value = "d";
 							break;
 					}
 					break;
 				case ("c"):
-					if (nbr.value < 2){
+					if (nbr.value < 3){
 						nbr.value++;
 					}
 					switch (nbr.value){
 						case 1:
+							c1();
+							break;
+						case 2:
+							c2();
+							break;
+						case 3:
+							c3();
+							letter.value = "d";
 							break;
 					}
-					break;
 				case ("d"):
 					if (nbr.value < 2){
 						nbr.value++;
 					}
 					switch (nbr.value){
 						case 1:
+							d1();
+							break;
+						case 1:
+							d2();
+							break;
+						case 1:
+							d3();
+							break;
+						case 1:
+							d4();
+							break;
+						case 1:
+							d5();
+							break;
+						case 1:
+							d6();
+							break;
+						case 1:
+							d7();
+							break;
+						case 1:
+							d8();
+							break;
+						case 1:
+							d9();
+							break;
+						case 1:
+							d10();
+							break;
+						case 1:
+							d11();
+							break;
+						case 1:
+							d12();
+							break;
+						case 1:
+							d13();
+							break;
+						case 1:
+							d14();
+							break;
+						case 1:
+							d15();
+							break;
+						case 1:
+							d16();
+							break;
+						case 1:
+							d17();
+							break;
+						case 1:
+							d18();
+							break;
+						case 1:
+							d19();
+							break;
+						case 1:
+							d20();
+							break;
+						case 1:
+							d21();
+							break;
+						case 1:
+							d22();
+							if (result.value == 1){
+								letter.value = "e";
+								nbr.value = 0;
+								$('#button_play').css("display", "none");
+								$('#button_play').removeClass("e3");
+							}else if (result.value == 2) {
+								letter.value = "f";
+								nbr.value = 0;
+								$('#button_play').css("display", "none");
+								$('#button_play').removeClass("e3");
+							}
 							break;
 					}
 					break;
@@ -218,8 +350,231 @@ function intro2(){
 	$('#button_play').css("display", "block");
 	$('#button_play').addClass("e1");
 }
-
-
+function a1(){
+	$("#background").css({"background-image": "url('assets/background/zone52.jpg')", "background-size": "1000px"});
+	ecrit_text("Vous arrivez finalement à sortir de ce labyrinthe. Devant vous apparaît un large complexe de bâtiments entouré d’un vaste grillage lui même installé derrière une série de panneaux. Ce lieu vous fait penser à quelque chose, ça ne serait pas la zone 51 par hasard ?");
+}
+function a2(){
+	ecrit_text("A peine arrivé près du périmètre, un garde vous arrête");
+}
+function a3(){
+	display_perso(1,"billy","idle");
+	display_perso(4,"billy","idle");
+	parle(1);gris(4);
+	ecrit_text("Halte monsieur ! où allez vous comme ça ?");
+}
+function a4(){
+	gris(1);parle(4);
+	ecrit_text("Je cherche la zone 51");
+}
+function a5(){
+	gris(4);parle(1);
+	ecrit_text("C’est interdit d’accès ici, allez voir à côté")
+}
+function a6(){
+	display_perso(1,"void","void");
+	display_perso(4,"void","void");
+	ecrit_text("Vous repartez en route, et après quelques kilomètres de marche, vous arrivez devant un grand bâtiment délabré, un grillage éventré entourant son enceinte. Vous pouvez voir un écriteau cassé à l’entrée sur lequel est écrit “Bienvenue dans la zone 52, ici territoire d’accueil pour aventuriers en herbe");
+}
+function a7(){
+	display_perso(4,"billy","idle");
+	parle(4);gris(1);
+	ecrit_text("Oah, mais super grand le bâtiment, qui a mit ça là ? , bon allez je rentre ça à l’air cool");
+}
+function a8(){
+	display_perso(1,"billy","idle");
+	gris(4);parle(1);
+	ecrit_text("C’est qui ce guignol qu’on voit dans la caméra ?");
+}
+function a9(){
+	$("#background").css({"background-image": "url('assets/background/labo.jpg')", "background-size": "1000px"});
+	display_perso(1,"void","void");
+	display_perso(4,"void","void");
+	ecrit_text("Vous pénétrez dans le bâtiment, la pièce dans laquelle vous arrivez et remplie de panneaux de commandes composés de voyants lumineux et de boutons de toutes sortes.");
+}
+function a10(){
+	display_perso(4,"billy","idle");
+	parle(4);
+	ecrit_text("Woaww c’est quoi cette endroit ?? Les autres me croiront jamais, il faut que je prenne un souvenir , tiens je vais prendre ce truc là sur la table.  *Prend un livre sur une table*  Vous vous approchez d’un des panneaux de commandes, lorsque une soudaine envie de toucher à tout fait son apparition.");
+}
+function a11(){
+	ecrit_text("");
+	display_perso(4,"void","void");
+	$('#button_play').css("display", "block");
+	$('#button_play').addClass("e2");
+}
+function b1(){
+	display_perso(1, "antagoniste", "idle");
+    display_perso(4, "billy", "idle");
+    gris(1);
+    parle(4);
+    ecrit_text(" Ho mais les boutons sont utilisables ! Je vais essayer d’activer les deux gros");
+}
+function b2(){
+	parle(1);
+    gris(4);
+    ecrit_text("Non, ne touchez à rien ! Ne bouge plus de là gamin ! Sécurité, envoyez le robot !");
+}
+function b3(){
+	display_perso(1, "void", "void");
+    display_perso(4, "void", "void");
+    ecrit_text("A cet instant, une large trappe que vous n’aviez pas remarqué s’enclenche sous vos pieds. Vous tombez dans une sorte de vortex ; aspiré par cette étrange force, vous serrez le bouquin dans vos bras. Vous n’avez pas vu qu'un petit robot vous avait rejoint dans votre chute.");   
+}
+function c1(){
+	display_perso(1, "antagoniste", "idle");
+    display_perso(4, "billy", "idle");
+    gris(1);
+    parle(4);
+    ecrit_text("Rahh mais ça marche pas, bon y’a plus qu’à rentrer");
+}
+function c2(){
+	parle(1);
+    gris(4);
+    ecrit_text("Il va partir ! Vite sécurité, envoyez le robot!");
+}
+function c3(){
+	//$("#background").css({"background-image": "url('assets/background/zone52.jpg')", "background-size": "1000px"});
+	//fond noir
+	display_perso(1, "void", "void");
+    display_perso(4, "void", "void");
+    ecrit_text("A cet instant, une large trappe que vous n’aviez pas remarqué s’enclenche sous vos pieds. Vous tombez dans une sorte de vortex ; aspiré par cette étrange force, vous serrez le bouquin dans vos bras. Vous n’avez pas vu qu'un petit robot vous avait rejoint dans votre chute.");
+}
+function d1(){
+	//$("#background").css({"background-image": "url('assets/background/zone52.jpg')", "background-size": "1000px"});
+	ecrit_text("Vous arrivez dans monde gelé mais qui vous fait étrangement penser à univers Far West");
+}
+function d2(){
+	display_perso(1, "robot", "idle");
+    display_perso(4, "billy", "idle");
+    gris(1);
+    parle(4);
+    ecrit_text("Mais qu’est ce que je fais là moi, ou suis-je ?");
+}
+function d3(){
+	parle(1);
+    gris(4);
+    ecrit_text("Te voila dans un beau pétrin");
+}
+function d4(){
+	gris(4);
+    parle(4);
+    ecrit_text("Qu’est-ce que.. ? C’est qui dans ma tête? ");
+}
+function d5(){
+	parle(1);
+    gris(4);
+    ecrit_text("Dans ta têt...");
+}
+function d6(){
+	display_perso(4, "billy", "sad");
+	gris(1);
+    parle(4);
+    ecrit_text("Je peux rentrer chez moi ? ");
+}
+function d7(){
+	gris(4);
+    parle(1);
+    ecrit_text("NON! Tu dois trouver comment t’échapper. Mais ne t’inquiète pas, je vais t’accompagner");
+}
+function d8(){
+	gris(1);
+    parle(4);
+    ecrit_text("ohhhh d’accord…); *Soudain tout enjoué* on va où du coup ?");
+}
+function d9(){
+	display_perso(4, "billy", "veryhappy");
+	ecrit_text("On va où du coup ?");
+}
+function d10(){
+	gris(4);
+    parle(1);
+    ecrit_text("Commençons à marcher");
+}
+function d11(){
+	display_perso(4, "billy", "idle");
+	gris(1);
+    parle(4);
+    ecrit_text("Okay");
+}
+function d12(){
+	//$("#background").css({"background-image": "url('assets/background/zone52.jpg')", "background-size": "1000px"});
+	gris(4);
+    parle(1);
+    ecrit_text("Nous arrivons dans une ville. Il n’y a pas grand-monde, j’ai l’impression. C’est même carrément abandonné, si regarde il y’a une sorte de shérif la bas ! allons le voir.");
+}
+function d13(){
+	display_perso(1, "shérif", "happy");
+    display_perso(3, "robot", "idle");
+    parle(4);
+    gris(1);
+    gris(3);
+    ecrit_text("Bonjour monsieur");
+}
+function d14(){
+	gris(4);
+    gris(3);
+    parle(1);
+    ecrit_text("Bonjour jeune homme, avez vous vu cette chose ? ");
+}
+function d15(){
+	ecrit_text("Le shérif brandit un avis de recherche où un animal en forme de bazooka est dessiné...");
+}
+function d16(){
+	display_perso(4, "billy", "veryhappy");
+	parle(4);
+    gris(1);
+    gris(3);
+    ecrit_text("Qu’est ce que c’est ?!");
+}
+function d17(){
+	display_perso(4, "billy", "idle");
+	display_perso(1, "shérif", "doubt");
+	gris(4);
+    gris(3);
+    parle(1);
+    ecrit_text("Ces énergumènes ont la faculté impressionnante de créer des portails, alors la plupart des gens qui viennent ici ne prennent plus la peine de s’arrêter, tout le monde se barre avec ce genre d’engin, alors je les chasse.");
+}
+function d18(){
+	parle(3);
+    gris(1);
+    gris(4);
+    ecrit_text(" *en parlant tout bas* Intéressant... on pourrait l’utiliser pour rentrer chez nous...");
+}
+function d19(){
+	display_perso(4, "billy", "happy");
+	parle(4);
+    gris(3);
+    gris(4);
+    ecrit_text("Ah oui tiens ! J’y avais pas pensé, c’quand même drôlement futé !");
+}
+function d20(){
+	display_perso(4, "billy", "idle");
+	parle(3);
+    gris(1);
+    gris(4);
+    ecrit_text("Chut ! pas si fort imbécile, trouvons le truc et barrons nous !");
+}
+function d21(){
+	display_perso(1, "shérif", "happy");
+	gris(4);
+    gris(3);
+    parle(1);
+    ecrit_text("Tenez je vous donne les différents éléments pour le trouver, si vous y parvenez dans le temps imparti, vous allez réussir à trouver l’endroit où il se trouve. Sinon ...");
+}
+function d22(){
+	ecrit_text("");
+	$('#button_play').css("display", "block");
+	$('#button_play').addClass("e3");
+}
+/*function a2(){
+	
+}
+function a2(){
+	
+}
+function a2(){
+	
+}*/
 //ALEA
 function getRandomIntInclusive(min, max) {
   	min = Math.ceil(min);
@@ -291,7 +646,7 @@ $('main').on('click','#button_play.e1',function(){
 					function end(){
 					$('#pop').css("display","none");
 					clear_minigame();
-					scene_1a();
+					result.value = 1;
 				}
 				break;
 		}
@@ -349,7 +704,7 @@ $('main').on('click','#button_play.e1',function(){
 					function end(){
 					$('#pop').css("display","none");
 					clear_minigame();
-					scene_1a();
+					result.value = 1;
 				}
 				break;
 		}
@@ -395,6 +750,7 @@ $('main').on('click','#button_play.e2',function(){
 				$('#element5').removeClass("e1");
 				$('#pop').css("display","none");
 				clear_minigame();
+				result.value = 2;
 			}
 			$("#element1.e1").html("VIE RESTANTE : "+vie)
 		} else if(game_end == 1){
@@ -406,6 +762,7 @@ $('main').on('click','#button_play.e2',function(){
 			$('#element5').removeClass("e1");
 			$('#pop').css("display","none");
 			clear_minigame();
+			result.value = 1;
 		}
 	})
 })
@@ -433,6 +790,7 @@ $('main').on('click','#button_play.e3',function(){
 		if(nb == 0){
 			$('#pop').css("display","none");
 			clear_minigame();
+			result.value = 1;
 		}
 	})
 
@@ -446,6 +804,7 @@ $('main').on('click','#button_play.e3',function(){
 			}
 			clear_minigame();
 			window.clearInterval(timer);
+			result.value = 2;
 		}
 	},1000)
 })
@@ -1041,8 +1400,8 @@ $("#button_play").click(function(){
 
 
 function parle(perso){
-	$('#perso'+perso+'_img').removeClass('gray').addClass("parle").css("width","200px")
+	$('#perso'+perso+'_img').removeClass('gray').addClass("parle").css("width","400px")
 }
 function gris(perso){
-	$('#perso'+perso+'_img').removeClass('parle').css("width","187px").addClass("gray")
+	$('#perso'+perso+'_img').removeClass('parle').css("width","380px").addClass("gray")
 }
