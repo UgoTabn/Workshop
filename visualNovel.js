@@ -5,7 +5,7 @@ var textOn = {value: 0};
 //cette variable sera altérée par les minijeux anoçant la victoire ou la défaite du joueur
 var result = {value: 0};
 var nbr = {value: 0};
-var letter = {value: "a"};
+var letter = {value: "b"};//a CHANGER
 display_perso(1,"void","void");
 display_perso(2,"void","void");
 display_perso(3,"void","void");
@@ -106,6 +106,7 @@ function realisateur(event){
 							break;
 						case 3:
 							b3();
+							nbr.value = 0;
 							letter.value = "d";
 							break;
 					}
@@ -123,78 +124,79 @@ function realisateur(event){
 							break;
 						case 3:
 							c3();
+							nbr.value = 0;
 							letter.value = "d";
 							break;
 					}
 				case ("d"):
-					if (nbr.value < 2){
+					if (nbr.value < 22){
 						nbr.value++;
 					}
 					switch (nbr.value){
 						case 1:
 							d1();
 							break;
-						case 1:
+						case 2:
 							d2();
 							break;
-						case 1:
+						case 3:
 							d3();
 							break;
-						case 1:
+						case 4:
 							d4();
 							break;
-						case 1:
+						case 5:
 							d5();
 							break;
-						case 1:
+						case 6:
 							d6();
 							break;
-						case 1:
+						case 7:
 							d7();
 							break;
-						case 1:
+						case 8:
 							d8();
 							break;
-						case 1:
+						case 9:
 							d9();
 							break;
-						case 1:
+						case 10:
 							d10();
 							break;
-						case 1:
+						case 11:
 							d11();
 							break;
-						case 1:
+						case 12:
 							d12();
 							break;
-						case 1:
+						case 13:
 							d13();
 							break;
-						case 1:
+						case 14:
 							d14();
 							break;
-						case 1:
+						case 15:
 							d15();
 							break;
-						case 1:
+						case 16:
 							d16();
 							break;
-						case 1:
+						case 17:
 							d17();
 							break;
-						case 1:
+						case 18:
 							d18();
 							break;
-						case 1:
+						case 19:
 							d19();
 							break;
-						case 1:
+						case 20:
 							d20();
 							break;
-						case 1:
+						case 21:
 							d21();
 							break;
-						case 1:
+						case 22:
 							d22();
 							if (result.value == 1){
 								letter.value = "e";
@@ -444,7 +446,7 @@ function d1(){
 	ecrit_text("Vous arrivez dans monde gelé mais qui vous fait étrangement penser à univers Far West");
 }
 function d2(){
-	display_perso(1, "robot", "idle");
+	display_perso(1, "robot", "gentil");
     display_perso(4, "billy", "idle");
     gris(1);
     parle(4);
@@ -479,7 +481,7 @@ function d7(){
 function d8(){
 	gris(1);
     parle(4);
-    ecrit_text("ohhhh d’accord…); *Soudain tout enjoué* on va où du coup ?");
+    ecrit_text("ohhhh d’accord…");
 }
 function d9(){
 	display_perso(4, "billy", "veryhappy");
@@ -503,8 +505,8 @@ function d12(){
     ecrit_text("Nous arrivons dans une ville. Il n’y a pas grand-monde, j’ai l’impression. C’est même carrément abandonné, si regarde il y’a une sorte de shérif la bas ! allons le voir.");
 }
 function d13(){
-	display_perso(1, "shérif", "happy");
-    display_perso(3, "robot", "idle");
+	display_perso(1, "sherif", "happy");
+    display_perso(3, "robot", "gentil");
     parle(4);
     gris(1);
     gris(3);
@@ -528,7 +530,7 @@ function d16(){
 }
 function d17(){
 	display_perso(4, "billy", "idle");
-	display_perso(1, "shérif", "doubt");
+	display_perso(1, "sherif", "doubt");
 	gris(4);
     gris(3);
     parle(1);
@@ -555,7 +557,7 @@ function d20(){
     ecrit_text("Chut ! pas si fort imbécile, trouvons le truc et barrons nous !");
 }
 function d21(){
-	display_perso(1, "shérif", "happy");
+	display_perso(1, "sherif", "happy");
 	gris(4);
     gris(3);
     parle(1);
